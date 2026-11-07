@@ -1,0 +1,3032 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-06T23:12:31+08:00",
+  "count": 144,
+  "bySubject": {
+    "math": 34,
+    "auto": 31,
+    "ethics": 16,
+    "logic": 16,
+    "english": 17,
+    "politics": 22,
+    "electrical": 8
+  },
+  "questions": [
+    {
+      "id": "m-001",
+      "subject": "math",
+      "topic": "极限",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "lim(x→0) sin(3x)/x 等于？",
+      "options": [
+        "3",
+        "不存在",
+        "1",
+        "0"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "sin(3x) ~ 3x，所以原式 = lim 3x/x = 3。",
+      "source": "751 基础 · 极限",
+      "tags": []
+    },
+    {
+      "id": "m-002",
+      "subject": "math",
+      "topic": "极限",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "lim(x→0) (1-cos x)/x² 等于？",
+      "options": [
+        "1",
+        "1/2",
+        "2",
+        "0"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "1-cos x ~ x²/2，所以极限为 1/2。",
+      "source": "751 基础 · 等价无穷小",
+      "tags": []
+    },
+    {
+      "id": "m-003",
+      "subject": "math",
+      "topic": "极限",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "lim(x→∞) (1+1/x)^x 等于？",
+      "options": [
+        "∞",
+        "1",
+        "e",
+        "e²"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "这是重要极限，结果为 e；注意与 (1+x)^(1/x)（x→0）区分。",
+      "source": "751 基础 · 重要极限",
+      "tags": []
+    },
+    {
+      "id": "m-004",
+      "subject": "math",
+      "topic": "极限",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "lim(x→0) (tan x - x)/x³ 等于？",
+      "options": [
+        "1",
+        "0",
+        "1/2",
+        "1/3"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "tan x = x + x³/3 + o(x³)，所以 tan x - x ~ x³/3，极限 1/3。不能用 tan x ~ x 直接减。",
+      "source": "751 基础 · 泰勒",
+      "tags": []
+    },
+    {
+      "id": "m-005",
+      "subject": "math",
+      "topic": "连续",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "f(x)=|x| 在 x=0 处？",
+      "options": [
+        "连续但不可导",
+        "连续且可导",
+        "可导但不连续",
+        "既不连续也不可导"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "|x| 在 0 处连续；左导 -1、右导 1，左右导数不等，所以不可导。",
+      "source": "751 基础 · 连续与可导",
+      "tags": []
+    },
+    {
+      "id": "m-006",
+      "subject": "math",
+      "topic": "连续",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "f(x)=1/x 在 x=0 处的间断点类型是？",
+      "options": [
+        "跳跃间断点",
+        "无穷间断点",
+        "振荡间断点",
+        "可去间断点"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "x→0 时 1/x→∞，属于第二类间断点中的无穷间断点。",
+      "source": "751 基础 · 间断点分类",
+      "tags": []
+    },
+    {
+      "id": "m-007",
+      "subject": "math",
+      "topic": "导数",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "函数 f(x)=x^x 在 x=1 处的导数等于？",
+      "options": [
+        "e",
+        "2e",
+        "1",
+        "0"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "取对数 ln f = x ln x，f'/f = ln x + 1；x=1 时 f=1，f'=1。",
+      "source": "751 基础 · 对数求导",
+      "tags": []
+    },
+    {
+      "id": "m-008",
+      "subject": "math",
+      "topic": "导数",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "d/dx ln(sec x) 等于？",
+      "options": [
+        "cot x",
+        "sec²x",
+        "sec x",
+        "tan x"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "(ln sec x)' = (sec x tan x)/sec x = tan x。",
+      "source": "751 基础 · 求导公式",
+      "tags": []
+    },
+    {
+      "id": "m-009",
+      "subject": "math",
+      "topic": "中值定理",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "下列哪一项不是罗尔定理的条件？",
+      "options": [
+        "端点导数相等",
+        "在开区间可导",
+        "在闭区间连续",
+        "区间端点函数值相等"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "罗尔定理只要求连续、可导、f(a)=f(b)，不要求端点导数相等。",
+      "source": "751 基础 · 罗尔定理",
+      "tags": []
+    },
+    {
+      "id": "m-010",
+      "subject": "math",
+      "topic": "中值定理",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "f(x)=x³-3x 在 [-2,2] 上的最大值是？",
+      "options": [
+        "-2",
+        "2",
+        "0",
+        "4"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "f(-1)=2，f(2)=2，f(-2)=-2，f(1)=-2；最大值为 2。",
+      "source": "751 基础 · 极值",
+      "tags": []
+    },
+    {
+      "id": "m-011",
+      "subject": "math",
+      "topic": "积分",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "∫ ln x dx 等于？",
+      "options": [
+        "x/ln x + C",
+        "ln x + C",
+        "x ln x - x + C",
+        "x ln x + C"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "分部积分：u=ln x，dv=dx，得 x ln x - ∫1 dx = x ln x - x + C。",
+      "source": "751 基础 · 分部积分",
+      "tags": []
+    },
+    {
+      "id": "m-012",
+      "subject": "math",
+      "topic": "积分",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "∫(0→1) x e^x dx 等于？",
+      "options": [
+        "0",
+        "e",
+        "e-1",
+        "1"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "分部积分得 (x-1)e^x，代入 0、1：0 - (-1)=1。",
+      "source": "751 基础 · 定积分",
+      "tags": []
+    },
+    {
+      "id": "m-013",
+      "subject": "math",
+      "topic": "积分",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "∫ 1/(1+x²) dx 等于？",
+      "options": [
+        "arctan x + C",
+        "arcsin x + C",
+        "-1/(1+x²) + C",
+        "ln(1+x²) + C"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "arctan x 的导数是 1/(1+x²)，所以原函数是 arctan x + C。",
+      "source": "751 基础 · 基本积分表",
+      "tags": []
+    },
+    {
+      "id": "m-014",
+      "subject": "math",
+      "topic": "变上限积分",
+      "type": "choice",
+      "difficulty": 3,
+      "stem": "d/dx ∫(0→x) (x-t)f(t) dt 等于？",
+      "options": [
+        "f(x)",
+        "∫(0→x) f(t) dt",
+        "x f(x)",
+        "f(x)-f(0)"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "先拆成 x∫f - ∫t f，求导得 ∫f + x f(x) - x f(x) = ∫f。被积函数含 x，不能直接套公式。",
+      "source": "751 基础 · 变上限积分",
+      "tags": []
+    },
+    {
+      "id": "m-015",
+      "subject": "math",
+      "topic": "反常积分",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "∫(1→+∞) 1/x^p dx 收敛的条件是？",
+      "options": [
+        "p=1",
+        "p<1",
+        "p>1",
+        "对任意 p 都收敛"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "p>1 时积分收敛到 1/(p-1)；p≤1 时发散。",
+      "source": "751 基础 · 反常积分",
+      "tags": []
+    },
+    {
+      "id": "m-016",
+      "subject": "math",
+      "topic": "二重积分",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "单位圆 x²+y²≤1 的面积用二重积分表示为？",
+      "options": [
+        "1",
+        "2π",
+        "π/2",
+        "π"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "单位圆面积 πr²=π；极坐标下 ∫0^2π∫0^1 r dr dθ=π。",
+      "source": "751 基础 · 二重积分",
+      "tags": []
+    },
+    {
+      "id": "m-017",
+      "subject": "math",
+      "topic": "二重积分",
+      "type": "choice",
+      "difficulty": 3,
+      "stem": "∬(x²+y²≤1) (x²+y²) dσ 等于？",
+      "options": [
+        "π/2",
+        "π",
+        "π/4",
+        "2π"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "极坐标 ∫0^2π∫0^1 r²·r dr dθ = 2π·(1/4)=π/2。",
+      "source": "751 基础 · 极坐标",
+      "tags": []
+    },
+    {
+      "id": "m-018",
+      "subject": "math",
+      "topic": "多元",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "f(x,y)=x²y+y³ 在 (1,1) 处的梯度是？",
+      "options": [
+        "(3,4)",
+        "(2,4)",
+        "(1,3)",
+        "(2,3)"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "f_x=2xy=2，f_y=x²+3y²=1+3=4，梯度为 (2,4)。",
+      "source": "751 基础 · 偏导数",
+      "tags": []
+    },
+    {
+      "id": "m-019",
+      "subject": "math",
+      "topic": "多元",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "f(x,y)=x²+y²-2x-4y+5 在 (1,2) 处取得？",
+      "options": [
+        "无法判断",
+        "鞍点",
+        "极小值",
+        "极大值"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "配方得 (x-1)²+(y-2)²，显然在 (1,2) 取最小值 0。",
+      "source": "751 基础 · 无条件极值",
+      "tags": []
+    },
+    {
+      "id": "m-020",
+      "subject": "math",
+      "topic": "微分方程",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "微分方程 y'=2xy，y(0)=1 的解是？",
+      "options": [
+        "y=1+x²",
+        "y=e^(-x²)",
+        "y=e^(2x)",
+        "y=e^(x²)"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "分离变量 dy/y=2x dx，积分得 ln y=x²+C；由 y(0)=1 得 C=0。",
+      "source": "751 基础 · 可分离变量",
+      "tags": []
+    },
+    {
+      "id": "m-021",
+      "subject": "math",
+      "topic": "微分方程",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "微分方程 y''+y=0 的通解是？",
+      "options": [
+        "C1 cos x + C2 sin x",
+        "C1 cosh x + C2 sinh x",
+        "C1 e^x + C2 e^(-x)",
+        "C1 x + C2"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "特征方程 r²+1=0，r=±i，通解为 C1 cos x + C2 sin x。",
+      "source": "751 基础 · 二阶常系数",
+      "tags": []
+    },
+    {
+      "id": "m-022",
+      "subject": "math",
+      "topic": "微分方程",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "微分方程 y''-3y'+2y=0 的通解是？",
+      "options": [
+        "C1 + C2 x",
+        "C1 e^x + C2 e^(2x)",
+        "C1 e^(-x) + C2 e^(-2x)",
+        "C1 cos x + C2 sin x"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "特征方程 r²-3r+2=0，r=1,2，通解为 C1 e^x + C2 e^(2x)。",
+      "source": "751 基础 · 二阶常系数",
+      "tags": []
+    },
+    {
+      "id": "m-023",
+      "subject": "math",
+      "topic": "行列式",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "行列式 |1 2; 3 4| 等于？",
+      "options": [
+        "-10",
+        "10",
+        "-2",
+        "2"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "1×4-2×3=4-6=-2。",
+      "source": "751 线代 · 行列式",
+      "tags": []
+    },
+    {
+      "id": "m-024",
+      "subject": "math",
+      "topic": "行列式",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "若 A 为 3 阶矩阵，则 |kA| 等于？",
+      "options": [
+        "|A|",
+        "k|A|",
+        "k²|A|",
+        "k³|A|"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "每行提一个 k，共 3 行，所以 |kA|=k³|A|。",
+      "source": "751 线代 · 行列式性质",
+      "tags": []
+    },
+    {
+      "id": "m-025",
+      "subject": "math",
+      "topic": "矩阵",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "矩阵 diag(2,3) 的逆矩阵是？",
+      "options": [
+        "diag(1/2,1/3)",
+        "diag(2,3)",
+        "diag(3,2)",
+        "diag(-2,-3)"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "对角矩阵的逆仍为对角矩阵，对角元取倒数。",
+      "source": "751 线代 · 逆矩阵",
+      "tags": []
+    },
+    {
+      "id": "m-026",
+      "subject": "math",
+      "topic": "秩",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "矩阵 [[1,2,3],[2,4,6],[0,0,1]] 的秩是？",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "第二行是第一行的 2 倍，第三行与第一行不成比例；非零行数为 2，秩为 2。",
+      "source": "751 线代 · 秩",
+      "tags": []
+    },
+    {
+      "id": "m-027",
+      "subject": "math",
+      "topic": "方程组",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "齐次方程组 Ax=0 有非零解的充要条件是？",
+      "options": [
+        "r(A)=r(A|b)",
+        "|A|≠0",
+        "r(A)<n",
+        "r(A)=n"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "未知数个数 n，若 r(A)<n，则自由变量存在，有非零解。",
+      "source": "751 线代 · 齐次方程组",
+      "tags": []
+    },
+    {
+      "id": "m-028",
+      "subject": "math",
+      "topic": "特征值",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "矩阵 [[2,1],[0,3]] 的特征值是？",
+      "options": [
+        "3,3",
+        "1,2",
+        "0,2",
+        "2,3"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "上三角矩阵的特征值就是对角元 2 和 3。",
+      "source": "751 线代 · 特征值",
+      "tags": []
+    },
+    {
+      "id": "m-029",
+      "subject": "math",
+      "topic": "特征值",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "3 阶矩阵 A 的特征值为 1,2,3，则 det(A) 与 tr(A) 分别为？",
+      "options": [
+        "6,6",
+        "5,6",
+        "6,5",
+        "0,6"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "行列式等于特征值之积 6，迹等于特征值之和 6。",
+      "source": "751 线代 · 特征值性质",
+      "tags": []
+    },
+    {
+      "id": "m-030",
+      "subject": "math",
+      "topic": "向量组",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "向量 (1,2,3) 与 (2,4,6) 的关系是？",
+      "options": [
+        "正交",
+        "线性相关",
+        "无法判断",
+        "线性无关"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "第二个向量是第一个的 2 倍，存在非零系数使线性组合为 0，故线性相关。",
+      "source": "751 线代 · 线性相关性",
+      "tags": []
+    },
+    {
+      "id": "m-031",
+      "subject": "math",
+      "topic": "极限",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "lim(x→0) (e^x - 1 - x)/x² 等于？",
+      "options": [
+        "0",
+        "1",
+        "1/2",
+        "2"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "e^x = 1 + x + x²/2 + o(x²)，减去 1+x 后剩 x²/2，极限 1/2。",
+      "source": "751 基础 · 泰勒",
+      "tags": []
+    },
+    {
+      "id": "m-032",
+      "subject": "math",
+      "topic": "导数",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "f(x)=x³-3x 的单调递增区间是？",
+      "options": [
+        "(0,+∞)",
+        "(-∞,0)",
+        "(-1,1)",
+        "(-∞,-1) 与 (1,+∞)"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "f'=3(x-1)(x+1)；在 (-∞,-1) 和 (1,+∞) 上 f'>0，单调递增。",
+      "source": "751 基础 · 单调性",
+      "tags": []
+    },
+    {
+      "id": "m-033",
+      "subject": "math",
+      "topic": "积分",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "∫(0→π) sin x dx 等于？",
+      "options": [
+        "2",
+        "π",
+        "0",
+        "1"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "原函数 -cos x，代入 0、π：-(-1)-(-1)=2。",
+      "source": "751 基础 · 定积分",
+      "tags": []
+    },
+    {
+      "id": "m-034",
+      "subject": "math",
+      "topic": "矩阵",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "若 3 阶矩阵 A 满足 |A|=2，则 |A⁻¹| 等于？",
+      "options": [
+        "-1/2",
+        "1/2",
+        "2",
+        "-2"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "|A⁻¹|=1/|A|=1/2。",
+      "source": "751 线代 · 逆矩阵行列式",
+      "tags": []
+    },
+    {
+      "id": "a-001",
+      "subject": "auto",
+      "topic": "传递函数",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "传递函数的定义要求系统满足什么前提？",
+      "options": [
+        "线性、时变、零初始条件",
+        "非线性、时变、任意初值",
+        "线性、定常、零初始条件",
+        "任意系统、任意初值"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "传递函数是零初始条件下线性定常系统输出/输入的拉氏变换比。",
+      "source": "胡寿松 · 第 2 章",
+      "tags": []
+    },
+    {
+      "id": "a-002",
+      "subject": "auto",
+      "topic": "建模",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "质量-弹簧-阻尼系统 m x'' + c x' + k x = F 的传递函数 X(s)/F(s) 是？",
+      "options": [
+        "1/(ms+c)",
+        "(ms²+cs+k)",
+        "k/(ms²+cs+k)",
+        "1/(ms²+cs+k)"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "拉氏变换得 (ms²+cs+k)X=F，所以 X/F=1/(ms²+cs+k)。",
+      "source": "胡寿松 · 第 2 章",
+      "tags": []
+    },
+    {
+      "id": "a-003",
+      "subject": "auto",
+      "topic": "时域",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "一阶系统 G(s)=K/(Ts+1) 的单位阶跃响应，在 t=T 时到达稳态值的？",
+      "options": [
+        "63.2%",
+        "86.5%",
+        "50%",
+        "95%"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "y(T)=K(1-e⁻¹)≈0.632K；3T 约 95%，4T 约 98%。",
+      "source": "胡寿松 · 第 3 章",
+      "tags": []
+    },
+    {
+      "id": "a-004",
+      "subject": "auto",
+      "topic": "时域",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "二阶系统的标准传递函数是？",
+      "options": [
+        "2ζω_n/(s²+ω_n²)",
+        "ω_n²/(s²+2ζω_ns+ω_n²)",
+        "ω_n/(s²+2ζω_ns+ω_n²)",
+        "1/(s²+2ζω_ns+ω_n²)"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "标准形式分子为 ω_n²，分母为 s²+2ζω_ns+ω_n²。",
+      "source": "胡寿松 · 第 3 章",
+      "tags": []
+    },
+    {
+      "id": "a-005",
+      "subject": "auto",
+      "topic": "时域",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "二阶系统 ζ=0.5 时，最大超调量约为？",
+      "options": [
+        "50%",
+        "4.3%",
+        "16.3%",
+        "25%"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "Mp=e^(-πζ/√(1-ζ²))=e^(-1.814)≈0.163，即 16.3%。",
+      "source": "胡寿松 · 第 3 章",
+      "tags": []
+    },
+    {
+      "id": "a-006",
+      "subject": "auto",
+      "topic": "时域",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "欠阻尼二阶系统，2% 误差带的调节时间约为？",
+      "options": [
+        "1/(ζω_n)",
+        "3/(ζω_n)",
+        "π/(ζω_n)",
+        "4/(ζω_n)"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "2% 误差带 ts≈4/(ζω_n)；5% 误差带约为 3/(ζω_n)。",
+      "source": "胡寿松 · 第 3 章",
+      "tags": []
+    },
+    {
+      "id": "a-007",
+      "subject": "auto",
+      "topic": "稳态误差",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "0 型系统单位阶跃输入的稳态误差为？",
+      "options": [
+        "1/(1+Kp)",
+        "1/Kv",
+        "∞",
+        "0"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "0 型系统对阶跃有有限误差 1/(1+Kp)；对斜坡/抛物线误差为 ∞。",
+      "source": "胡寿松 · 第 3 章",
+      "tags": []
+    },
+    {
+      "id": "a-008",
+      "subject": "auto",
+      "topic": "稳态误差",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "I 型系统单位斜坡输入的稳态误差为？",
+      "options": [
+        "0",
+        "1/Kv",
+        "∞",
+        "1/Ka"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "I 型系统阶跃误差 0，斜坡误差 1/Kv，抛物线误差 ∞。",
+      "source": "胡寿松 · 第 3 章",
+      "tags": []
+    },
+    {
+      "id": "a-009",
+      "subject": "auto",
+      "topic": "稳定性",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "Routh 表第一列的符号变化次数等于？",
+      "options": [
+        "左半平面根数",
+        "特征多项式阶数",
+        "右半平面根数",
+        "虚轴根数"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "Routh 判据：第一列变号次数等于右半平面特征根个数。",
+      "source": "胡寿松 · 第 3 章",
+      "tags": []
+    },
+    {
+      "id": "a-010",
+      "subject": "auto",
+      "topic": "稳定性",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "Routh 表出现某行全为 0 时，正确做法是？",
+      "options": [
+        "把该行全部改成 1",
+        "直接判稳定",
+        "停止计算，判不稳定",
+        "用上一行构造辅助多项式并求导"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "全 0 行说明有对称根；用上一行系数构造辅助多项式，对其求导后继续。",
+      "source": "胡寿松 · 第 3 章",
+      "tags": []
+    },
+    {
+      "id": "a-011",
+      "subject": "auto",
+      "topic": "根轨迹",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "开环传递函数有 n 个极点、m 个零点（n>m），根轨迹的分支数为？",
+      "options": [
+        "n",
+        "m",
+        "n-m",
+        "n+m"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "根轨迹分支数等于 max(n,m)，通常为 n；其中 n-m 条趋向无穷。",
+      "source": "胡寿松 · 第 4 章",
+      "tags": []
+    },
+    {
+      "id": "a-012",
+      "subject": "auto",
+      "topic": "根轨迹",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "实轴上某点右侧的开环实数极点与零点总数为奇数时，该点？",
+      "options": [
+        "一定不在根轨迹上",
+        "一定在根轨迹上",
+        "是分离点",
+        "是渐近线交点"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "这是实轴段判据：右侧实数极点+零点为奇数，则该实轴段属于根轨迹。",
+      "source": "胡寿松 · 第 4 章",
+      "tags": []
+    },
+    {
+      "id": "a-013",
+      "subject": "auto",
+      "topic": "根轨迹",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "根轨迹渐近线与实轴正方向的夹角为？",
+      "options": [
+        "kπ/m",
+        "kπ/(n-m)",
+        "(2k+1)π/(n-m)",
+        "(2k+1)π/n"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "渐近线角度 θ=(2k+1)π/(n-m)，k=0,1,…,n-m-1。",
+      "source": "胡寿松 · 第 4 章",
+      "tags": []
+    },
+    {
+      "id": "a-014",
+      "subject": "auto",
+      "topic": "根轨迹",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "根轨迹的分离点（会合点）满足？",
+      "options": [
+        "dG/ds=0",
+        "∠G=0",
+        "|G|=1",
+        "dK/ds=0"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "分离点处闭环特征根重根，等价于 dK/ds=0；解出后还要验证在根轨迹上。",
+      "source": "胡寿松 · 第 4 章",
+      "tags": []
+    },
+    {
+      "id": "a-015",
+      "subject": "auto",
+      "topic": "频域",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "积分环节 1/s 的 Bode 幅频渐近线斜率是？",
+      "options": [
+        "-20 dB/dec",
+        "-40 dB/dec",
+        "+20 dB/dec",
+        "0 dB/dec"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "积分环节幅值 1/ω，斜率为 -20 dB/dec；相位 -90°。",
+      "source": "胡寿松 · 第 5 章",
+      "tags": []
+    },
+    {
+      "id": "a-016",
+      "subject": "auto",
+      "topic": "裕度",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "幅值裕度 GM 的定义是？",
+      "options": [
+        "180°+∠G(jωc)",
+        "20lg(1/|G(jωg)|)，其中 ∠G(jωg)=-180°",
+        "20lg|G(jωc)|",
+        "|G(jωg)|"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "在相位 -180° 的频率 ωg 处，GM=20lg(1/|G(jωg)|)；GM>0 表示稳定（最小相位）。",
+      "source": "胡寿松 · 第 5 章",
+      "tags": []
+    },
+    {
+      "id": "a-017",
+      "subject": "auto",
+      "topic": "裕度",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "相位裕度 PM 的计算公式是？",
+      "options": [
+        "-∠G(jωc)",
+        "∠G(jωg)",
+        "180°+∠G(jωc)，其中 |G(jωc)|=1",
+        "180°-∠G(jωc)"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "在幅值 0 dB 的截止频率 ωc 处，PM=180°+∠G(jωc)；PM>0 稳定。",
+      "source": "胡寿松 · 第 5 章",
+      "tags": []
+    },
+    {
+      "id": "a-018",
+      "subject": "auto",
+      "topic": "频域",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "最小相位系统要求？",
+      "options": [
+        "所有零点在右半平面",
+        "只有积分环节",
+        "所有极点在右半平面",
+        "所有极点和零点都在左半平面"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "最小相位系统无右半平面极点/零点；幅频与相频一一对应。",
+      "source": "胡寿松 · 第 5 章",
+      "tags": []
+    },
+    {
+      "id": "a-019",
+      "subject": "auto",
+      "topic": "频域",
+      "type": "choice",
+      "difficulty": 3,
+      "stem": "Nyquist 判据 Z=P+N 中，P 表示？",
+      "options": [
+        "开环右半平面极点数",
+        "闭环右半平面极点数",
+        "包围圈数",
+        "开环零点数"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "P 是开环右半平面极点数，N 是包围 (-1,j0) 的圈数，Z 是闭环右半平面极点数。",
+      "source": "胡寿松 · 第 5 章",
+      "tags": []
+    },
+    {
+      "id": "a-020",
+      "subject": "auto",
+      "topic": "校正",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "超前校正的主要作用是？",
+      "options": [
+        "增加积分环节",
+        "提高相位裕度、加快响应",
+        "降低高频噪声",
+        "消除稳态误差"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "超前校正提供正相位，提高 PM，改善稳定性/加快响应；代价是高频增益变大。",
+      "source": "胡寿松 · 第 6 章",
+      "tags": []
+    },
+    {
+      "id": "a-021",
+      "subject": "auto",
+      "topic": "校正",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "滞后校正的主要作用是？",
+      "options": [
+        "消除所有噪声",
+        "提高相位裕度、加快响应",
+        "提高低频增益、改善稳态误差",
+        "增加超调"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "滞后校正提高低频增益、改善稳态误差，但会降低带宽、增加相位滞后。",
+      "source": "胡寿松 · 第 6 章",
+      "tags": []
+    },
+    {
+      "id": "a-022",
+      "subject": "auto",
+      "topic": "PID",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "PID 中积分环节的主要作用是？",
+      "options": [
+        "加快响应",
+        "增加阻尼",
+        "放大高频噪声",
+        "消除稳态误差"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "积分环节提高系统型别，消除阶跃/斜坡稳态误差；代价是稳定性下降。",
+      "source": "胡寿松 · 第 6 章",
+      "tags": []
+    },
+    {
+      "id": "a-023",
+      "subject": "auto",
+      "topic": "PID",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "PID 中微分环节的主要副作用是？",
+      "options": [
+        "放大高频噪声",
+        "增加积分饱和",
+        "消除稳态误差",
+        "降低阻尼"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "微分环节对高频敏感，会放大噪声；通常加低通滤波，且不单独使用。",
+      "source": "胡寿松 · 第 6 章",
+      "tags": []
+    },
+    {
+      "id": "a-024",
+      "subject": "auto",
+      "topic": "离散",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "离散系统稳定的充要条件是？",
+      "options": [
+        "特征多项式系数全正",
+        "所有闭环极点在 z 平面单位圆内",
+        "所有闭环极点在单位圆外",
+        "所有闭环极点在左半平面"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "z=e^(sT)，s 左半平面对应 |z|<1；所以稳定要求极点都在单位圆内。",
+      "source": "胡寿松 · 第 7 章",
+      "tags": []
+    },
+    {
+      "id": "a-025",
+      "subject": "auto",
+      "topic": "离散",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "采样定理要求采样频率 fs 满足？",
+      "options": [
+        "fs < 2fmax",
+        "fs > fmax",
+        "fs > 2fmax",
+        "fs = fmax"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "采样频率必须大于信号最高频率的 2 倍，否则发生混叠。",
+      "source": "胡寿松 · 第 7 章",
+      "tags": []
+    },
+    {
+      "id": "a-026",
+      "subject": "auto",
+      "topic": "离散",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "零阶保持器的传递函数是？",
+      "options": [
+        "e^(-sT)",
+        "1/(sT)",
+        "(1+e^(-sT))/s",
+        "(1-e^(-sT))/s"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "零阶保持器 Gh(s)=(1-e^(-sT))/s；离散等效常用 (1-z⁻¹)Z{G(s)/s}。",
+      "source": "胡寿松 · 第 7 章",
+      "tags": []
+    },
+    {
+      "id": "a-027",
+      "subject": "auto",
+      "topic": "非线性",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "用描述函数法判断极限环，闭环特征方程是？",
+      "options": [
+        "1+N(A)G(jω)=0",
+        "N(A)G(jω)=1",
+        "1-N(A)G(jω)=0",
+        "N(A)+G(jω)=0"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "非线性环节描述函数 N(A) 与线性部分 G(jω) 串联，闭环特征为 1+N(A)G(jω)=0。",
+      "source": "胡寿松 · 第 8 章",
+      "tags": []
+    },
+    {
+      "id": "a-028",
+      "subject": "auto",
+      "topic": "非线性",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "理想继电特性（幅值 M）的描述函数是？",
+      "options": [
+        "2M/(πA)",
+        "4M/(πA)",
+        "M/A",
+        "πM/(4A)"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "理想继电的描述函数 N(A)=4M/(πA)，与输入幅值成反比。",
+      "source": "胡寿松 · 第 8 章",
+      "tags": []
+    },
+    {
+      "id": "a-029",
+      "subject": "auto",
+      "topic": "状态空间",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "状态方程 x'=Ax+Bu 的系统稳定性由什么决定？",
+      "options": [
+        "B 的特征值",
+        "C 的秩",
+        "A 的特征值",
+        "D 的值"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "系统矩阵 A 的特征值决定稳定性；全部在左半平面则渐近稳定。",
+      "source": "胡寿松 · 第 9 章",
+      "tags": []
+    },
+    {
+      "id": "a-030",
+      "subject": "auto",
+      "topic": "稳定性",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "某系统特征方程为 s³+2s²+s+2=0，其稳定性为？",
+      "options": [
+        "不稳定",
+        "稳定",
+        "无法判断",
+        "临界稳定"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "可分解为 (s²+1)(s+2)=0，根为 ±j 和 -2，有虚轴根，临界稳定。",
+      "source": "胡寿松 · 第 3 章",
+      "tags": []
+    },
+    {
+      "id": "a-031",
+      "subject": "auto",
+      "topic": "状态空间",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "系统 (A,B) 完全可控的判据是？",
+      "options": [
+        "[B AB … A^(n-1)B] 满秩",
+        "[C; CA; …] 满秩",
+        "A 可逆",
+        "B 非零"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "可控性矩阵 [B AB … A^(n-1)B] 的秩为 n 时完全可控；能观性看 [C; CA; …]。",
+      "source": "胡寿松 · 第 9 章",
+      "tags": []
+    },
+    {
+      "id": "e-001",
+      "subject": "ethics",
+      "topic": "伦理原则",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "工程伦理的首要原则通常是什么？",
+      "options": [
+        "雇主利益最大化",
+        "公众安全、健康与福利优先",
+        "技术先进性优先",
+        "项目进度优先"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "工程师的职业责任首先指向公众安全、健康与福利；雇主指令不能免除这一责任。",
+      "source": "工程伦理 · 通用框架",
+      "tags": []
+    },
+    {
+      "id": "e-002",
+      "subject": "ethics",
+      "topic": "伦理困境",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "伦理困境的典型特征是？",
+      "options": [
+        "技术方案不可行",
+        "只有一个明显正确选项",
+        "两个道德原则冲突，没有完美选择",
+        "法律没有规定"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "伦理困境是不同道德原则/利益之间的冲突，任何选择都有代价；不是“没规定”或“技术不行”。",
+      "source": "工程伦理 · 通用框架",
+      "tags": []
+    },
+    {
+      "id": "e-003",
+      "subject": "ethics",
+      "topic": "利益冲突",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "工程师发现自己的配偶在投标供应商任职，最合适的做法是？",
+      "options": [
+        "保证自己公正，不告诉任何人",
+        "把标底告诉配偶",
+        "直接让配偶辞职",
+        "披露并回避该项目评审/决策"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "利益冲突的关键是“看起来是否可能偏袒”；披露 + 回避比口头保证更有效。",
+      "source": "工程伦理 · 利益冲突",
+      "tags": []
+    },
+    {
+      "id": "e-004",
+      "subject": "ethics",
+      "topic": "举报",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "发现产品存在严重安全隐患，举报前通常应先？",
+      "options": [
+        "走内部渠道并保留证据",
+        "隐瞒等待召回",
+        "立即辞职",
+        "直接发社交媒体"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "举报应是最后手段；先内部升级、书面记录、保留证据，内部无效再向监管机构报告。",
+      "source": "工程伦理 · 举报",
+      "tags": []
+    },
+    {
+      "id": "e-005",
+      "subject": "ethics",
+      "topic": "举报",
+      "type": "multi",
+      "difficulty": 3,
+      "stem": "下列哪些是“可以/应该举报”的常见条件？",
+      "options": [
+        "举报能带来个人升职",
+        "有充分证据",
+        "内部渠道已尝试且无效",
+        "存在严重的公共安全/健康/环境风险"
+      ],
+      "answer": [
+        1,
+        2,
+        3
+      ],
+      "answerText": "",
+      "explain": "举报需严重风险、内部无效、证据充分、最后手段；个人升职不是伦理依据。",
+      "source": "工程伦理 · 举报",
+      "tags": []
+    },
+    {
+      "id": "e-006",
+      "subject": "ethics",
+      "topic": "知情同意",
+      "type": "multi",
+      "difficulty": 2,
+      "stem": "知情同意通常需要满足哪些要素？",
+      "options": [
+        "自愿、无胁迫",
+        "只要签字即可，不需要解释",
+        "当事人有能力理解并决定",
+        "充分信息（风险/收益/替代方案）"
+      ],
+      "answer": [
+        0,
+        2,
+        3
+      ],
+      "answerText": "",
+      "explain": "知情同意 = 充分信息 + 自愿 + 能力；签字只是形式，不等于理解。",
+      "source": "工程伦理 · 知情同意",
+      "tags": []
+    },
+    {
+      "id": "e-007",
+      "subject": "ethics",
+      "topic": "风险",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "工程风险通常如何度量？",
+      "options": [
+        "只看后果严重度",
+        "发生概率 × 后果严重度",
+        "只看成本",
+        "只看发生概率"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "风险=概率×后果；还要考虑可逆性、暴露人群、科学不确定性。",
+      "source": "工程伦理 · 风险",
+      "tags": []
+    },
+    {
+      "id": "e-008",
+      "subject": "ethics",
+      "topic": "风险",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "ALARP 原则的含义是？",
+      "options": [
+        "风险由保险公司承担",
+        "风险可以忽略",
+        "风险应降到合理可行的最低水平",
+        "风险必须为零"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "ALARP=As Low As Reasonably Practicable；不是零风险，而是在可行范围内尽量低。",
+      "source": "工程伦理 · 风险",
+      "tags": []
+    },
+    {
+      "id": "e-009",
+      "subject": "ethics",
+      "topic": "可持续",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "可持续发展的经典定义强调？",
+      "options": [
+        "停止一切开发",
+        "只追求经济增长",
+        "只保护环境，不考虑社会",
+        "满足当代需要，不损害后代满足其需要的能力"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "布伦特兰定义：既满足当代人的需要，又不损害后代人满足其需要的能力。",
+      "source": "工程伦理 · 可持续发展",
+      "tags": []
+    },
+    {
+      "id": "e-010",
+      "subject": "ethics",
+      "topic": "环境",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "预防原则的核心主张是？",
+      "options": [
+        "存在严重/不可逆损害的不确定性时，不应以证据不足为由推迟预防",
+        "只要成本低就可以做",
+        "没有确定证据就什么都不做",
+        "先污染后治理"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "预防原则针对严重或不可逆损害，在科学不确定性下采取谨慎行动；不是绝对禁止。",
+      "source": "工程伦理 · 环境",
+      "tags": []
+    },
+    {
+      "id": "e-011",
+      "subject": "ethics",
+      "topic": "利益相关者",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "利益相关者分析中，最需要优先关注的是？",
+      "options": [
+        "最有权力的人",
+        "最弱势、最没有话语权的人",
+        "媒体",
+        "投资最多的人"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "伦理分析要特别关注 weakest stakeholder：谁承担风险却无法参与决策。",
+      "source": "工程伦理 · 利益相关者",
+      "tags": []
+    },
+    {
+      "id": "e-012",
+      "subject": "ethics",
+      "topic": "案例",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "挑战者号事故最典型的伦理教训是？",
+      "options": [
+        "宇航员训练不足",
+        "技术不够先进",
+        "组织压力压过安全警告，风险被正常化",
+        "天气无法预测"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "工程师对低温 O 形圈的警告被管理层忽视；此前多次未出事让风险被“正常化”。",
+      "source": "工程伦理 · 案例",
+      "tags": []
+    },
+    {
+      "id": "e-013",
+      "subject": "ethics",
+      "topic": "伦理框架",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "伦理决策七步法的第一步是？",
+      "options": [
+        "写结论",
+        "选方案",
+        "找利益相关者",
+        "澄清事实"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "先澄清事实与缺失信息，再识别问题/相关方/原则/选项/后果，最后决定与复盘。",
+      "source": "工程伦理 · 决策",
+      "tags": []
+    },
+    {
+      "id": "e-014",
+      "subject": "ethics",
+      "topic": "伦理原则",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "“合法”与“合伦理”的关系是？",
+      "options": [
+        "合法是底线，合伦理可能要求更高",
+        "合伦理一定合法",
+        "二者无关",
+        "合法一定合伦理"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "法律是最低要求；符合法律仍可能违背公众安全、公平等伦理原则。",
+      "source": "工程伦理 · 通用框架",
+      "tags": []
+    },
+    {
+      "id": "e-015",
+      "subject": "ethics",
+      "topic": "环境",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "化工厂拟建在河流上游、居民区附近，环评公众参与不足。最合适的第一步是？",
+      "options": [
+        "直接开工，反正符合国家标准",
+        "补充公众参与和影响评价，比较替代选址",
+        "等出事再说",
+        "给居民发钱封口"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "程序正义 + 预防原则：先补公众参与、影响评价、替代方案比较，再决定。",
+      "source": "工程伦理 · 案例",
+      "tags": []
+    },
+    {
+      "id": "e-016",
+      "subject": "ethics",
+      "topic": "利益冲突",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "利益冲突管理的核心不是“实际有没有偏袒”，而是？",
+      "options": [
+        "有没有被媒体发现",
+        "有没有赚钱",
+        "是否“看起来可能偏袒”",
+        "领导是否同意"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "公众信任要求避免“外观上的偏袒”；所以披露 + 回避是常用措施。",
+      "source": "工程伦理 · 利益冲突",
+      "tags": []
+    },
+    {
+      "id": "l-001",
+      "subject": "logic",
+      "topic": "条件",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "“只有通过初试，才能参加复试”等价于？",
+      "options": [
+        "初试 → 复试",
+        "未通过初试 → 未参加复试",
+        "复试 → 未通过初试",
+        "复试 → 初试"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "“只有 P 才 Q”表示 P 是 Q 的必要条件，即 Q→P；通过复试意味着通过初试。",
+      "source": "逻辑基础 · 必要条件",
+      "tags": []
+    },
+    {
+      "id": "l-002",
+      "subject": "logic",
+      "topic": "条件",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "命题“如果下雨，地就湿”的逆否命题是？",
+      "options": [
+        "如果地不湿，就没下雨",
+        "如果不下雨，地就不湿",
+        "下雨且地不湿",
+        "如果地湿，就下雨"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "P→Q 的逆否命题是 ¬Q→¬P，与原命题等价。",
+      "source": "逻辑基础 · 逆否命题",
+      "tags": []
+    },
+    {
+      "id": "l-003",
+      "subject": "logic",
+      "topic": "条件",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "“除非你道歉，否则我不原谅你”等价于？",
+      "options": [
+        "道歉 → 原谅",
+        "不道歉 → 不原谅",
+        "原谅 → 道歉",
+        "不原谅 → 道歉"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "“除非 P，否则 Q”= ¬P→Q；这里 P=道歉，Q=不原谅。",
+      "source": "逻辑基础 · 除非否则",
+      "tags": []
+    },
+    {
+      "id": "l-004",
+      "subject": "logic",
+      "topic": "三段论",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "所有工程师都学过数学；所有学过数学的人都逻辑清晰。由此可推出？",
+      "options": [
+        "逻辑清晰的人都学过数学",
+        "有些工程师不逻辑清晰",
+        "所有工程师都逻辑清晰",
+        "所有逻辑清晰的人都是工程师"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "A⊆B，B⊆C ⇒ A⊆C；所以工程师⊆逻辑清晰。",
+      "source": "逻辑基础 · 三段论",
+      "tags": []
+    },
+    {
+      "id": "l-005",
+      "subject": "logic",
+      "topic": "削弱",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "某研究发现“每天喝咖啡的人寿命更长”，于是结论“咖啡能延寿”。最能削弱的是？",
+      "options": [
+        "咖啡有苦味",
+        "咖啡产量在上升",
+        "有些人喝咖啡加糖",
+        "喝咖啡的人整体收入更高、医疗条件更好"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "另有他因：收入/医疗条件可能同时导致喝咖啡和长寿，削弱“咖啡→长寿”。",
+      "source": "论证 · 另有他因",
+      "tags": []
+    },
+    {
+      "id": "l-006",
+      "subject": "logic",
+      "topic": "加强",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "某研究称“新药有效”，因为服药组康复率高于对照组。最能加强的是？",
+      "options": [
+        "两组年龄、病情严重程度基本一致",
+        "医生喜欢开新药",
+        "服药组人数更多",
+        "新药价格更贵"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "排除混杂因素（年龄/病情）后，康复率差异更可能由药物导致。",
+      "source": "论证 · 排除他因",
+      "tags": []
+    },
+    {
+      "id": "l-007",
+      "subject": "logic",
+      "topic": "假设",
+      "type": "choice",
+      "difficulty": 3,
+      "stem": "论证：“这家餐厅生意好，所以菜一定好吃。”该论证依赖的假设是？",
+      "options": [
+        "餐厅老板很努力",
+        "生意好一定因为菜好吃，而不是位置/价格/营销",
+        "菜价很便宜",
+        "顾客都喜欢拍照"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "论证把“生意好”直接归因于“菜好吃”，必须假设没有其他更主要的原因。",
+      "source": "论证 · 假设",
+      "tags": []
+    },
+    {
+      "id": "l-008",
+      "subject": "logic",
+      "topic": "解释",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "某城市增加了警力，犯罪率却上升了。最能解释的是？",
+      "options": [
+        "犯罪率数据造假",
+        "警察不负责",
+        "报案率提高/统计口径变化，使更多案件被记录",
+        "警力增加导致犯罪率上升"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "解释矛盾要同时容纳“警力增加”和“犯罪率上升”；统计口径/报案率变化是常见解释。",
+      "source": "论证 · 解释",
+      "tags": []
+    },
+    {
+      "id": "l-009",
+      "subject": "logic",
+      "topic": "统计",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "甲厂产品不合格率 2%，乙厂 1%，但甲厂不合格品数量更多。最可能的原因是？",
+      "options": [
+        "不合格率不能比较",
+        "乙厂数据造假",
+        "甲厂技术更差",
+        "甲厂产量远大于乙厂"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "数量=总量×不合格率；甲厂总量大，即使率略高，数量也可能更多。",
+      "source": "论证 · 比例",
+      "tags": []
+    },
+    {
+      "id": "l-010",
+      "subject": "logic",
+      "topic": "统计",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "某公司平均工资很高，但多数员工工资不高。最可能的情况是？",
+      "options": [
+        "少数高管工资极高，拉高平均数",
+        "平均工资没有意义",
+        "数据错误",
+        "员工人数很少"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "平均数受极端值影响；应看中位数/分布，而不是只看平均。",
+      "source": "论证 · 平均数陷阱",
+      "tags": []
+    },
+    {
+      "id": "l-011",
+      "subject": "logic",
+      "topic": "削弱",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "调查“本市 90% 居民支持建垃圾焚烧厂”，但样本来自工厂周边社区。该调查的问题主要是？",
+      "options": [
+        "统计方法太复杂",
+        "样本有偏，不能代表全市",
+        "样本太小",
+        "问题太难"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "周边社区可能因补偿/就业更支持，样本选择偏差导致结论不能推广到全市。",
+      "source": "论证 · 样本偏差",
+      "tags": []
+    },
+    {
+      "id": "l-012",
+      "subject": "logic",
+      "topic": "选言",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "已知“要么小王去，要么小李去”。若小王不去，可推出？",
+      "options": [
+        "两人都去",
+        "小李不去",
+        "小李去",
+        "无法推出"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "不相容选言命题，否定一个选言支，就要肯定另一个。",
+      "source": "逻辑基础 · 选言命题",
+      "tags": []
+    },
+    {
+      "id": "l-013",
+      "subject": "logic",
+      "topic": "形式逻辑",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "“并非（甲及格且乙及格）”等价于？",
+      "options": [
+        "甲及格或乙及格",
+        "甲不及格且乙不及格",
+        "甲乙都及格",
+        "甲不及格或乙不及格"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "德摩根律：¬(P∧Q)=¬P∨¬Q。",
+      "source": "逻辑基础 · 德摩根",
+      "tags": []
+    },
+    {
+      "id": "l-014",
+      "subject": "logic",
+      "topic": "谬误",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "“自从换了新厂长，产量就下降了，所以新厂长导致产量下降。”这属于？",
+      "options": [
+        "强加因果/事后归因",
+        "循环论证",
+        "以偏概全",
+        "诉诸权威"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "时间先后不等于因果；可能有设备老化、市场变化等其他原因。",
+      "source": "逻辑基础 · 谬误",
+      "tags": []
+    },
+    {
+      "id": "l-015",
+      "subject": "logic",
+      "topic": "加强",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "为证明“阅读能提高写作能力”，下列哪项证据最有力？",
+      "options": [
+        "作家都喜欢读书",
+        "控制其他因素后，阅读量大的学生写作成绩更高",
+        "书店销量上升",
+        "老师说阅读很重要"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "控制混杂因素后的相关性/实验证据，比名人例子和权威意见更有力。",
+      "source": "论证 · 加强",
+      "tags": []
+    },
+    {
+      "id": "l-016",
+      "subject": "logic",
+      "topic": "形式逻辑",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "已知 P→Q，且 ¬Q，可推出？",
+      "options": [
+        "Q",
+        "P",
+        "¬P",
+        "无法推出"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "逆否推理：P→Q 等价于 ¬Q→¬P；已知 ¬Q，所以 ¬P。",
+      "source": "逻辑基础 · 逆否",
+      "tags": []
+    },
+    {
+      "id": "en-001",
+      "subject": "english",
+      "topic": "词汇",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "The word \"abandon\" is closest in meaning to？",
+      "options": [
+        "take away",
+        "turn down",
+        "look after",
+        "give up"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "abandon = 放弃/抛弃；give up 最接近。",
+      "source": "243 高频词",
+      "tags": []
+    },
+    {
+      "id": "en-002",
+      "subject": "english",
+      "topic": "词汇",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "\"substantial\" most probably means？",
+      "options": [
+        "considerable",
+        "temporary",
+        "minor",
+        "artificial"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "substantial = 大量的/实质的；considerable（相当大的）最接近。",
+      "source": "243 高频词",
+      "tags": []
+    },
+    {
+      "id": "en-003",
+      "subject": "english",
+      "topic": "词汇",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "\"inevitable\" is closest in meaning to？",
+      "options": [
+        "incredible",
+        "unavoidable",
+        "invisible",
+        "independent"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "inevitable = 不可避免的；unavoidable 同义。",
+      "source": "243 高频词",
+      "tags": []
+    },
+    {
+      "id": "en-004",
+      "subject": "english",
+      "topic": "语法",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "The number of students in our school ______ increasing.",
+      "options": [
+        "be",
+        "were",
+        "is",
+        "are"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "“the number of + 复数名词”作主语，谓语用单数；a number of 才用复数。",
+      "source": "243 语法 · 主谓一致",
+      "tags": []
+    },
+    {
+      "id": "en-005",
+      "subject": "english",
+      "topic": "语法",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "Neither the students nor the teacher ______ aware of the change.",
+      "options": [
+        "are",
+        "were",
+        "be",
+        "is"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "neither...nor 连接主语时，谓语与最近的主语一致；最近的是 the teacher，用 is。",
+      "source": "243 语法 · 主谓一致",
+      "tags": []
+    },
+    {
+      "id": "en-006",
+      "subject": "english",
+      "topic": "语法",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "By the time he arrived, the meeting ______.",
+      "options": [
+        "had started",
+        "will start",
+        "has started",
+        "starts"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "“过去的过去”用过去完成时 had started；by the time 从句用一般过去时。",
+      "source": "243 语法 · 时态",
+      "tags": []
+    },
+    {
+      "id": "en-007",
+      "subject": "english",
+      "topic": "语法",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "The report ______ by the team last week.",
+      "options": [
+        "wrote",
+        "was written",
+        "has written",
+        "is writing"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "报告“被写”，用被动语态；last week 提示一般过去时 was written。",
+      "source": "243 语法 · 被动",
+      "tags": []
+    },
+    {
+      "id": "en-008",
+      "subject": "english",
+      "topic": "翻译",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "“科技创新是高质量发展的核心动力。”最贴切的翻译是？",
+      "options": [
+        "Innovation of science is the core drive of developing high quality.",
+        "Technological innovation is the core power of high development.",
+        "Scientific and technological innovation is the core driving force for high-quality development.",
+        "Science and technology innovation is high-quality development's core."
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "“科技创新”= scientific and technological innovation；“核心动力”= core driving force；“高质量发展”= high-quality development。",
+      "source": "243 翻译",
+      "tags": []
+    },
+    {
+      "id": "en-009",
+      "subject": "english",
+      "topic": "构词",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "The adjective form of \"sustain\" is？",
+      "options": [
+        "sustainingly",
+        "sustainment",
+        "sustainedly",
+        "sustainable"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "sustain → sustainable（可持续的）；sustained 也可作形容词，但“可持续的”固定用 sustainable。",
+      "source": "243 构词",
+      "tags": []
+    },
+    {
+      "id": "en-010",
+      "subject": "english",
+      "topic": "搭配",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "Science and technology ______ a vital role in economic development.",
+      "options": [
+        "play",
+        "make",
+        "do",
+        "take"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "固定搭配 play a vital role in...（在……中起重要作用）。",
+      "source": "243 固定搭配",
+      "tags": []
+    },
+    {
+      "id": "en-011",
+      "subject": "english",
+      "topic": "阅读",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "In a passage, the word \"However\" at the beginning of a paragraph usually signals？",
+      "options": [
+        "example",
+        "contrast",
+        "addition",
+        "cause"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "however 表示转折/对比；注意转折后往往是作者重点。",
+      "source": "243 阅读 · 逻辑词",
+      "tags": []
+    },
+    {
+      "id": "en-012",
+      "subject": "english",
+      "topic": "阅读",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "主旨题的最佳选项通常？",
+      "options": [
+        "与原文用词完全一致",
+        "只覆盖文章某一段",
+        "覆盖全文核心，不过窄也不过宽",
+        "包含文章所有细节"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "主旨题要覆盖全文；太窄（只讲一段）或太宽（超出文章）都不对。",
+      "source": "243 阅读 · 主旨题",
+      "tags": []
+    },
+    {
+      "id": "en-013",
+      "subject": "english",
+      "topic": "语法",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "______ his attitude that impressed me most.",
+      "options": [
+        "It is",
+        "There was",
+        "That was",
+        "It was"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "强调句型 It was ... that ...；强调 his attitude，主句用 was 与过去语境一致。",
+      "source": "243 语法 · 强调句",
+      "tags": []
+    },
+    {
+      "id": "en-015",
+      "subject": "english",
+      "topic": "语法",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "______ the bad weather, the flight took off on time.",
+      "options": [
+        "Despite",
+        "Because",
+        "However",
+        "Although"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "despite 是介词，后接名词短语；although 后接从句；however 是副词。",
+      "source": "243 语法 · 让步",
+      "tags": []
+    },
+    {
+      "id": "en-016",
+      "subject": "english",
+      "topic": "语法",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "Not only ______ interested in the project, but he also contributed many ideas.",
+      "options": [
+        "he is",
+        "was he",
+        "is he",
+        "he was"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "not only 置于句首时，主句部分倒装：was he interested...；后半句 but he also...",
+      "source": "243 语法 · 倒装",
+      "tags": []
+    },
+    {
+      "id": "en-018",
+      "subject": "english",
+      "topic": "搭配",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "The word \"account for\" in \"Women account for 60% of the staff\" means？",
+      "options": [
+        "take care of",
+        "apply for",
+        "make up",
+        "explain"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "account for 在此表示“占……比例”；另有“解释”义。",
+      "source": "243 固定搭配",
+      "tags": []
+    },
+    {
+      "id": "en-019",
+      "subject": "english",
+      "topic": "词汇",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "\"The delay resulted ______ the storm.\" 空白处应填？",
+      "options": [
+        "for",
+        "of",
+        "in",
+        "from"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "result from = 由……导致；result in = 导致。延误由暴风雨导致，用 from。",
+      "source": "243 固定搭配",
+      "tags": []
+    },
+    {
+      "id": "p-001",
+      "subject": "politics",
+      "topic": "唯物论",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "哲学的基本问题是？",
+      "options": [
+        "思维和存在的关系",
+        "个人和社会的关系",
+        "实践和认识的关系",
+        "物质和运动的关系"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "哲学基本问题是思维和存在的关系，包括何者第一性、有无同一性两方面。",
+      "source": "马原 · 唯物论",
+      "tags": []
+    },
+    {
+      "id": "p-002",
+      "subject": "politics",
+      "topic": "唯物论",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "物质的唯一特性是？",
+      "options": [
+        "可知性",
+        "客观实在性",
+        "多样性",
+        "运动性"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "列宁物质定义的唯一特性是客观实在性；运动是物质的根本属性/存在方式。",
+      "source": "马原 · 唯物论",
+      "tags": []
+    },
+    {
+      "id": "p-003",
+      "subject": "politics",
+      "topic": "唯物论",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "意识的本质是？",
+      "options": [
+        "人脑分泌的特殊物质",
+        "与物质无关的精神实体",
+        "人脑的机能和客观世界的主观映象",
+        "主观自生的东西"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "意识是人脑的机能，内容是客观的、形式是主观的；不是物质本身。",
+      "source": "马原 · 唯物论",
+      "tags": []
+    },
+    {
+      "id": "p-004",
+      "subject": "politics",
+      "topic": "唯物论",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "正确发挥主观能动性的前提是？",
+      "options": [
+        "摆脱规律束缚",
+        "否定物质决定意识",
+        "依靠个人意志",
+        "尊重客观规律"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "尊重客观规律是正确发挥主观能动性的前提；实践是二者统一的基础。",
+      "source": "马原 · 唯物论",
+      "tags": []
+    },
+    {
+      "id": "p-005",
+      "subject": "politics",
+      "topic": "辩证法",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "矛盾普遍性与特殊性的关系是？",
+      "options": [
+        "共性寓于个性之中，个性包含共性",
+        "特殊性寓于普遍性之中",
+        "普遍性就是特殊性",
+        "二者互不相干"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "普遍性/共性寓于特殊性/个性之中；个性包含共性。方法论：具体问题具体分析。",
+      "source": "马原 · 辩证法",
+      "tags": []
+    },
+    {
+      "id": "p-006",
+      "subject": "politics",
+      "topic": "辩证法",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "量变与质变的关系是？",
+      "options": [
+        "量变一定立刻引起质变",
+        "量变是质变的必要准备，质变是量变的必然结果",
+        "二者没有联系",
+        "质变是量变的简单相加"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "量变积累到一定程度引起质变；质变又为新的量变开辟道路。",
+      "source": "马原 · 辩证法",
+      "tags": []
+    },
+    {
+      "id": "p-007",
+      "subject": "politics",
+      "topic": "辩证法",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "辩证否定观的实质是？",
+      "options": [
+        "循环往复",
+        "全盘否定",
+        "扬弃（既克服又保留）",
+        "全盘肯定"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "辩证否定是事物的自我否定，是发展的环节和联系的环节，实质是扬弃。",
+      "source": "马原 · 辩证法",
+      "tags": []
+    },
+    {
+      "id": "p-008",
+      "subject": "politics",
+      "topic": "认识论",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "实践是认识的基础，主要表现在？",
+      "options": [
+        "认识决定实践",
+        "实践可以代替认识",
+        "实践就是认识",
+        "实践是认识的来源、动力、目的和检验标准"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "实践决定认识：来源/动力/目的/检验标准；认识反作用于实践。",
+      "source": "马原 · 认识论",
+      "tags": []
+    },
+    {
+      "id": "p-009",
+      "subject": "politics",
+      "topic": "认识论",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "真理的绝对性与相对性是指？",
+      "options": [
+        "真理包含客观内容（绝对），又受条件限制（相对）",
+        "相对真理就是谬误",
+        "绝对真理不存在",
+        "真理有时对有时错"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "绝对性指客观内容/无限接近；相对性指条件性/范围性；二者辩证统一。",
+      "source": "马原 · 认识论",
+      "tags": []
+    },
+    {
+      "id": "p-010",
+      "subject": "politics",
+      "topic": "认识论",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "检验真理的唯一标准是？",
+      "options": [
+        "多数人意见",
+        "实践",
+        "有用性",
+        "权威"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "真理是主观与客观相符合，只有实践能检验；权威/多数/有用都不是标准。",
+      "source": "马原 · 认识论",
+      "tags": []
+    },
+    {
+      "id": "p-011",
+      "subject": "politics",
+      "topic": "唯物史观",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "社会存在与社会意识的关系是？",
+      "options": [
+        "二者互不影响",
+        "社会意识决定社会存在",
+        "社会存在决定社会意识，社会意识有相对独立性",
+        "社会意识没有反作用"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "社会存在决定社会意识；社会意识相对独立并能反作用。",
+      "source": "马原 · 唯物史观",
+      "tags": []
+    },
+    {
+      "id": "p-012",
+      "subject": "politics",
+      "topic": "唯物史观",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "生产关系一定要适合生产力状况的规律表明？",
+      "options": [
+        "生产力与生产关系无关",
+        "生产关系越先进越好",
+        "生产关系决定生产力",
+        "生产力决定生产关系，生产关系反作用于生产力"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "生产力决定生产关系；适合的生产关系促进生产力，不适合的阻碍。",
+      "source": "马原 · 唯物史观",
+      "tags": []
+    },
+    {
+      "id": "p-013",
+      "subject": "politics",
+      "topic": "唯物史观",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "人民群众是历史的创造者，主要表现在？",
+      "options": [
+        "人民群众是物质/精神财富的创造者，是社会变革的决定力量",
+        "人民群众掌握所有权力",
+        "人民群众不会犯错",
+        "人民群众决定一切细节"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "人民群众创造物质/精神财富，是社会变革的决定力量；个人影响历史但不决定方向。",
+      "source": "马原 · 唯物史观",
+      "tags": []
+    },
+    {
+      "id": "p-014",
+      "subject": "politics",
+      "topic": "政经",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "商品的二因素是？",
+      "options": [
+        "具体劳动和抽象劳动",
+        "使用价值和价值",
+        "价值和交换价值",
+        "价格和价值"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "商品二因素=使用价值+价值；劳动二重性=具体劳动+抽象劳动。",
+      "source": "马原 · 政经",
+      "tags": []
+    },
+    {
+      "id": "p-015",
+      "subject": "politics",
+      "topic": "政经",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "抽象劳动的作用是？",
+      "options": [
+        "决定价格",
+        "创造使用价值",
+        "形成价值",
+        "转移生产资料价值"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "具体劳动创造使用价值，抽象劳动形成价值；劳动二重性是理解政治经济学的枢纽。",
+      "source": "马原 · 政经",
+      "tags": []
+    },
+    {
+      "id": "p-016",
+      "subject": "politics",
+      "topic": "政经",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "剩余价值的来源是？",
+      "options": [
+        "机器创造的价值",
+        "流通中的不等价交换",
+        "资本家的管理劳动",
+        "雇佣工人的剩余劳动"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "剩余价值来自生产过程中雇佣工人的剩余劳动；不变资本只转移价值。",
+      "source": "马原 · 政经",
+      "tags": []
+    },
+    {
+      "id": "p-017",
+      "subject": "politics",
+      "topic": "政经",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "资本主义基本矛盾是？",
+      "options": [
+        "生产社会化与生产资料资本主义私人占有之间的矛盾",
+        "城市与农村的矛盾",
+        "生产力与生产关系的矛盾",
+        "资本家与工人的矛盾"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "资本主义基本矛盾是生产社会化与私人占有；它是生产力/生产关系矛盾在资本主义社会的具体表现。",
+      "source": "马原 · 政经",
+      "tags": []
+    },
+    {
+      "id": "p-018",
+      "subject": "politics",
+      "topic": "科社",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "科学社会主义的两大理论基石是？",
+      "options": [
+        "空想社会主义和启蒙思想",
+        "唯物史观和剩余价值学说",
+        "阶级斗争和国家学说",
+        "辩证法和认识论"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "唯物史观揭示社会发展规律，剩余价值学说揭示资本主义剥削秘密，使社会主义从空想变科学。",
+      "source": "马原 · 科社",
+      "tags": []
+    },
+    {
+      "id": "p-019",
+      "subject": "politics",
+      "topic": "科社",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "“两个必然”与“两个决不会”的关系是？",
+      "options": [
+        "只讲一个即可",
+        "后者否定前者",
+        "前者讲方向，后者讲条件，二者统一",
+        "相互矛盾"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "“两个必然”讲资本主义灭亡/社会主义胜利的历史方向；“两个决不会”讲生产力条件，二者统一于唯物史观。",
+      "source": "马原 · 科社",
+      "tags": []
+    },
+    {
+      "id": "p-020",
+      "subject": "politics",
+      "topic": "辩证法",
+      "type": "multi",
+      "difficulty": 2,
+      "stem": "唯物辩证法的三大基本规律包括？",
+      "options": [
+        "价值规律",
+        "质量互变规律",
+        "否定之否定规律",
+        "对立统一规律"
+      ],
+      "answer": [
+        1,
+        2,
+        3
+      ],
+      "answerText": "",
+      "explain": "三大规律是对立统一、质量互变、否定之否定；价值规律是政治经济学规律。",
+      "source": "马原 · 辩证法",
+      "tags": []
+    },
+    {
+      "id": "p-021",
+      "subject": "politics",
+      "topic": "辩证法",
+      "type": "short",
+      "difficulty": 3,
+      "stem": "简述矛盾普遍性与特殊性的关系及其方法论意义。",
+      "options": [],
+      "answer": [],
+      "answerText": "普遍性指矛盾无处不在、无时不有；特殊性指不同事物、不同阶段、不同方面各有特点。\n二者是共性与个性、一般与个别的关系：共性寓于个性之中，个性包含共性。\n方法论：坚持具体问题具体分析，把一般原理与具体实际相结合，反对教条主义和经验主义。",
+      "explain": "答题要写“关系 + 方法论”，只写定义会丢分。",
+      "source": "马原 · 辩证法",
+      "tags": []
+    },
+    {
+      "id": "p-022",
+      "subject": "politics",
+      "topic": "认识论",
+      "type": "short",
+      "difficulty": 3,
+      "stem": "简述实践与认识的辩证关系。",
+      "options": [],
+      "answer": [],
+      "answerText": "实践决定认识：实践是认识的来源、动力、目的和检验标准。\n认识反作用于实践：正确认识指导实践成功，错误认识导致失败。\n认识运动的总规律是实践—认识—再实践—再认识，循环往复、不断深化。\n方法论：坚持实践第一，同时重视科学理论对实践的指导作用。",
+      "explain": "先写“决定作用”四点，再写“反作用”，最后写总规律/方法论。",
+      "source": "马原 · 认识论",
+      "tags": []
+    },
+    {
+      "id": "el-001",
+      "subject": "electrical",
+      "topic": "电路基础",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "欧姆定律的表达式是？",
+      "options": [
+        "U=I/R",
+        "I=UR",
+        "R=UI",
+        "U=IR"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "欧姆定律 U=IR；电流与电压成正比，与电阻成反比。",
+      "source": "电气基础 · 电路",
+      "tags": []
+    },
+    {
+      "id": "el-002",
+      "subject": "electrical",
+      "topic": "电路基础",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "基尔霍夫电流定律（KCL）的内容是？",
+      "options": [
+        "节点电流代数和为零",
+        "电阻电压与电流成正比",
+        "功率守恒",
+        "回路电压代数和为零"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "KCL：流入节点的电流等于流出节点的电流（代数和为零）；KVL 是回路电压。",
+      "source": "电气基础 · 电路",
+      "tags": []
+    },
+    {
+      "id": "el-003",
+      "subject": "electrical",
+      "topic": "三相电路",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "三相对称星形连接中，线电压与相电压的关系是？",
+      "options": [
+        "线电压等于相电压",
+        "线电压等于相电压的√3倍",
+        "线电压等于相电压的3倍",
+        "线电压等于相电压的1/√3"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "星形连接线电压=√3×相电压，且线电压超前相电压30°。",
+      "source": "电气基础 · 三相电路",
+      "tags": []
+    },
+    {
+      "id": "el-004",
+      "subject": "electrical",
+      "topic": "功率",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "功率因数 cosφ 表示？",
+      "options": [
+        "电压与电流之比",
+        "无功功率与有功功率之比",
+        "有功功率与视在功率之比",
+        "电阻与电抗之比"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "cosφ=P/S；功率因数越低，无功占比越大，线路损耗/容量占用越大。",
+      "source": "电气基础 · 功率",
+      "tags": []
+    },
+    {
+      "id": "el-005",
+      "subject": "electrical",
+      "topic": "变压器",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "理想变压器电压比与匝数比的关系是？",
+      "options": [
+        "U1/U2=N2/N1",
+        "U1/U2=(N1/N2)²",
+        "U1/U2=1",
+        "U1/U2=N1/N2"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "理想变压器 U1/U2=N1/N2；电流比相反 I1/I2=N2/N1。",
+      "source": "电气基础 · 变压器",
+      "tags": []
+    },
+    {
+      "id": "el-006",
+      "subject": "electrical",
+      "topic": "安全",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "保护接地的主要作用是？",
+      "options": [
+        "降低故障时设备外壳对地电压，防止触电",
+        "提高供电电压",
+        "增加线路电流",
+        "提高功率因数"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "保护接地把设备外壳与大地连接，故障时降低外壳对地电压，配合保护装置切断故障。",
+      "source": "电气基础 · 安全",
+      "tags": []
+    },
+    {
+      "id": "el-007",
+      "subject": "electrical",
+      "topic": "电路基础",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "基尔霍夫电压定律（KVL）适用于？",
+      "options": [
+        "只有直流电路",
+        "回路",
+        "节点",
+        "电源内部"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "KVL 用于回路：沿回路一周，各段电压代数和为零；也适用于交流瞬时值/相量。",
+      "source": "电气基础 · 电路",
+      "tags": []
+    },
+    {
+      "id": "el-008",
+      "subject": "electrical",
+      "topic": "功率",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "三相对称负载的有功功率公式是？",
+      "options": [
+        "P=U_L I_L cosφ",
+        "P=√3 U_L I_L sinφ",
+        "P=√3 U_L I_L cosφ",
+        "P=3U_L I_L cosφ"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "三相对称负载 P=√3 U_L I_L cosφ；无功 Q=√3 U_L I_L sinφ。",
+      "source": "电气基础 · 功率",
+      "tags": []
+    }
+  ]
+}
