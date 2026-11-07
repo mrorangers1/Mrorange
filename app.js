@@ -35,7 +35,7 @@
   ];
   const WEEK_NODES = {
     0: "开营前：情报、购书、基线；先不要学新章。",
-    1: "数学 1.1-1.2 · 899 伦理 1.1-1.2 / 自控 3.1 · 英语 1.1 + 3.1",
+    1: "数学 1.1（三角忘了先补 0.6-0.10）· 899 伦理 1.1 / 自控 3.1 · 英语 1.1",
     2: "数学 1.3-1.6 · 899 伦理 1.3-1.5 / 逻辑 2.1-2.2 · 英语 1.2-1.3",
     3: "数学 1.7-1.8 / 2.1-2.2 · 899 伦理 1.6-1.8 / 自控 3.2-3.3 · 英语 1.4-1.5",
     4: "数学 2.3-2.6 · 899 伦理 1.9-1.10 / 逻辑 2.3-2.4 · 英语 1.6-1.7",
@@ -141,10 +141,13 @@
   }
   let state = defaultState();
   let DB = null;
+  let KDB = null;
   let session = null;
   let timerId = null;
   let route = "today";
   const bankFilter = { subject: "all", query: "" };
+  let learnSubject = "math";
+  let learnQuery = "";
 
   function loadState() {
     try {
@@ -243,6 +246,32 @@
     const res = await fetch("questions.json", { cache: "no-store" });
     if (!res.ok) throw new Error("HTTP " + res.status);
     return normalizeBank(await res.json());
+  }
+  async function loadKnowledge() {
+    if (window.__KNOWLEDGE__) return window.__KNOWLEDGE__;
+    const res = await fetch("knowledge.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    return await res.json();
+  }
+  function allNodes() { return (KDB && Array.isArray(KDB.nodes)) ? KDB.nodes : []; }
+  function nodeById(id) { return allNodes().find((n) => n.id === id) || null; }
+  function nodeStatus(id) {
+    const k = state.knowledge && state.knowledge[id];
+    return k && [1, 2].indexOf(k.status) >= 0 ? k.status : 0;
+  }
+  function setNodeStatus(id, status) {
+    if (!state.knowledge) state.knowledge = {};
+    state.knowledge[id] = { status, updated: Date.now() };
+    saveState();
+  }
+  function masteredCount(subject) {
+    return allNodes().filter((n) => (!subject || n.subject === subject) && nodeStatus(n.id) === 2).length;
+  }
+  function learningCount(subject) {
+    return allNodes().filter((n) => (!subject || n.subject === subject) && nodeStatus(n.id) === 1).length;
+  }
+  function nodeCount(subject) {
+    return allNodes().filter((n) => !subject || n.subject === subject).length;
   }
   function allQuestions() { return (DB ? DB.questions : []).concat(state.custom || []); }
   function questionById(id) { return allQuestions().find((q) => q.id === id) || null; }
@@ -430,14 +459,21 @@
     ensureDaily();
     const dday = $("#dday");
     if (dday) dday.textContent = ddayLabel();
-    $$(".tab").forEach((t) => t.classList.toggle("active", t.dataset.route === route));
+    const activeRoute = route === "bank" ? "learn" : route;
+    $$(".tab").forEach((t) => t.classList.toggle("active", t.dataset.route === activeRoute));
     const v = $("#view");
     if (!v) return;
-    if (route === "today") v.innerHTML = viewToday();
-    else if (route === "bank") v.innerHTML = viewBank();
-    else if (route === "wrong") v.innerHTML = viewWrong();
-    else if (route === "stats") v.innerHTML = viewStats();
-    else v.innerHTML = viewMe();
+    try {
+      if (route === "today") v.innerHTML = viewToday();
+      else if (route === "learn") v.innerHTML = viewLearn();
+      else if (route === "bank") v.innerHTML = viewBank();
+      else if (route === "wrong") v.innerHTML = viewWrong();
+      else if (route === "stats") v.innerHTML = viewStats();
+      else v.innerHTML = viewMe();
+    } catch (e) {
+      console.error(e);
+      v.innerHTML = `<div class="empty" style="margin-top:12vh"><div class="big">!</div><b>页面渲染出错</b><pre style="white-space:pre-wrap;text-align:left;font-size:10px;max-width:100%;overflow:auto">${esc(e.stack || e.message || e)}</pre></div>`;
+    }
   }
 
   /* ---------------- today ---------------- */
@@ -504,6 +540,7 @@
       <div class="between"><b>本周先学</b><span class="tiny muted">W${String(week || 0).padStart(2, "0")}</span></div>
       <div class="tiny muted mt8">${esc(weekNodeTip())}</div>
       <div class="tiny faint mt8">先点亮节点，再来刷对应题；每周只挑 3-5 个；不会的题回 Obsidian 笔记。</div>
+      <div class="row mt8"><button class="btn small" data-action="go-learn">去学习</button></div>
     </div>
 
     <div class="section">
@@ -539,6 +576,198 @@
       </div>
     </div>
     `;
+  }
+
+  /* ---------------- learn / knowledge tree ---------------- */
+  function nodesOf(subject) {
+    return allNodes().filter((n) => !subject || n.subject === subject);
+  }
+  function nodeQuestionCount(n) {
+    return (n.questionIds || []).filter((id) => !!questionById(id)).length;
+  }
+  function nodeStatusMeta(status) {
+    if (status === 2) return { cls: "s2", label: "已掌握" };
+    if (status === 1) return { cls: "s1", label: "在学" };
+    return { cls: "s0", label: "未学" };
+  }
+  function chapterList(subject) {
+    const groups = [];
+    const index = new Map();
+    for (const n of nodesOf(subject)) {
+      if (!index.has(n.chapter)) {
+        index.set(n.chapter, { name: n.chapter, nodes: [] });
+        groups.push(index.get(n.chapter));
+      }
+      index.get(n.chapter).nodes.push(n);
+    }
+    return groups;
+  }
+  function learnListHTML() {
+    if (learnQuery) {
+      const q = learnQuery.toLowerCase();
+      const found = allNodes().filter((n) =>
+        (n.title + " " + n.focus + " " + n.chapter + " " + n.num).toLowerCase().indexOf(q) >= 0
+      );
+      if (!found.length) return `<div class="empty"><b>没找到节点</b>换个关键词。</div>`;
+      return `<div class="list">` + found.map((n) => nodeRowHTML(n, true)).join("") + `</div>`;
+    }
+    const chapters = chapterList(learnSubject);
+    if (!chapters.length) return `<div class="empty"><b>这一科还没有节点</b>先运行 build_knowledge.py。</div>`;
+    return chapters.map((ch, i) => {
+      const done = ch.nodes.filter((n) => nodeStatus(n.id) === 2).length;
+      const p = pct(done, ch.nodes.length);
+      return `<details class="chapter" ${i === 0 ? "open" : ""}>
+        <summary>
+          <span class="chapter-name">${esc(ch.name)}</span>
+          <span class="chapter-progress"><i style="width:${p}%"></i></span>
+          <span class="chapter-num">${done}/${ch.nodes.length}</span>
+        </summary>
+        <div class="chapter-body">${ch.nodes.map((n) => nodeRowHTML(n)).join("")}</div>
+      </details>`;
+    }).join("");
+  }
+  function nodeRowHTML(n, showSubject) {
+    const st = nodeStatusMeta(nodeStatus(n.id));
+    const qc = nodeQuestionCount(n);
+    return `<button class="node-row" data-action="open-node" data-id="${esc(n.id)}">
+      <span class="node-dot ${st.cls}"></span>
+      <span class="node-body">
+        <span class="node-title">${esc(n.num)} ${esc(n.title)} ${n.hasCard ? '<span class="node-card-flag">卡</span>' : ""}</span>
+        <span class="node-focus">${esc(n.focus || "")}</span>
+      </span>
+      <span class="node-side">${showSubject ? `<span class="badge">${esc(subjectShort(n.subject))}</span>` : ""}${qc ? `<span class="badge">${qc} 题</span>` : `<span class="badge">题待补</span>`}</span>
+    </button>`;
+  }
+  function continueNode() {
+    const pool = nodesOf(learnSubject).length ? nodesOf(learnSubject) : allNodes();
+    return pool.find((n) => nodeStatus(n.id) === 1)
+      || pool.find((n) => nodeStatus(n.id) === 0)
+      || pool[0] || null;
+  }
+  function viewLearn() {
+    const total = allNodes().length;
+    if (!total) {
+      return `<div class="empty" style="margin-top:16vh"><div class="big">树</div><b>知识树还没加载</b>先在 Mac 运行 <code>./build.sh</code>，生成 <code>knowledge.json</code>。</div>`;
+    }
+    const done = masteredCount();
+    const doing = learningCount();
+    const p = pct(done, total);
+    const next = continueNode();
+    const subjectCards = SUBJECT_ORDER.map((s) => {
+      const n = nodeCount(s);
+      if (!n) return "";
+      const d = masteredCount(s);
+      const r = pct(d, n);
+      return `<button class="subject-card learn-subject ${learnSubject === s ? "active" : ""}" data-action="learn-subject" data-subject="${s}">
+        <span class="top"><span class="name"><span class="dot" style="background:${SUBJECTS[s].color}"></span> ${SUBJECTS[s].short}</span><span class="count">${d}<small>/${n}</small></span></span>
+        <span class="sub">已掌握 ${d} · 在学 ${learningCount(s)}</span>
+        <span class="bar"><i style="width:${r}%;background:${SUBJECTS[s].color}"></i></span>
+      </button>`;
+    }).join("");
+    return `
+    <section class="learn-hero">
+      <div class="between"><span class="eyebrow">知识树</span><span class="pill teal">已点亮 ${done} / ${total}</span></div>
+      <div class="learn-hero-main">
+        <div class="ring learn-ring" style="--p:${p}"><div><b>${done}</b><small>/ ${total}</small></div></div>
+        <div class="grow">
+          <h1 class="h1">先看知识，<br>再刷题。</h1>
+          <p class="tiny muted mt8">已掌握 ${done} · 在学 ${doing} · 未学 ${Math.max(0, total - done - doing)}</p>
+        </div>
+      </div>
+      <div class="row mt12">
+        <button class="btn primary small" data-action="continue-learn">${next ? "继续：" + esc(next.title) : "开始学习"}</button>
+        <button class="btn small" data-action="go-bank">题库</button>
+      </div>
+    </section>
+
+    <div class="section">
+      <div class="section-head"><h2>分科点亮</h2><span class="more">点一科看章节</span></div>
+      <div class="subject-grid">${subjectCards}</div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2>${learnQuery ? "搜索结果" : esc(subjectName(learnSubject))}</h2><span class="more" id="learnCount">${nodesOf(learnSubject).length} 个节点</span></div>
+      <div class="search mt8">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="learnSearch" type="search" placeholder="搜知识点，如：三角、极限、举报" value="${esc(learnQuery)}" autocomplete="off">
+      </div>
+      <div id="learnList" class="mt12">${learnListHTML()}</div>
+    </div>
+
+    <div class="card tip-card">
+      <div class="ico">◎</div>
+      <div><b>点亮规则</b><p>能讲 3 分钟 + 做对 2 道变式，才点「已掌握」。只“看过”不算；每周只挑 3-5 个。</p></div>
+    </div>
+    `;
+  }
+  function renderLearnList() {
+    const el = $("#learnList");
+    if (!el) return;
+    el.innerHTML = learnListHTML();
+    const c = $("#learnCount");
+    if (c) c.textContent = learnQuery ? `${allNodes().filter((n) => (n.title + " " + n.focus + " " + n.chapter).toLowerCase().indexOf(learnQuery.toLowerCase()) >= 0).length} 个节点` : `${nodesOf(learnSubject).length} 个节点`;
+  }
+  function openNodeSheet(id) {
+    const n = nodeById(id);
+    if (!n) return;
+    const st = nodeStatus(n.id);
+    const statusBtns = [0, 1, 2].map((s) => {
+      const m = nodeStatusMeta(s);
+      return `<button class="status-btn ${st === s ? "active " + m.cls : ""}" data-action="set-node-status" data-id="${esc(n.id)}" data-status="${s}">${m.label}</button>`;
+    }).join("");
+    const qc = nodeQuestionCount(n);
+    const formulas = (n.formulas || []).map((f) => `<div class="formula">${inline(f)}</div>`).join("");
+    const sheet = $("#nodeSheet");
+    sheet.innerHTML = `<div class="sheet node-sheet">
+      <div class="sheet-head">
+        <div class="grow"><div class="eyebrow">${esc(subjectShort(n.subject))} · ${esc(n.chapter)}</div><h3>${esc(n.num)} ${esc(n.title)}</h3></div>
+        <button class="icon-btn" data-action="close-node">✕</button>
+      </div>
+      <div class="node-status-row">${statusBtns}</div>
+      <div class="node-read">
+        <div class="eyebrow">先看知识</div>
+        <p class="node-summary">${inline(n.summary || n.focus || "")}</p>
+        ${formulas ? `<div class="formula-list">${formulas}</div>` : ""}
+        ${n.example ? `<div class="node-example"><b>例</b> ${inline(n.example)}</div>` : ""}
+        ${n.cardNote ? `<div class="node-tip"><b>记</b> ${inline(n.cardNote)}</div>` : ""}
+        ${n.note ? `<div class="tiny faint mt12">完整笔记：${esc(n.note)}</div>` : ""}
+        ${n.source ? `<div class="tiny faint">来源：${esc(n.source)}</div>` : ""}
+        ${!n.hasCard ? `<div class="node-missing">这节还没有知识卡；先看 Obsidian 笔记/教材，再回来做题。</div>` : ""}
+      </div>
+      <div class="tiny muted mt8">前置：${esc(n.prereq || "—")} ｜ 考点：${esc(n.focus || "—")}</div>
+      <div class="toolbar mt12">
+        <button class="btn primary" data-action="start-node" data-id="${esc(n.id)}" ${qc ? "" : "disabled"}>做这节题（${qc}）</button>
+      </div>
+      <div class="tiny faint">做完题回来自评：能讲 + 做对变式，再点「已掌握」。</div>
+    </div>`;
+    sheet.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function closeNodeSheet() {
+    const sheet = $("#nodeSheet");
+    if (!sheet) return;
+    sheet.hidden = true;
+    sheet.innerHTML = "";
+    document.body.style.overflow = "";
+  }
+  function refreshNodeSheet(id) {
+    if ($("#nodeSheet") && !$("#nodeSheet").hidden) openNodeSheet(id);
+  }
+  function setNodeStatusAction(id, status) {
+    setNodeStatus(id, status);
+    const n = nodeById(id);
+    toast(status === 2 ? `点亮：${n ? n.title : "节点"}` : status === 1 ? "标记在学" : "已回到未学");
+    refreshNodeSheet(id);
+    if (route === "learn") render();
+  }
+  function startNodeQuestions(id) {
+    const n = nodeById(id);
+    if (!n) return;
+    const ids = (n.questionIds || []).filter((qid) => !!questionById(qid));
+    if (!ids.length) { toast("这节题库还没补", true); return; }
+    if (nodeStatus(id) === 0) setNodeStatus(id, 1);
+    closeNodeSheet();
+    startSession({ ids, mode: "node" });
   }
 
   /* ---------------- bank ---------------- */
@@ -586,7 +815,7 @@
     return `
     <div class="between">
       <div><div class="eyebrow">题库</div><h1 class="h1">${allQuestions().length} 道</h1></div>
-      <button class="btn small" data-action="open-add">＋ 加题</button>
+      <div class="row"><button class="btn small" data-action="go-learn">知识树</button><button class="btn small" data-action="open-add">＋ 加题</button></div>
     </div>
     <div class="search mt12">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -1041,7 +1270,7 @@
           </div>
           <div class="actions">
             <button class="btn" data-action="session-again">再来一组</button>
-            <button class="btn primary" data-action="session-close">回今日</button>
+            <button class="btn primary" data-action="session-close">${session.mode === "node" ? "回知识树" : "回今日"}</button>
           </div>
           <div class="tiny faint mt12">错题已自动进「错题」；明天会再出现。</div>
         </div>
@@ -1322,6 +1551,14 @@
         break;
       case "export": exportData(); break;
       case "copy-ai-prompt": copyAIPrompt(); break;
+      case "go-learn": closeNodeSheet(); go("learn"); break;
+      case "go-bank": go("bank"); break;
+      case "learn-subject": learnSubject = el.dataset.subject; learnQuery = ""; render(); break;
+      case "open-node": openNodeSheet(el.dataset.id); break;
+      case "close-node": closeNodeSheet(); break;
+      case "set-node-status": setNodeStatusAction(el.dataset.id, Number(el.dataset.status)); break;
+      case "start-node": startNodeQuestions(el.dataset.id); break;
+      case "continue-learn": { const n = continueNode(); if (n) openNodeSheet(n.id); break; }
       case "import": { const f = $("#importFile"); if (f) f.click(); break; }
       case "reset":
         if (confirm("清空所有刷题进度？建议先导出。")) {
@@ -1371,12 +1608,21 @@
       }
       case "speak": speakQuestion(); break;
       case "session-again": {
+        if (session && session.mode === "node") {
+          startSession({ ids: session.queue.map((q) => q.id), mode: "node" });
+          break;
+        }
         const mode = session && (session.mode === "single" || session.mode === "random") ? "random" : "daily";
         const subject = session ? session.subject : null;
         startSession({ mode, subject, limit: mode === "random" ? 10 : null });
         break;
       }
-      case "session-close": closePractice(); go("today"); break;
+      case "session-close": {
+        const back = session && session.mode === "node" ? "learn" : "today";
+        closePractice();
+        go(back);
+        break;
+      }
       default: break;
     }
   }
@@ -1386,6 +1632,11 @@
     if (t.id === "bankSearch") {
       bankFilter.query = t.value.trim();
       renderBankList();
+      return;
+    }
+    if (t.id === "learnSearch") {
+      learnQuery = t.value.trim();
+      renderLearnList();
       return;
     }
     if (t.id === "dailyNew") {
@@ -1497,13 +1748,18 @@
       $("#view").innerHTML = `<div class="empty" style="margin-top:18vh"><div class="big">0</div><b>题库为空</b>先在 Obsidian 的 <code>60-题库</code> 写题，再运行构建。</div>`;
       return;
     }
+    try {
+      KDB = await loadKnowledge();
+    } catch (e) {
+      KDB = { nodes: [], subjects: {} };
+    }
     ensureDaily();
     const params = new URLSearchParams(location.search);
     const demo = params.get("demo");
     if (demo) seedDemo(demo);
     applyTheme();
     const rp = params.get("route");
-    if (rp && ["today", "bank", "wrong", "stats", "me"].indexOf(rp) >= 0) route = rp;
+    if (rp && ["today", "learn", "bank", "wrong", "stats", "me"].indexOf(rp) >= 0) route = rp;
     document.addEventListener("click", onClick);
     document.addEventListener("input", onInput);
     document.addEventListener("change", onChange);

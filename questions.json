@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-06T23:12:31+08:00",
-  "count": 144,
+  "generatedAt": "2026-11-07T10:46:49+08:00",
+  "count": 176,
   "bySubject": {
-    "math": 34,
+    "math": 66,
     "auto": 31,
     "ethics": 16,
     "logic": 16,
@@ -724,6 +724,678 @@
       "answerText": "",
       "explain": "|A⁻¹|=1/|A|=1/2。",
       "source": "751 线代 · 逆矩阵行列式",
+      "tags": []
+    },
+    {
+      "id": "m-101",
+      "subject": "math",
+      "topic": "预备/代数",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "方程 x²-5x+6=0 的解是？",
+      "options": [
+        "x=-2 或 x=-3",
+        "x=0 或 x=5",
+        "x=2 或 x=3",
+        "x=1 或 x=6"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "因式分解 (x-2)(x-3)=0，所以 x=2 或 x=3；也可用求根公式。",
+      "source": "高中回顾 · 二次方程",
+      "tags": []
+    },
+    {
+      "id": "m-102",
+      "subject": "math",
+      "topic": "预备/代数",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "x²-4 因式分解为？",
+      "options": [
+        "(x+2)²",
+        "(x-2)²",
+        "(x-4)(x+1)",
+        "(x-2)(x+2)"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "平方差公式 a²-b²=(a-b)(a+b)，所以 x²-4=(x-2)(x+2)。",
+      "source": "高中回顾 · 因式分解",
+      "tags": []
+    },
+    {
+      "id": "m-103",
+      "subject": "math",
+      "topic": "预备/代数",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "方程 x²+2x+5=0 的判别式 Δ 及实根情况是？",
+      "options": [
+        "Δ=-16，无实根",
+        "Δ=-24，无实根",
+        "Δ=24，两个实根",
+        "Δ=16，两个实根"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "Δ=b²-4ac=4-20=-16<0，所以无实根。",
+      "source": "高中回顾 · 判别式",
+      "tags": []
+    },
+    {
+      "id": "m-104",
+      "subject": "math",
+      "topic": "预备/不等式",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "不等式 |x-1|<2 的解集是？",
+      "options": [
+        "x<3",
+        "-1<x<3",
+        "x<-1 或 x>3",
+        "x>-1"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "|x-1|<2 ⇔ -2<x-1<2 ⇔ -1<x<3。",
+      "source": "高中回顾 · 绝对值不等式",
+      "tags": []
+    },
+    {
+      "id": "m-105",
+      "subject": "math",
+      "topic": "预备/不等式",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "不等式 x²-3x+2>0 的解集是？",
+      "options": [
+        "1<x<2",
+        "全体实数",
+        "x<1 或 x>2",
+        "x>2"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "x²-3x+2=(x-1)(x-2)>0；开口向上，取两边，所以 x<1 或 x>2。",
+      "source": "高中回顾 · 一元二次不等式",
+      "tags": []
+    },
+    {
+      "id": "m-106",
+      "subject": "math",
+      "topic": "预备/对数",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "log₂8 等于？",
+      "options": [
+        "8",
+        "4",
+        "2",
+        "3"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "2³=8，所以 log₂8=3。",
+      "source": "高中回顾 · 对数",
+      "tags": []
+    },
+    {
+      "id": "m-107",
+      "subject": "math",
+      "topic": "预备/指数",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "2⁰ 等于？",
+      "options": [
+        "1",
+        "2",
+        "不存在",
+        "0"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "任何非零数的 0 次幂等于 1（a⁰=1，a≠0）。",
+      "source": "高中回顾 · 指数",
+      "tags": []
+    },
+    {
+      "id": "m-108",
+      "subject": "math",
+      "topic": "预备/函数",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "函数 f(x)=1/(x-1) 的定义域是？",
+      "options": [
+        "全体实数",
+        "x≠1",
+        "x≥1",
+        "x>1"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "分母不能为 0，所以 x-1≠0，即 x≠1。",
+      "source": "高中回顾 · 定义域",
+      "tags": []
+    },
+    {
+      "id": "m-109",
+      "subject": "math",
+      "topic": "预备/函数",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "函数 f(x)=√(x-2) 的定义域是？",
+      "options": [
+        "全体实数",
+        "x≤2",
+        "x≥2",
+        "x>2"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "根号内非负：x-2≥0，所以 x≥2。",
+      "source": "高中回顾 · 定义域",
+      "tags": []
+    },
+    {
+      "id": "m-110",
+      "subject": "math",
+      "topic": "预备/二次函数",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "抛物线 y=x²-4x+3 的顶点是？",
+      "options": [
+        "(-2,-1)",
+        "(2,1)",
+        "(4,3)",
+        "(2,-1)"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "配方 y=(x-2)²-1，顶点为 (2,-1)。",
+      "source": "高中回顾 · 二次函数",
+      "tags": []
+    },
+    {
+      "id": "m-111",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "180° 等于多少弧度？",
+      "options": [
+        "π",
+        "360",
+        "π/2",
+        "2π"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "180°=π 弧度；360°=2π。",
+      "source": "高中回顾 · 弧度制",
+      "tags": []
+    },
+    {
+      "id": "m-112",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "60° 等于多少弧度？",
+      "options": [
+        "π/2",
+        "π/3",
+        "π/6",
+        "π/4"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "60°=60×π/180=π/3。",
+      "source": "高中回顾 · 弧度制",
+      "tags": []
+    },
+    {
+      "id": "m-113",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "sin 30° 等于？",
+      "options": [
+        "√3/2",
+        "1",
+        "1/2",
+        "√2/2"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "特殊角：sin30°=1/2，sin45°=√2/2，sin60°=√3/2。",
+      "source": "高中回顾 · 特殊角",
+      "tags": []
+    },
+    {
+      "id": "m-114",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "cos 60° 等于？",
+      "options": [
+        "0",
+        "√2/2",
+        "√3/2",
+        "1/2"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "cos60°=1/2；cos0°=1，cos90°=0。",
+      "source": "高中回顾 · 特殊角",
+      "tags": []
+    },
+    {
+      "id": "m-115",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "tan 45° 等于？",
+      "options": [
+        "1",
+        "√3",
+        "0",
+        "不存在"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "tan45°=sin45°/cos45°=1。",
+      "source": "高中回顾 · 特殊角",
+      "tags": []
+    },
+    {
+      "id": "m-116",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "sin(π/2) 等于？",
+      "options": [
+        "1/2",
+        "1",
+        "-1",
+        "0"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "π/2=90°，sin90°=1。",
+      "source": "高中回顾 · 三角函数值",
+      "tags": []
+    },
+    {
+      "id": "m-117",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "120° 角的终边在第二象限，则？",
+      "options": [
+        "sin<0，cos<0",
+        "sin<0，cos>0",
+        "sin>0，cos<0",
+        "sin>0，cos>0"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "第二象限 sin 为正、cos 为负、tan 为负（ASTC：一全正、二正弦、三正切、四余弦）。",
+      "source": "高中回顾 · 象限符号",
+      "tags": []
+    },
+    {
+      "id": "m-118",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "函数 y=sin(2x) 的最小正周期是？",
+      "options": [
+        "π/2",
+        "4π",
+        "2π",
+        "π"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "y=sin(ωx) 的周期为 2π/|ω|；ω=2，所以 T=π。",
+      "source": "高中回顾 · 周期",
+      "tags": []
+    },
+    {
+      "id": "m-119",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "sin²x+cos²x 等于？",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "tan x"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "同角基本关系：sin²x+cos²x=1。",
+      "source": "高中回顾 · 同角关系",
+      "tags": []
+    },
+    {
+      "id": "m-120",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "sin(π/2 - x) 等于？",
+      "options": [
+        "-sin x",
+        "cos x",
+        "-cos x",
+        "sin x"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "诱导公式：sin(π/2-x)=cos x；cos(π/2-x)=sin x。",
+      "source": "高中回顾 · 诱导公式",
+      "tags": []
+    },
+    {
+      "id": "m-121",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "sin(π + x) 等于？",
+      "options": [
+        "-cos x",
+        "cos x",
+        "-sin x",
+        "sin x"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "诱导公式：sin(π+x)=-sin x；cos(π+x)=-cos x。",
+      "source": "高中回顾 · 诱导公式",
+      "tags": []
+    },
+    {
+      "id": "m-122",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "sin(a+b) 等于？",
+      "options": [
+        "sin a cos b - cos a sin b",
+        "sin a sin b + cos a cos b",
+        "cos a cos b - sin a sin b",
+        "sin a cos b + cos a sin b"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "和角公式：sin(a+b)=sin a cos b + cos a sin b；sin(a-b) 中间为减号。",
+      "source": "高中回顾 · 和角公式",
+      "tags": []
+    },
+    {
+      "id": "m-123",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "cos 2a 等于？",
+      "options": [
+        "cos²a - sin²a",
+        "2sin a cos a",
+        "1 + 2sin²a",
+        "sin²a - cos²a"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "二倍角：cos2a=cos²a-sin²a=2cos²a-1=1-2sin²a；2sin a cos a 是 sin2a。",
+      "source": "高中回顾 · 二倍角",
+      "tags": []
+    },
+    {
+      "id": "m-124",
+      "subject": "math",
+      "topic": "预备/三角",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "sin 2a 等于？",
+      "options": [
+        "2cos a",
+        "2sin a cos a",
+        "2sin a",
+        "cos²a - sin²a"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "二倍角：sin2a=2sin a cos a。",
+      "source": "高中回顾 · 二倍角",
+      "tags": []
+    },
+    {
+      "id": "m-125",
+      "subject": "math",
+      "topic": "预备/解三角形",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "余弦定理的表达式是？",
+      "options": [
+        "a²=b²+c²+2bc cos A",
+        "a²=b²+c²",
+        "a²=b²+c²-2bc cos A",
+        "a/sin A=2R"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "余弦定理：a²=b²+c²-2bc cos A；a/sinA=2R 是正弦定理。",
+      "source": "高中回顾 · 余弦定理",
+      "tags": []
+    },
+    {
+      "id": "m-126",
+      "subject": "math",
+      "topic": "预备/数列",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "等差数列 {a_n} 的通项公式是？",
+      "options": [
+        "a_n=a_1·d^(n-1)",
+        "a_n=a_1+nd",
+        "a_n=n(a_1+a_n)/2",
+        "a_n=a_1+(n-1)d"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "等差数列通项 a_n=a_1+(n-1)d；等比数列才是 a_1·q^(n-1)。",
+      "source": "高中回顾 · 等差数列",
+      "tags": []
+    },
+    {
+      "id": "m-127",
+      "subject": "math",
+      "topic": "预备/数列",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "等比数列前 n 项和（q≠1）是？",
+      "options": [
+        "a_1(1-q^n)/(1-q)",
+        "a_1+(n-1)d",
+        "n(a_1+a_n)/2",
+        "a_1 q^n"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "等比求和 S_n=a_1(1-q^n)/(1-q)（q≠1）；等差求和才是 n(a1+an)/2。",
+      "source": "高中回顾 · 等比数列",
+      "tags": []
+    },
+    {
+      "id": "m-128",
+      "subject": "math",
+      "topic": "预备/解析几何",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "过点 (1,2) 和 (3,6) 的直线斜率是？",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "1"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "k=(6-2)/(3-1)=4/2=2。",
+      "source": "高中回顾 · 斜率",
+      "tags": []
+    },
+    {
+      "id": "m-129",
+      "subject": "math",
+      "topic": "预备/解析几何",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "点 (0,0) 到点 (3,4) 的距离是？",
+      "options": [
+        "7",
+        "3",
+        "5",
+        "4"
+      ],
+      "answer": [
+        2
+      ],
+      "answerText": "",
+      "explain": "距离 √(3²+4²)=√25=5。",
+      "source": "高中回顾 · 两点距离",
+      "tags": []
+    },
+    {
+      "id": "m-130",
+      "subject": "math",
+      "topic": "预备/向量",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "向量 (1,2) 与 (2,-1) 的关系是？",
+      "options": [
+        "无法判断",
+        "相等",
+        "平行",
+        "垂直"
+      ],
+      "answer": [
+        3
+      ],
+      "answerText": "",
+      "explain": "数量积 1×2+2×(-1)=0，所以两向量垂直。",
+      "source": "高中回顾 · 向量数量积",
+      "tags": []
+    },
+    {
+      "id": "m-131",
+      "subject": "math",
+      "topic": "预备/解析几何",
+      "type": "choice",
+      "difficulty": 2,
+      "stem": "圆 x²+y²-4x+2y-4=0 的圆心和半径是？",
+      "options": [
+        "圆心 (2,-1)，半径 3",
+        "圆心 (4,-2)，半径 4",
+        "圆心 (2,-1)，半径 9",
+        "圆心 (-2,1)，半径 3"
+      ],
+      "answer": [
+        0
+      ],
+      "answerText": "",
+      "explain": "配方 (x-2)²+(y+1)²=9，所以圆心 (2,-1)，半径 3。",
+      "source": "高中回顾 · 圆的方程",
+      "tags": []
+    },
+    {
+      "id": "m-132",
+      "subject": "math",
+      "topic": "预备/向量",
+      "type": "choice",
+      "difficulty": 1,
+      "stem": "向量 (3,4) 的模长是？",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "7"
+      ],
+      "answer": [
+        1
+      ],
+      "answerText": "",
+      "explain": "|(3,4)|=√(3²+4²)=5。",
+      "source": "高中回顾 · 向量模长",
       "tags": []
     },
     {
