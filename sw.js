@@ -1,5 +1,5 @@
 /* 考研刷题 PWA · cache-first for offline commute */
-const CACHE = "kaoyan-quiz-20261111214536";
+const CACHE = "kaoyan-quiz-20261111222741";
 const ASSETS = [
   "./",
   "./index.html",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-11T21:45:36+08:00",
+  "generatedAt": "2026-11-11T22:27:41+08:00",
   "count": 406,
   "bySubject": {
     "math": 166,
@@ -39,7 +39,7 @@
       "topic": "极限",
       "type": "choice",
       "difficulty": 1,
-      "stem": "lim(x→0) (1-cos x)/x² 等于？",
+      "stem": "lim(x→0) (1-cos x)/x^2 等于？",
       "options": [
         "1",
         "1/2",
@@ -50,7 +50,7 @@
         1
       ],
       "answerText": "",
-      "explain": "1-cos x ~ x²/2，所以极限为 1/2。",
+      "explain": "1-cos x ~ x^2/2，所以极限为 1/2。",
       "source": "751 基础 · 等价无穷小",
       "tags": []
     },
@@ -65,7 +65,7 @@
         "∞",
         "1",
         "e",
-        "e²"
+        "e^2"
       ],
       "answer": [
         2
@@ -81,7 +81,7 @@
       "topic": "极限",
       "type": "choice",
       "difficulty": 2,
-      "stem": "lim(x→0) (tan x - x)/x³ 等于？",
+      "stem": "lim(x→0) (tan x - x)/x^3 等于？",
       "options": [
         "1",
         "0",
@@ -92,7 +92,7 @@
         3
       ],
       "answerText": "",
-      "explain": "tan x = x + x³/3 + o(x³)，所以 tan x - x ~ x³/3，极限 1/3。不能用 tan x ~ x 直接减。",
+      "explain": "tan x = x + x^3/3 + o(x^3)，所以 tan x - x ~ x^3/3，极限 1/3。不能用 tan x ~ x 直接减。",
       "source": "751 基础 · 泰勒",
       "tags": []
     },
@@ -168,7 +168,7 @@
       "stem": "d/dx ln(sec x) 等于？",
       "options": [
         "cot x",
-        "sec²x",
+        "sec^2x",
         "sec x",
         "tan x"
       ],
@@ -207,7 +207,7 @@
       "topic": "中值定理",
       "type": "choice",
       "difficulty": 2,
-      "stem": "f(x)=x³-3x 在 [-2,2] 上的最大值是？",
+      "stem": "f(x)=x^3-3x 在 [-2,2] 上的最大值是？",
       "options": [
         "-2",
         "2",
@@ -270,18 +270,18 @@
       "topic": "积分",
       "type": "choice",
       "difficulty": 1,
-      "stem": "∫ 1/(1+x²) dx 等于？",
+      "stem": "∫ 1/(1+x^2) dx 等于？",
       "options": [
         "arctan x + C",
         "arcsin x + C",
-        "-1/(1+x²) + C",
-        "ln(1+x²) + C"
+        "-1/(1+x^2) + C",
+        "ln(1+x^2) + C"
       ],
       "answer": [
         0
       ],
       "answerText": "",
-      "explain": "arctan x 的导数是 1/(1+x²)，所以原函数是 arctan x + C。",
+      "explain": "arctan x 的导数是 1/(1+x^2)，所以原函数是 arctan x + C。",
       "source": "751 基础 · 基本积分表",
       "tags": []
     },
@@ -333,7 +333,7 @@
       "topic": "二重积分",
       "type": "choice",
       "difficulty": 1,
-      "stem": "单位圆 x²+y²≤1 的面积用二重积分表示为？",
+      "stem": "单位圆 x^2+y^2≤1 的面积用二重积分表示为？",
       "options": [
         "1",
         "2π",
@@ -344,7 +344,7 @@
         3
       ],
       "answerText": "",
-      "explain": "单位圆面积 πr²=π；极坐标下 ∫0^2π∫0^1 r dr dθ=π。",
+      "explain": "单位圆面积 πr^2=π；极坐标下 ∫0^2π∫0^1 r dr dθ=π。",
       "source": "751 基础 · 二重积分",
       "tags": []
     },
@@ -354,7 +354,7 @@
       "topic": "二重积分",
       "type": "choice",
       "difficulty": 3,
-      "stem": "∬(x²+y²≤1) (x²+y²) dσ 等于？",
+      "stem": "∬(x^2+y^2≤1) (x^2+y^2) dσ 等于？",
       "options": [
         "π/2",
         "π",
@@ -365,7 +365,7 @@
         0
       ],
       "answerText": "",
-      "explain": "极坐标 ∫0^2π∫0^1 r²·r dr dθ = 2π·(1/4)=π/2。",
+      "explain": "极坐标 ∫0^2π∫0^1 r^2·r dr dθ = 2π·(1/4)=π/2。",
       "source": "751 基础 · 极坐标",
       "tags": []
     },
@@ -375,7 +375,7 @@
       "topic": "多元",
       "type": "choice",
       "difficulty": 2,
-      "stem": "f(x,y)=x²y+y³ 在 (1,1) 处的梯度是？",
+      "stem": "f(x,y)=x^2y+y^3 在 (1,1) 处的梯度是？",
       "options": [
         "(3,4)",
         "(2,4)",
@@ -386,7 +386,7 @@
         1
       ],
       "answerText": "",
-      "explain": "f_x=2xy=2，f_y=x²+3y²=1+3=4，梯度为 (2,4)。",
+      "explain": "f_x=2xy=2，f_y=x^2+3y^2=1+3=4，梯度为 (2,4)。",
       "source": "751 基础 · 偏导数",
       "tags": []
     },
@@ -396,7 +396,7 @@
       "topic": "多元",
       "type": "choice",
       "difficulty": 2,
-      "stem": "f(x,y)=x²+y²-2x-4y+5 在 (1,2) 处取得？",
+      "stem": "f(x,y)=x^2+y^2-2x-4y+5 在 (1,2) 处取得？",
       "options": [
         "无法判断",
         "鞍点",
@@ -407,7 +407,7 @@
         2
       ],
       "answerText": "",
-      "explain": "配方得 (x-1)²+(y-2)²，显然在 (1,2) 取最小值 0。",
+      "explain": "配方得 (x-1)^2+(y-2)^2，显然在 (1,2) 取最小值 0。",
       "source": "751 基础 · 无条件极值",
       "tags": []
     },
@@ -419,16 +419,16 @@
       "difficulty": 2,
       "stem": "微分方程 y'=2xy，y(0)=1 的解是？",
       "options": [
-        "y=1+x²",
-        "y=e^(-x²)",
+        "y=1+x^2",
+        "y=e^(-x^2)",
         "y=e^(2x)",
-        "y=e^(x²)"
+        "y=e^(x^2)"
       ],
       "answer": [
         3
       ],
       "answerText": "",
-      "explain": "分离变量 dy/y=2x dx，积分得 ln y=x²+C；由 y(0)=1 得 C=0。",
+      "explain": "分离变量 dy/y=2x dx，积分得 ln y=x^2+C；由 y(0)=1 得 C=0。",
       "source": "751 基础 · 可分离变量",
       "tags": []
     },
@@ -449,7 +449,7 @@
         0
       ],
       "answerText": "",
-      "explain": "特征方程 r²+1=0，r=±i，通解为 C1 cos x + C2 sin x。",
+      "explain": "特征方程 r^2+1=0，r=±i，通解为 C1 cos x + C2 sin x。",
       "source": "751 基础 · 二阶常系数",
       "tags": []
     },
@@ -470,7 +470,7 @@
         1
       ],
       "answerText": "",
-      "explain": "特征方程 r²-3r+2=0，r=1,2，通解为 C1 e^x + C2 e^(2x)。",
+      "explain": "特征方程 r^2-3r+2=0，r=1,2，通解为 C1 e^x + C2 e^(2x)。",
       "source": "751 基础 · 二阶常系数",
       "tags": []
     },
@@ -505,14 +505,14 @@
       "options": [
         "|A|",
         "k|A|",
-        "k²|A|",
-        "k³|A|"
+        "k^2|A|",
+        "k^3|A|"
       ],
       "answer": [
         3
       ],
       "answerText": "",
-      "explain": "每行提一个 k，共 3 行，所以 |kA|=k³|A|。",
+      "explain": "每行提一个 k，共 3 行，所以 |kA|=k^3|A|。",
       "source": "751 线代 · 行列式性质",
       "tags": []
     },
@@ -648,7 +648,7 @@
       "topic": "极限",
       "type": "choice",
       "difficulty": 2,
-      "stem": "lim(x→0) (e^x - 1 - x)/x² 等于？",
+      "stem": "lim(x→0) (e^x - 1 - x)/x^2 等于？",
       "options": [
         "0",
         "1",
@@ -659,7 +659,7 @@
         2
       ],
       "answerText": "",
-      "explain": "e^x = 1 + x + x²/2 + o(x²)，减去 1+x 后剩 x²/2，极限 1/2。",
+      "explain": "e^x = 1 + x + x^2/2 + o(x^2)，减去 1+x 后剩 x^2/2，极限 1/2。",
       "source": "751 基础 · 泰勒",
       "tags": []
     },
@@ -669,7 +669,7 @@
       "topic": "导数",
       "type": "choice",
       "difficulty": 2,
-      "stem": "f(x)=x³-3x 的单调递增区间是？",
+      "stem": "f(x)=x^3-3x 的单调递增区间是？",
       "options": [
         "(0,+∞)",
         "(-∞,0)",
@@ -711,7 +711,7 @@
       "topic": "矩阵",
       "type": "choice",
       "difficulty": 2,
-      "stem": "若 3 阶矩阵 A 满足 |A|=2，则 |A⁻¹| 等于？",
+      "stem": "若 3 阶矩阵 A 满足 |A|=2，则 |A^(-1)| 等于？",
       "options": [
         "-1/2",
         "1/2",
@@ -722,7 +722,7 @@
         1
       ],
       "answerText": "",
-      "explain": "|A⁻¹|=1/|A|=1/2。",
+      "explain": "|A^(-1)|=1/|A|=1/2。",
       "source": "751 线代 · 逆矩阵行列式",
       "tags": []
     },
@@ -732,7 +732,7 @@
       "topic": "预备/代数",
       "type": "choice",
       "difficulty": 1,
-      "stem": "方程 x²-5x+6=0 的解是？",
+      "stem": "方程 x^2-5x+6=0 的解是？",
       "options": [
         "x=-2 或 x=-3",
         "x=0 或 x=5",
@@ -753,10 +753,10 @@
       "topic": "预备/代数",
       "type": "choice",
       "difficulty": 1,
-      "stem": "x²-4 因式分解为？",
+      "stem": "x^2-4 因式分解为？",
       "options": [
-        "(x+2)²",
-        "(x-2)²",
+        "(x+2)^2",
+        "(x-2)^2",
         "(x-4)(x+1)",
         "(x-2)(x+2)"
       ],
@@ -764,7 +764,7 @@
         3
       ],
       "answerText": "",
-      "explain": "平方差公式 a²-b²=(a-b)(a+b)，所以 x²-4=(x-2)(x+2)。",
+      "explain": "平方差公式 a^2-b^2=(a-b)(a+b)，所以 x^2-4=(x-2)(x+2)。",
       "source": "高中回顾 · 因式分解",
       "tags": []
     },
@@ -774,7 +774,7 @@
       "topic": "预备/代数",
       "type": "choice",
       "difficulty": 2,
-      "stem": "方程 x²+2x+5=0 的判别式 Δ 及实根情况是？",
+      "stem": "方程 x^2+2x+5=0 的判别式 Δ 及实根情况是？",
       "options": [
         "Δ=-16，无实根",
         "Δ=-24，无实根",
@@ -785,7 +785,7 @@
         0
       ],
       "answerText": "",
-      "explain": "Δ=b²-4ac=4-20=-16<0，所以无实根。",
+      "explain": "Δ=b^2-4ac=4-20=-16<0，所以无实根。",
       "source": "高中回顾 · 判别式",
       "tags": []
     },
@@ -816,7 +816,7 @@
       "topic": "预备/不等式",
       "type": "choice",
       "difficulty": 2,
-      "stem": "不等式 x²-3x+2>0 的解集是？",
+      "stem": "不等式 x^2-3x+2>0 的解集是？",
       "options": [
         "1<x<2",
         "全体实数",
@@ -827,7 +827,7 @@
         2
       ],
       "answerText": "",
-      "explain": "x²-3x+2=(x-1)(x-2)>0；开口向上，取两边，所以 x<1 或 x>2。",
+      "explain": "x^2-3x+2=(x-1)(x-2)>0；开口向上，取两边，所以 x<1 或 x>2。",
       "source": "高中回顾 · 一元二次不等式",
       "tags": []
     },
@@ -837,7 +837,7 @@
       "topic": "预备/对数",
       "type": "choice",
       "difficulty": 1,
-      "stem": "log₂8 等于？",
+      "stem": "log_28 等于？",
       "options": [
         "8",
         "4",
@@ -848,7 +848,7 @@
         3
       ],
       "answerText": "",
-      "explain": "2³=8，所以 log₂8=3。",
+      "explain": "2^3=8，所以 log_28=3。",
       "source": "高中回顾 · 对数",
       "tags": []
     },
@@ -858,7 +858,7 @@
       "topic": "预备/指数",
       "type": "choice",
       "difficulty": 1,
-      "stem": "2⁰ 等于？",
+      "stem": "2^0 等于？",
       "options": [
         "1",
         "2",
@@ -869,7 +869,7 @@
         0
       ],
       "answerText": "",
-      "explain": "任何非零数的 0 次幂等于 1（a⁰=1，a≠0）。",
+      "explain": "任何非零数的 0 次幂等于 1（a^0=1，a≠0）。",
       "source": "高中回顾 · 指数",
       "tags": []
     },
@@ -921,7 +921,7 @@
       "topic": "预备/二次函数",
       "type": "choice",
       "difficulty": 2,
-      "stem": "抛物线 y=x²-4x+3 的顶点是？",
+      "stem": "抛物线 y=x^2-4x+3 的顶点是？",
       "options": [
         "(-2,-1)",
         "(2,1)",
@@ -932,7 +932,7 @@
         3
       ],
       "answerText": "",
-      "explain": "配方 y=(x-2)²-1，顶点为 (2,-1)。",
+      "explain": "配方 y=(x-2)^2-1，顶点为 (2,-1)。",
       "source": "高中回顾 · 二次函数",
       "tags": []
     },
@@ -1110,7 +1110,7 @@
       "topic": "预备/三角",
       "type": "choice",
       "difficulty": 1,
-      "stem": "sin²x+cos²x 等于？",
+      "stem": "sin^2x+cos^2x 等于？",
       "options": [
         "1",
         "2",
@@ -1121,7 +1121,7 @@
         0
       ],
       "answerText": "",
-      "explain": "同角基本关系：sin²x+cos²x=1。",
+      "explain": "同角基本关系：sin^2x+cos^2x=1。",
       "source": "高中回顾 · 同角关系",
       "tags": []
     },
@@ -1196,16 +1196,16 @@
       "difficulty": 2,
       "stem": "cos 2a 等于？",
       "options": [
-        "cos²a - sin²a",
+        "cos^2a - sin^2a",
         "2sin a cos a",
-        "1 + 2sin²a",
-        "sin²a - cos²a"
+        "1 + 2sin^2a",
+        "sin^2a - cos^2a"
       ],
       "answer": [
         0
       ],
       "answerText": "",
-      "explain": "二倍角：cos2a=cos²a-sin²a=2cos²a-1=1-2sin²a；2sin a cos a 是 sin2a。",
+      "explain": "二倍角：cos2a=cos^2a-sin^2a=2cos^2a-1=1-2sin^2a；2sin a cos a 是 sin2a。",
       "source": "高中回顾 · 二倍角",
       "tags": []
     },
@@ -1220,7 +1220,7 @@
         "2cos a",
         "2sin a cos a",
         "2sin a",
-        "cos²a - sin²a"
+        "cos^2a - sin^2a"
       ],
       "answer": [
         1
@@ -1238,16 +1238,16 @@
       "difficulty": 2,
       "stem": "余弦定理的表达式是？",
       "options": [
-        "a²=b²+c²+2bc cos A",
-        "a²=b²+c²",
-        "a²=b²+c²-2bc cos A",
+        "a^2=b^2+c^2+2bc cos A",
+        "a^2=b^2+c^2",
+        "a^2=b^2+c^2-2bc cos A",
         "a/sin A=2R"
       ],
       "answer": [
         2
       ],
       "answerText": "",
-      "explain": "余弦定理：a²=b²+c²-2bc cos A；a/sinA=2R 是正弦定理。",
+      "explain": "余弦定理：a^2=b^2+c^2-2bc cos A；a/sinA=2R 是正弦定理。",
       "source": "高中回顾 · 余弦定理",
       "tags": []
     },
@@ -1331,7 +1331,7 @@
         2
       ],
       "answerText": "",
-      "explain": "距离 √(3²+4²)=√25=5。",
+      "explain": "距离 √(3^2+4^2)=√25=5。",
       "source": "高中回顾 · 两点距离",
       "tags": []
     },
@@ -1362,7 +1362,7 @@
       "topic": "预备/解析几何",
       "type": "choice",
       "difficulty": 2,
-      "stem": "圆 x²+y²-4x+2y-4=0 的圆心和半径是？",
+      "stem": "圆 x^2+y^2-4x+2y-4=0 的圆心和半径是？",
       "options": [
         "圆心 (2,-1)，半径 3",
         "圆心 (4,-2)，半径 4",
@@ -1373,7 +1373,7 @@
         0
       ],
       "answerText": "",
-      "explain": "配方 (x-2)²+(y+1)²=9，所以圆心 (2,-1)，半径 3。",
+      "explain": "配方 (x-2)^2+(y+1)^2=9，所以圆心 (2,-1)，半径 3。",
       "source": "高中回顾 · 圆的方程",
       "tags": []
     },
@@ -1394,7 +1394,7 @@
         1
       ],
       "answerText": "",
-      "explain": "|(3,4)|=√(3²+4²)=5。",
+      "explain": "|(3,4)|=√(3^2+4^2)=5。",
       "source": "高中回顾 · 向量模长",
       "tags": []
     },
@@ -1457,7 +1457,7 @@
         0
       ],
       "answerText": "",
-      "explain": "1-cos x~x²/2，x sin x~x²，原式=1/2。",
+      "explain": "1-cos x~x^2/2，x sin x~x^2，原式=1/2。",
       "source": "751 极限 · 等价无穷小",
       "tags": []
     },
@@ -1467,7 +1467,7 @@
       "topic": "极限",
       "type": "choice",
       "difficulty": 3,
-      "stem": "lim(x→0) (sin x - x)/x³ 等于？",
+      "stem": "lim(x→0) (sin x - x)/x^3 等于？",
       "options": [
         "0",
         "-1/6",
@@ -1478,7 +1478,7 @@
         1
       ],
       "answerText": "",
-      "explain": "泰勒 sin x = x - x³/6 + o(x³)，所以 sin x - x ~ -x³/6，极限 -1/6。注意与 tan x - x ~ +x³/3 区分符号和系数。",
+      "explain": "泰勒 sin x = x - x^3/6 + o(x^3)，所以 sin x - x ~ -x^3/6，极限 -1/6。注意与 tan x - x ~ +x^3/3 区分符号和系数。",
       "source": "751 极限 · 泰勒",
       "tags": []
     },
@@ -1488,7 +1488,7 @@
       "topic": "极限",
       "type": "choice",
       "difficulty": 3,
-      "stem": "lim(x→0) (arcsin x - x)/x³ 等于？",
+      "stem": "lim(x→0) (arcsin x - x)/x^3 等于？",
       "options": [
         "0",
         "-1/6",
@@ -1499,7 +1499,7 @@
         2
       ],
       "answerText": "",
-      "explain": "arcsin x = x + x³/6 + o(x³)，所以极限=1/6。",
+      "explain": "arcsin x = x + x^3/6 + o(x^3)，所以极限=1/6。",
       "source": "751 极限 · 泰勒",
       "tags": []
     },
@@ -1514,13 +1514,13 @@
         "∞",
         "2e",
         "e",
-        "e²"
+        "e^2"
       ],
       "answer": [
         3
       ],
       "answerText": "",
-      "explain": "重要极限变式：(1+2/x)^x → e²。可令 t=x/2。",
+      "explain": "重要极限变式：(1+2/x)^x → e^2。可令 t=x/2。",
       "source": "751 极限 · 重要极限",
       "tags": []
     },
@@ -1532,7 +1532,7 @@
       "difficulty": 2,
       "stem": "lim(x→0) (1 + 3x)^(1/x) 等于？",
       "options": [
-        "e³",
+        "e^3",
         "3e",
         "1",
         "e"
@@ -1541,7 +1541,7 @@
         0
       ],
       "answerText": "",
-      "explain": "(1+3x)^(1/x)=[(1+3x)^(1/(3x))]³ → e³。",
+      "explain": "(1+3x)^(1/x)=[(1+3x)^(1/(3x))]^3 → e^3。",
       "source": "751 极限 · 重要极限",
       "tags": []
     },
@@ -1551,7 +1551,7 @@
       "topic": "极限",
       "type": "choice",
       "difficulty": 3,
-      "stem": "lim(x→0) (cos x)^(1/x²) 等于？",
+      "stem": "lim(x→0) (cos x)^(1/x^2) 等于？",
       "options": [
         "e^(-1)",
         "e^(-1/2)",
@@ -1562,7 +1562,7 @@
         1
       ],
       "answerText": "",
-      "explain": "1^∞ 型：取对数，ln = ln(cos x)/x² ~ (cos x -1)/x² ~ -1/2，所以极限 e^(-1/2)。",
+      "explain": "1^∞ 型：取对数，ln = ln(cos x)/x^2 ~ (cos x -1)/x^2 ~ -1/2，所以极限 e^(-1/2)。",
       "source": "751 极限 · 1^∞",
       "tags": []
     },
@@ -1572,7 +1572,7 @@
       "topic": "极限",
       "type": "choice",
       "difficulty": 2,
-      "stem": "lim(x→1) (x²-1)/(x-1) 等于？",
+      "stem": "lim(x→1) (x^2-1)/(x-1) 等于？",
       "options": [
         "1",
         "不存在",
@@ -1635,7 +1635,7 @@
       "topic": "极限",
       "type": "choice",
       "difficulty": 3,
-      "stem": "lim(x→0) (tan x - sin x)/x³ 等于？",
+      "stem": "lim(x→0) (tan x - sin x)/x^3 等于？",
       "options": [
         "2",
         "1/2",
@@ -1646,7 +1646,7 @@
         1
       ],
       "answerText": "",
-      "explain": "tan x - sin x = sin x(1-cos x)/cos x ~ x·(x²/2)/1 = x³/2，所以极限 1/2。",
+      "explain": "tan x - sin x = sin x(1-cos x)/cos x ~ x·(x^2/2)/1 = x^3/2，所以极限 1/2。",
       "source": "751 极限 · 等价综合",
       "tags": []
     },
@@ -1677,7 +1677,7 @@
       "topic": "极限",
       "type": "choice",
       "difficulty": 3,
-      "stem": "lim(n→∞) (1+2+…+n)/n² 等于？",
+      "stem": "lim(n→∞) (1+2+…+n)/n^2 等于？",
       "options": [
         "∞",
         "0",
@@ -1688,7 +1688,7 @@
         3
       ],
       "answerText": "",
-      "explain": "分子=n(n+1)/2，除以 n² 得 (n+1)/(2n) → 1/2。",
+      "explain": "分子=n(n+1)/2，除以 n^2 得 (n+1)/(2n) → 1/2。",
       "source": "751 极限 · 数列",
       "tags": []
     },
@@ -1698,7 +1698,7 @@
       "topic": "极限",
       "type": "choice",
       "difficulty": 2,
-      "stem": "lim(n→∞) (2ⁿ+3ⁿ)/(2ⁿ+3·3ⁿ) 等于？",
+      "stem": "lim(n→∞) (2^n+3^n)/(2^n+3·3^n) 等于？",
       "options": [
         "1/3",
         "2/3",
@@ -1709,7 +1709,7 @@
         0
       ],
       "answerText": "",
-      "explain": "分子分母同除以 3ⁿ：(2/3)ⁿ+1)/((2/3)ⁿ+3) → 1/3。抓大头。",
+      "explain": "分子分母同除以 3^n：(2/3)^n+1)/((2/3)^n+3) → 1/3。抓大头。",
       "source": "751 极限 · 抓大头",
       "tags": []
     },
@@ -1740,7 +1740,7 @@
       "topic": "连续",
       "type": "choice",
       "difficulty": 2,
-      "stem": "f(x) = { x², x<1; 2x-1, x≥1 } 在 x=1 处？",
+      "stem": "f(x) = { x^2, x<1; 2x-1, x≥1 } 在 x=1 处？",
       "options": [
         "连续但不可导",
         "不连续",
@@ -1782,7 +1782,7 @@
       "topic": "连续",
       "type": "choice",
       "difficulty": 3,
-      "stem": "函数 f(x)=(x²-1)/(x²-3x+2) 的间断点个数是？",
+      "stem": "函数 f(x)=(x^2-1)/(x^2-3x+2) 的间断点个数是？",
       "options": [
         "1",
         "0",
@@ -1806,7 +1806,7 @@
       "stem": "简述求极限时\"等价无穷小替换\"的使用条件，以及加减运算中不能随意替换的原因。",
       "options": [],
       "answer": [],
-      "answerText": "条件：x→某值时两个无穷小之比的极限为 1（α~β ⇔ lim α/β=1），且只用于乘除因子。\n加减中随意替换会改变无穷小的阶：如 sin x - x，若把 sin x 换成 x 得 0，但实际 sin x - x ~ -x³/6。\n加减应改用泰勒展开，保留到与分母（或比较对象）同阶的项。",
+      "answerText": "条件：x→某值时两个无穷小之比的极限为 1（α~β ⇔ lim α/β=1），且只用于乘除因子。\n加减中随意替换会改变无穷小的阶：如 sin x - x，若把 sin x 换成 x 得 0，但实际 sin x - x ~ -x^3/6。\n加减应改用泰勒展开，保留到与分母（或比较对象）同阶的项。",
       "explain": "关键词：比值极限为1、乘除可用、加减用泰勒。",
       "source": "751 极限 · 概念辨析",
       "tags": []
@@ -1817,18 +1817,18 @@
       "topic": "导数",
       "type": "choice",
       "difficulty": 1,
-      "stem": "d/dx (x³·e^x) 等于？",
+      "stem": "d/dx (x^3·e^x) 等于？",
       "options": [
-        "x²e^x",
-        "x³e^x+3x²e^x",
-        "3x²e^x",
-        "3x²e^x-x³e^x"
+        "x^2e^x",
+        "x^3e^x+3x^2e^x",
+        "3x^2e^x",
+        "3x^2e^x-x^3e^x"
       ],
       "answer": [
         1
       ],
       "answerText": "",
-      "explain": "乘积法则：(x³)'e^x+x³(e^x)'=3x²e^x+x³e^x。",
+      "explain": "乘积法则：(x^3)'e^x+x^3(e^x)'=3x^2e^x+x^3e^x。",
       "source": "751 导数 · 乘积法则",
       "tags": []
     },
@@ -1840,16 +1840,16 @@
       "difficulty": 2,
       "stem": "d/dx (sin x/x) 等于？",
       "options": [
-        "(sin x - x cos x)/x²",
+        "(sin x - x cos x)/x^2",
         "cos x/x",
-        "(x cos x - sin x)/x²",
-        "(x cos x + sin x)/x²"
+        "(x cos x - sin x)/x^2",
+        "(x cos x + sin x)/x^2"
       ],
       "answer": [
         2
       ],
       "answerText": "",
-      "explain": "商法则：(x cos x - sin x·1)/x²。",
+      "explain": "商法则：(x cos x - sin x·1)/x^2。",
       "source": "751 导数 · 商法则",
       "tags": []
     },
@@ -1859,7 +1859,7 @@
       "topic": "导数",
       "type": "choice",
       "difficulty": 2,
-      "stem": "设 y=ln(x²+1)，则 y'(1) 等于？",
+      "stem": "设 y=ln(x^2+1)，则 y'(1) 等于？",
       "options": [
         "0",
         "1/2",
@@ -1870,7 +1870,7 @@
         3
       ],
       "answerText": "",
-      "explain": "y'=2x/(x²+1)，代入 x=1 得 2/2=1。",
+      "explain": "y'=2x/(x^2+1)，代入 x=1 得 2/2=1。",
       "source": "751 导数 · 复合函数",
       "tags": []
     },
@@ -1880,11 +1880,11 @@
       "topic": "导数",
       "type": "choice",
       "difficulty": 2,
-      "stem": "设 y=sin²x，则 y' 等于？",
+      "stem": "设 y=sin^2x，则 y' 等于？",
       "options": [
         "2sin x cos x",
         "2sin x",
-        "cos²x",
+        "cos^2x",
         "-2sin x cos x"
       ],
       "answer": [
@@ -1901,7 +1901,7 @@
       "topic": "导数",
       "type": "choice",
       "difficulty": 2,
-      "stem": "曲线 y=x² 在点 (1,1) 处的切线方程是？",
+      "stem": "曲线 y=x^2 在点 (1,1) 处的切线方程是？",
       "options": [
         "y=x+1",
         "y=2x-1",
@@ -1922,7 +1922,7 @@
       "topic": "导数",
       "type": "choice",
       "difficulty": 2,
-      "stem": "由方程 x²+y²=1 确定的隐函数在 (0,1) 处的导数 y' 等于？",
+      "stem": "由方程 x^2+y^2=1 确定的隐函数在 (0,1) 处的导数 y' 等于？",
       "options": [
         "-1",
         "1",
@@ -1943,7 +1943,7 @@
       "topic": "导数",
       "type": "choice",
       "difficulty": 2,
-      "stem": "设 x=t²，y=t³，则 dy/dx 在 t=1 处等于？",
+      "stem": "设 x=t^2，y=t^3，则 dy/dx 在 t=1 处等于？",
       "options": [
         "1",
         "2/3",
@@ -1954,7 +1954,7 @@
         3
       ],
       "answerText": "",
-      "explain": "dy/dx=(dy/dt)/(dx/dt)=3t²/2t=3t/2，t=1 处为 3/2。",
+      "explain": "dy/dx=(dy/dt)/(dx/dt)=3t^2/2t=3t/2，t=1 处为 3/2。",
       "source": "751 导数 · 参数方程",
       "tags": []
     },
@@ -1964,7 +1964,7 @@
       "topic": "中值定理",
       "type": "choice",
       "difficulty": 2,
-      "stem": "函数 f(x)=x³-12x+1 的极大值点是？",
+      "stem": "函数 f(x)=x^3-12x+1 的极大值点是？",
       "options": [
         "x=-2",
         "x=2",
@@ -1975,7 +1975,7 @@
         0
       ],
       "answerText": "",
-      "explain": "f'=3x²-12=3(x-2)(x+2)，x=-2 处由正变负（极大），x=2 处极小。",
+      "explain": "f'=3x^2-12=3(x-2)(x+2)，x=-2 处由正变负（极大），x=2 处极小。",
       "source": "751 导数 · 极值",
       "tags": []
     },
@@ -1985,7 +1985,7 @@
       "topic": "导数",
       "type": "choice",
       "difficulty": 2,
-      "stem": "f(x)=x³-3x²-9x+1 的单调递减区间是？",
+      "stem": "f(x)=x^3-3x^2-9x+1 的单调递减区间是？",
       "options": [
         "(-3，1)",
         "(-1，3)",
@@ -1996,7 +1996,7 @@
         1
       ],
       "answerText": "",
-      "explain": "f'=3x²-6x-9=3(x-3)(x+1)，f'<0 ⇔ -1<x<3。",
+      "explain": "f'=3x^2-6x-9=3(x-3)(x+1)，f'<0 ⇔ -1<x<3。",
       "source": "751 导数 · 单调性",
       "tags": []
     },
@@ -2006,7 +2006,7 @@
       "topic": "中值定理",
       "type": "choice",
       "difficulty": 3,
-      "stem": "函数 f(x)=x⁴-2x²+1 的拐点个数是？",
+      "stem": "函数 f(x)=x^4-2x^2+1 的拐点个数是？",
       "options": [
         "0",
         "1",
@@ -2017,7 +2017,7 @@
         2
       ],
       "answerText": "",
-      "explain": "f''=12x²-4=4(3x²-1)，x=±1/√3 两侧变号，两个拐点。",
+      "explain": "f''=12x^2-4=4(3x^2-1)，x=±1/√3 两侧变号，两个拐点。",
       "source": "751 导数 · 凹凸拐点",
       "tags": []
     },
@@ -2048,7 +2048,7 @@
       "topic": "中值定理",
       "type": "choice",
       "difficulty": 3,
-      "stem": "方程 x³+x-1=0 在 (0,1) 内实根的个数为？",
+      "stem": "方程 x^3+x-1=0 在 (0,1) 内实根的个数为？",
       "options": [
         "1",
         "3",
@@ -2059,7 +2059,7 @@
         0
       ],
       "answerText": "",
-      "explain": "f(0)=-1，f(1)=1，由零点定理至少一根；f'=3x²+1>0 严格递增，故恰有一根。",
+      "explain": "f(0)=-1，f(1)=1，由零点定理至少一根；f'=3x^2+1>0 严格递增，故恰有一根。",
       "source": "751 中值定理 · 零点定理",
       "tags": []
     },
@@ -2069,7 +2069,7 @@
       "topic": "中值定理",
       "type": "choice",
       "difficulty": 3,
-      "stem": "在 [0,1] 上对 f(x)=x² 应用 Lagrange 中值定理，ξ 等于？",
+      "stem": "在 [0,1] 上对 f(x)=x^2 应用 Lagrange 中值定理，ξ 等于？",
       "options": [
         "2/3",
         "1/2",
@@ -2143,7 +2143,7 @@
         0
       ],
       "answerText": "",
-      "explain": "x≥0 时 f=x²，右导 0；x<0 时 f=-x²，左导 0；所以 f'(0)=0。",
+      "explain": "x≥0 时 f=x^2，右导 0；x<0 时 f=-x^2，左导 0；所以 f'(0)=0。",
       "source": "751 导数 · 定义",
       "tags": []
     },
@@ -2153,7 +2153,7 @@
       "topic": "导数",
       "type": "choice",
       "difficulty": 3,
-      "stem": "设 f(x)=|x²-1|，则 f(x) 不可导点的个数是？",
+      "stem": "设 f(x)=|x^2-1|，则 f(x) 不可导点的个数是？",
       "options": [
         "1",
         "2",
@@ -2174,7 +2174,7 @@
       "topic": "导数",
       "type": "choice",
       "difficulty": 2,
-      "stem": "高阶导数：(e^x)⁽ⁿ⁾ 等于？",
+      "stem": "高阶导数：(e^x)(n) 等于？",
       "options": [
         "n!·e^x",
         "n·e^x",
@@ -2195,7 +2195,7 @@
       "topic": "导数",
       "type": "choice",
       "difficulty": 3,
-      "stem": "高阶导数：(sin x)⁽ⁿ⁾ 等于？",
+      "stem": "高阶导数：(sin x)(n) 等于？",
       "options": [
         "cos(x+nπ/2)",
         "sin x",
@@ -2206,7 +2206,7 @@
         3
       ],
       "answerText": "",
-      "explain": "公式 (sin x)⁽ⁿ⁾ = sin(x + nπ/2)。",
+      "explain": "公式 (sin x)(n) = sin(x + nπ/2)。",
       "source": "751 导数 · 高阶导",
       "tags": []
     },
@@ -2230,18 +2230,18 @@
       "topic": "积分",
       "type": "choice",
       "difficulty": 2,
-      "stem": "∫ x·sin(x²) dx 等于？",
+      "stem": "∫ x·sin(x^2) dx 等于？",
       "options": [
-        "-cos(x²)/2+C",
-        "sin(x²)+C",
-        "-2cos(x²)+C",
-        "cos(x²)/2+C"
+        "-cos(x^2)/2+C",
+        "sin(x^2)+C",
+        "-2cos(x^2)+C",
+        "cos(x^2)/2+C"
       ],
       "answer": [
         0
       ],
       "answerText": "",
-      "explain": "凑微分：x dx = d(x²)/2，∫sin(x²)d(x²)/2 = -cos(x²)/2+C。",
+      "explain": "凑微分：x dx = d(x^2)/2，∫sin(x^2)d(x^2)/2 = -cos(x^2)/2+C。",
       "source": "751 积分 · 凑微分",
       "tags": []
     },
@@ -2296,15 +2296,15 @@
       "stem": "∫ x·ln x dx（x>0）等于？",
       "options": [
         "x ln x - x + C",
-        "x²ln x + C",
-        "x²ln x/2 + x²/4 + C",
-        "x²ln x/2 - x²/4 + C"
+        "x^2ln x + C",
+        "x^2ln x/2 + x^2/4 + C",
+        "x^2ln x/2 - x^2/4 + C"
       ],
       "answer": [
         3
       ],
       "answerText": "",
-      "explain": "分部：u=ln x，dv=x dx，得 x²ln x/2 - ∫x/2 dx = x²ln x/2 - x²/4 + C。",
+      "explain": "分部：u=ln x，dv=x dx，得 x^2ln x/2 - ∫x/2 dx = x^2ln x/2 - x^2/4 + C。",
       "source": "751 积分 · 分部",
       "tags": []
     },
@@ -2316,8 +2316,8 @@
       "difficulty": 2,
       "stem": "∫ arctan x dx 等于？",
       "options": [
-        "x arctan x - ln(1+x²)/2 + C",
-        "x arctan x + ln(1+x²)/2 + C",
+        "x arctan x - ln(1+x^2)/2 + C",
+        "x arctan x + ln(1+x^2)/2 + C",
         "x arctan x - x + C",
         "arctan x/x + C"
       ],
@@ -2325,7 +2325,7 @@
         0
       ],
       "answerText": "",
-      "explain": "分部：u=arctan x，dv=dx，得 x arctan x - ∫x/(1+x²)dx = x arctan x - ln(1+x²)/2 + C。",
+      "explain": "分部：u=arctan x，dv=dx，得 x arctan x - ∫x/(1+x^2)dx = x arctan x - ln(1+x^2)/2 + C。",
       "source": "751 积分 · 分部",
       "tags": []
     },
@@ -2356,7 +2356,7 @@
       "topic": "积分",
       "type": "choice",
       "difficulty": 3,
-      "stem": "∫(-1→1) (x³ + sin x) dx 等于？",
+      "stem": "∫(-1→1) (x^3 + sin x) dx 等于？",
       "options": [
         "4",
         "1",
@@ -2367,7 +2367,7 @@
         2
       ],
       "answerText": "",
-      "explain": "x³ 和 sin x 都是奇函数，对称区间积分=0。",
+      "explain": "x^3 和 sin x 都是奇函数，对称区间积分=0。",
       "source": "751 积分 · 对称性",
       "tags": []
     },
@@ -2377,7 +2377,7 @@
       "topic": "积分",
       "type": "choice",
       "difficulty": 3,
-      "stem": "∫(-1→1) √(1-x²) dx 等于？",
+      "stem": "∫(-1→1) √(1-x^2) dx 等于？",
       "options": [
         "π",
         "2π",
@@ -2388,7 +2388,7 @@
         3
       ],
       "answerText": "",
-      "explain": "几何意义：上半圆 x²+y²≤1 的面积一半=π/2。或令 x=sin t。",
+      "explain": "几何意义：上半圆 x^2+y^2≤1 的面积一半=π/2。或令 x=sin t。",
       "source": "751 积分 · 几何意义",
       "tags": []
     },
@@ -2398,7 +2398,7 @@
       "topic": "积分",
       "type": "choice",
       "difficulty": 2,
-      "stem": "曲线 y=x² 与 y=x 所围图形的面积是？",
+      "stem": "曲线 y=x^2 与 y=x 所围图形的面积是？",
       "options": [
         "1/6",
         "1/2",
@@ -2409,7 +2409,7 @@
         0
       ],
       "answerText": "",
-      "explain": "交点 0、1，∫(0→1)(x-x²)dx = 1/2-1/3 = 1/6。",
+      "explain": "交点 0、1，∫(0→1)(x-x^2)dx = 1/2-1/3 = 1/6。",
       "source": "751 积分 · 面积",
       "tags": []
     },
@@ -2419,7 +2419,7 @@
       "topic": "积分",
       "type": "choice",
       "difficulty": 3,
-      "stem": "曲线 y=√x 与 y=x² 所围图形的面积是？",
+      "stem": "曲线 y=√x 与 y=x^2 所围图形的面积是？",
       "options": [
         "2/3",
         "1/3",
@@ -2430,7 +2430,7 @@
         1
       ],
       "answerText": "",
-      "explain": "交点 x=0,1，∫(0→1)(√x-x²)dx = 2/3-1/3 = 1/3。",
+      "explain": "交点 x=0,1，∫(0→1)(√x-x^2)dx = 2/3-1/3 = 1/3。",
       "source": "751 积分 · 面积",
       "tags": []
     },
@@ -2440,7 +2440,7 @@
       "topic": "积分",
       "type": "choice",
       "difficulty": 3,
-      "stem": "y=x²（0≤x≤1）绕 x 轴旋转所得旋转体体积是？",
+      "stem": "y=x^2（0≤x≤1）绕 x 轴旋转所得旋转体体积是？",
       "options": [
         "π",
         "2π/5",
@@ -2451,7 +2451,7 @@
         2
       ],
       "answerText": "",
-      "explain": "V=π∫(0→1)x⁴dx = π/5。",
+      "explain": "V=π∫(0→1)x^4dx = π/5。",
       "source": "751 积分 · 旋转体",
       "tags": []
     },
@@ -2461,7 +2461,7 @@
       "topic": "积分",
       "type": "choice",
       "difficulty": 3,
-      "stem": "∫(1→+∞) 1/x² dx 等于？",
+      "stem": "∫(1→+∞) 1/x^2 dx 等于？",
       "options": [
         "发散",
         "1/2",
@@ -2503,18 +2503,18 @@
       "topic": "变上限积分",
       "type": "choice",
       "difficulty": 2,
-      "stem": "d/dx ∫(0→x) sin(t²) dt 等于？",
+      "stem": "d/dx ∫(0→x) sin(t^2) dt 等于？",
       "options": [
-        "cos(x²)",
-        "sin(x²)",
-        "2x sin(x²)",
-        "sin(t²)"
+        "cos(x^2)",
+        "sin(x^2)",
+        "2x sin(x^2)",
+        "sin(t^2)"
       ],
       "answer": [
         1
       ],
       "answerText": "",
-      "explain": "变上限求导：直接代入上限，得 sin(x²)。",
+      "explain": "变上限求导：直接代入上限，得 sin(x^2)。",
       "source": "751 积分 · 变上限",
       "tags": []
     },
@@ -2524,18 +2524,18 @@
       "topic": "变上限积分",
       "type": "choice",
       "difficulty": 3,
-      "stem": "d/dx ∫(0→x²) e^t dt 等于？",
+      "stem": "d/dx ∫(0→x^2) e^t dt 等于？",
       "options": [
-        "e^(x²)",
+        "e^(x^2)",
         "e^x",
-        "2x·e^(x²)",
+        "2x·e^(x^2)",
         "2x·e^x"
       ],
       "answer": [
         2
       ],
       "answerText": "",
-      "explain": "链式法则：e^(x²)·(x²)'=2x·e^(x²)。",
+      "explain": "链式法则：e^(x^2)·(x^2)'=2x·e^(x^2)。",
       "source": "751 积分 · 变上限",
       "tags": []
     },
@@ -2545,7 +2545,7 @@
       "topic": "积分",
       "type": "choice",
       "difficulty": 3,
-      "stem": "lim(x→0) (∫(0→x) sin t dt)/x² 等于？",
+      "stem": "lim(x→0) (∫(0→x) sin t dt)/x^2 等于？",
       "options": [
         "2",
         "1",
@@ -2566,18 +2566,18 @@
       "topic": "积分",
       "type": "choice",
       "difficulty": 2,
-      "stem": "∫ 1/(x²+4) dx 等于？",
+      "stem": "∫ 1/(x^2+4) dx 等于？",
       "options": [
         "(1/2)arctan(x/2)+C",
         "(1/2)arctan x+C",
         "arctan(x/2)+C",
-        "ln(x²+4)+C"
+        "ln(x^2+4)+C"
       ],
       "answer": [
         0
       ],
       "answerText": "",
-      "explain": "公式 ∫dx/(x²+a²)=(1/a)arctan(x/a)+C，a=2。",
+      "explain": "公式 ∫dx/(x^2+a^2)=(1/a)arctan(x/a)+C，a=2。",
       "source": "751 积分 · 公式",
       "tags": []
     },
@@ -2587,18 +2587,18 @@
       "topic": "积分",
       "type": "choice",
       "difficulty": 3,
-      "stem": "∫ 1/(x²-1) dx 等于？",
+      "stem": "∫ 1/(x^2-1) dx 等于？",
       "options": [
         "ln|(x-1)/(x+1)|/2+C",
         "ln|(x+1)/(x-1)|/2+C",
-        "1/(x²-1)+C",
+        "1/(x^2-1)+C",
         "arctan x+C"
       ],
       "answer": [
         1
       ],
       "answerText": "",
-      "explain": "部分分式 1/(x²-1)=1/2[1/(x-1)-1/(x+1)]，积分=ln|(x-1)/(x+1)|/2+C。注意分子顺序：∫dx/(x²-a²)=(1/2a)ln|(x-a)/(x+a)|。",
+      "explain": "部分分式 1/(x^2-1)=1/2[1/(x-1)-1/(x+1)]，积分=ln|(x-1)/(x+1)|/2+C。注意分子顺序：∫dx/(x^2-a^2)=(1/2a)ln|(x-a)/(x+a)|。",
       "source": "751 积分 · 部分分式",
       "tags": []
     },
@@ -2613,7 +2613,7 @@
         "ln|sin x|+C",
         "ln|cos x|+C",
         "-ln|cos x|+C",
-        "sec²x+C"
+        "sec^2x+C"
       ],
       "answer": [
         2
@@ -2643,11 +2643,11 @@
       "topic": "多元",
       "type": "choice",
       "difficulty": 2,
-      "stem": "z=x²y+y³，则 ∂z/∂x 等于？",
+      "stem": "z=x^2y+y^3，则 ∂z/∂x 等于？",
       "options": [
-        "x²y",
-        "x²+3y²",
-        "2xy+y³",
+        "x^2y",
+        "x^2+3y^2",
+        "2xy+y^3",
         "2xy"
       ],
       "answer": [
@@ -2664,18 +2664,18 @@
       "topic": "多元",
       "type": "choice",
       "difficulty": 2,
-      "stem": "z=ln(x+y²)，则 ∂z/∂y 等于？",
+      "stem": "z=ln(x+y^2)，则 ∂z/∂y 等于？",
       "options": [
-        "2y/(x+y²)",
-        "1/(x+y²)",
-        "2y·ln(x+y²)",
-        "y/(x+y²)"
+        "2y/(x+y^2)",
+        "1/(x+y^2)",
+        "2y·ln(x+y^2)",
+        "y/(x+y^2)"
       ],
       "answer": [
         0
       ],
       "answerText": "",
-      "explain": "链式法则：1/(x+y²)·2y。",
+      "explain": "链式法则：1/(x+y^2)·2y。",
       "source": "751 多元 · 偏导",
       "tags": []
     },
@@ -2706,7 +2706,7 @@
       "topic": "多元",
       "type": "choice",
       "difficulty": 2,
-      "stem": "函数 z=x³+y³-3xy 的驻点是？",
+      "stem": "函数 z=x^3+y^3-3xy 的驻点是？",
       "options": [
         "(1，0)",
         "(0，1)",
@@ -2717,7 +2717,7 @@
         2
       ],
       "answerText": "",
-      "explain": "∂z/∂x=3x²-3y=0，∂z/∂y=3y²-3x=0，联立得 (0,0) 和 (1,1)。",
+      "explain": "∂z/∂x=3x^2-3y=0，∂z/∂y=3y^2-3x=0，联立得 (0,0) 和 (1,1)。",
       "source": "751 多元 · 极值",
       "tags": []
     },
@@ -2727,7 +2727,7 @@
       "topic": "多元",
       "type": "choice",
       "difficulty": 3,
-      "stem": "上题中 z=x³+y³-3xy 在 (1,1) 处取得？",
+      "stem": "上题中 z=x^3+y^3-3xy 在 (1,1) 处取得？",
       "options": [
         "鞍点",
         "极大值",
@@ -2738,7 +2738,7 @@
         3
       ],
       "answerText": "",
-      "explain": "A=6x=6，B=-3，C=6y=6，AC-B²=36-9=27>0 且 A>0，极小值。",
+      "explain": "A=6x=6，B=-3，C=6y=6，AC-B^2=36-9=27>0 且 A>0，极小值。",
       "source": "751 多元 · 极值判别",
       "tags": []
     },
@@ -2790,7 +2790,7 @@
       "topic": "二重积分",
       "type": "choice",
       "difficulty": 3,
-      "stem": "∬(x²+y²≤1) dσ 等于？",
+      "stem": "∬(x^2+y^2≤1) dσ 等于？",
       "options": [
         "2π",
         "1",
@@ -2822,7 +2822,7 @@
         3
       ],
       "answerText": "",
-      "explain": "∫(0→1)dx∫(0→x)xy dy = ∫(0→1)x·x²/2 dx = 1/8。",
+      "explain": "∫(0→1)dx∫(0→x)xy dy = ∫(0→1)x·x^2/2 dx = 1/8。",
       "source": "751 二重积分 · 计算",
       "tags": []
     },
@@ -2906,7 +2906,7 @@
         3
       ],
       "answerText": "",
-      "explain": "特征方程 r²-1=0，r=±1，通解 C1e^x+C2e^(-x)。",
+      "explain": "特征方程 r^2-1=0，r=±1，通解 C1e^x+C2e^(-x)。",
       "source": "751 微分方程 · 二阶齐次",
       "tags": []
     },
@@ -2927,7 +2927,7 @@
         0
       ],
       "answerText": "",
-      "explain": "特征方程 r²+2r+1=(r+1)²=0 重根 r=-1，通解 (C1+C2x)e^(-x)。",
+      "explain": "特征方程 r^2+2r+1=(r+1)^2=0 重根 r=-1，通解 (C1+C2x)e^(-x)。",
       "source": "751 微分方程 · 重根",
       "tags": []
     },
@@ -2969,7 +2969,7 @@
         2
       ],
       "answerText": "",
-      "explain": "f(x)=x 是一次多项式，λ=0 不是特征根（r²+1=0 根为 ±i），特解设同次多项式 ax+b。",
+      "explain": "f(x)=x 是一次多项式，λ=0 不是特征根（r^2+1=0 根为 ±i），特解设同次多项式 ax+b。",
       "source": "751 微分方程 · 特解设法",
       "tags": []
     },
@@ -2982,7 +2982,7 @@
       "stem": "y''-3y'+2y=e^x 的一个特解可设为？",
       "options": [
         "y*=ae^(2x)",
-        "y*=ax²e^x",
+        "y*=ax^2e^x",
         "y*=ae^x",
         "y*=axe^x"
       ],
@@ -3026,13 +3026,13 @@
         "y'·y=x",
         "y'+xy=e^x",
         "y''+y=0",
-        "(y')²+y=x"
+        "(y')^2+y=x"
       ],
       "answer": [
         1
       ],
       "answerText": "",
-      "explain": "一阶线性标准形 y'+P(x)y=Q(x)，只有 A 符合（y·y' 和 (y')² 非线性，y'' 二阶）。",
+      "explain": "一阶线性标准形 y'+P(x)y=Q(x)，只有 A 符合（y·y' 和 (y')^2 非线性，y'' 二阶）。",
       "source": "751 微分方程 · 识别",
       "tags": []
     },
@@ -3045,7 +3045,7 @@
       "stem": "求 y' = y/x + x（x>0）的通解。",
       "options": [],
       "answer": [],
-      "answerText": "化为一阶线性标准形：y' - y/x = x。\n积分因子 μ = e^(-∫dx/x) = 1/x。\n(y/x)' = 1，所以 y/x = x + C，y = x² + Cx。",
+      "answerText": "化为一阶线性标准形：y' - y/x = x。\n积分因子 μ = e^(-∫dx/x) = 1/x。\n(y/x)' = 1，所以 y/x = x + C，y = x^2 + Cx。",
       "explain": "也可视为 y'-y/x=x，用公式 y=e^(-∫P)[∫Qe^(∫P)dx+C]。",
       "source": "751 微分方程 · 一阶线性",
       "tags": []
@@ -3130,7 +3130,7 @@
         1
       ],
       "answerText": "",
-      "explain": "|kA|=kⁿ|A|，n=3，所以 8×3=24。",
+      "explain": "|kA|=k^n|A|，n=3，所以 8×3=24。",
       "source": "751 线代 · 行列式性质",
       "tags": []
     },
@@ -3151,7 +3151,7 @@
         2
       ],
       "answerText": "",
-      "explain": "|A*|=|A|^(n-1)=2²=4。",
+      "explain": "|A*|=|A|^(n-1)=2^2=4。",
       "source": "751 线代 · 伴随矩阵",
       "tags": []
     },
@@ -3206,9 +3206,9 @@
       "stem": "下列命题正确的是？",
       "options": [
         "AB=BA 恒成立",
-        "(AB)ᵀ=BᵀAᵀ",
+        "(AB)^T=B^TA^T",
         "AB=0 则 A=0 或 B=0",
-        "(AB)ᵀ=AᵀBᵀ"
+        "(AB)^T=A^TB^T"
       ],
       "answer": [
         1
@@ -3434,7 +3434,7 @@
       "topic": "特征值",
       "type": "choice",
       "difficulty": 3,
-      "stem": "已知 3 阶矩阵 A 的特征值为 1、2、3，则 A² 的特征值为？",
+      "stem": "已知 3 阶矩阵 A 的特征值为 1、2、3，则 A^2 的特征值为？",
       "options": [
         "1，4，9",
         "2，4，6",
@@ -3445,7 +3445,7 @@
         0
       ],
       "answerText": "",
-      "explain": "f(A) 的特征值为 f(λ)：1²,2²,3²=1,4,9。",
+      "explain": "f(A) 的特征值为 f(λ)：1^2,2^2,3^2=1,4,9。",
       "source": "751 线代 · 特征值性质",
       "tags": []
     },
@@ -3466,7 +3466,7 @@
         1
       ],
       "answerText": "",
-      "explain": "特征方程 (1-λ)²-4=0，λ=3,-1，两个不同特征值必可对角化（实对称也保证）。",
+      "explain": "特征方程 (1-λ)^2-4=0，λ=3,-1，两个不同特征值必可对角化（实对称也保证）。",
       "source": "751 线代 · 对角化",
       "tags": []
     },
@@ -3500,15 +3500,15 @@
       "stem": "质量-弹簧-阻尼系统 m x'' + c x' + k x = F 的传递函数 X(s)/F(s) 是？",
       "options": [
         "1/(ms+c)",
-        "(ms²+cs+k)",
-        "k/(ms²+cs+k)",
-        "1/(ms²+cs+k)"
+        "(ms^2+cs+k)",
+        "k/(ms^2+cs+k)",
+        "1/(ms^2+cs+k)"
       ],
       "answer": [
         3
       ],
       "answerText": "",
-      "explain": "拉氏变换得 (ms²+cs+k)X=F，所以 X/F=1/(ms²+cs+k)。",
+      "explain": "拉氏变换得 (ms^2+cs+k)X=F，所以 X/F=1/(ms^2+cs+k)。",
       "source": "胡寿松 · 第 2 章",
       "tags": []
     },
@@ -3529,7 +3529,7 @@
         0
       ],
       "answerText": "",
-      "explain": "y(T)=K(1-e⁻¹)≈0.632K；3T 约 95%，4T 约 98%。",
+      "explain": "y(T)=K(1-e^(-1))≈0.632K；3T 约 95%，4T 约 98%。",
       "source": "胡寿松 · 第 3 章",
       "tags": []
     },
@@ -3541,16 +3541,16 @@
       "difficulty": 1,
       "stem": "二阶系统的标准传递函数是？",
       "options": [
-        "2ζω_n/(s²+ω_n²)",
-        "ω_n²/(s²+2ζω_ns+ω_n²)",
-        "ω_n/(s²+2ζω_ns+ω_n²)",
-        "1/(s²+2ζω_ns+ω_n²)"
+        "2ζω_n/(s^2+ω_n^2)",
+        "ω_n^2/(s^2+2ζω_ns+ω_n^2)",
+        "ω_n/(s^2+2ζω_ns+ω_n^2)",
+        "1/(s^2+2ζω_ns+ω_n^2)"
       ],
       "answer": [
         1
       ],
       "answerText": "",
-      "explain": "标准形式分子为 ω_n²，分母为 s²+2ζω_ns+ω_n²。",
+      "explain": "标准形式分子为 ω_n^2，分母为 s^2+2ζω_ns+ω_n^2。",
       "source": "胡寿松 · 第 3 章",
       "tags": []
     },
@@ -3571,7 +3571,7 @@
         2
       ],
       "answerText": "",
-      "explain": "Mp=e^(-πζ/√(1-ζ²))=e^(-1.814)≈0.163，即 16.3%。",
+      "explain": "Mp=e^(-πζ/√(1-ζ^2))=e^(-1.814)≈0.163，即 16.3%。",
       "source": "胡寿松 · 第 3 章",
       "tags": []
     },
@@ -4012,7 +4012,7 @@
         3
       ],
       "answerText": "",
-      "explain": "零阶保持器 Gh(s)=(1-e^(-sT))/s；离散等效常用 (1-z⁻¹)Z{G(s)/s}。",
+      "explain": "零阶保持器 Gh(s)=(1-e^(-sT))/s；离散等效常用 (1-z^(-1))Z{G(s)/s}。",
       "source": "胡寿松 · 第 7 章",
       "tags": []
     },
@@ -4085,7 +4085,7 @@
       "topic": "稳定性",
       "type": "choice",
       "difficulty": 2,
-      "stem": "某系统特征方程为 s³+2s²+s+2=0，其稳定性为？",
+      "stem": "某系统特征方程为 s^3+2s^2+s+2=0，其稳定性为？",
       "options": [
         "不稳定",
         "稳定",
@@ -4096,7 +4096,7 @@
         3
       ],
       "answerText": "",
-      "explain": "可分解为 (s²+1)(s+2)=0，根为 ±j 和 -2，有虚轴根，临界稳定。",
+      "explain": "可分解为 (s^2+1)(s+2)=0，根为 ±j 和 -2，有虚轴根，临界稳定。",
       "source": "胡寿松 · 第 3 章",
       "tags": []
     },
@@ -4201,7 +4201,7 @@
         0
       ],
       "answerText": "",
-      "explain": "ωd=ωn√(1-ζ²)=2×√(1-0.25)=2×√0.75=√3。",
+      "explain": "ωd=ωn√(1-ζ^2)=2×√(1-0.25)=2×√0.75=√3。",
       "source": "899 自控 · 二阶指标",
       "tags": []
     },
@@ -4316,9 +4316,9 @@
       "topic": "稳定性",
       "type": "choice",
       "difficulty": 2,
-      "stem": "二阶系统特征方程 s²+a1s+a0=0 稳定的充要条件是？",
+      "stem": "二阶系统特征方程 s^2+a1s+a0=0 稳定的充要条件是？",
       "options": [
-        "a1²>4a0",
+        "a1^2>4a0",
         "a1>0",
         "a1>0 且 a0>0",
         "a0>0"
@@ -4337,7 +4337,7 @@
       "topic": "稳定性",
       "type": "choice",
       "difficulty": 3,
-      "stem": "特征方程 s³+3s²+2s+K=0 稳定的 K 范围是？",
+      "stem": "特征方程 s^3+3s^2+2s+K=0 稳定的 K 范围是？",
       "options": [
         "K>0",
         "K<6",
@@ -4348,7 +4348,7 @@
         3
       ],
       "answerText": "",
-      "explain": "Routh：s³ 行 1,2；s² 行 3,K；s 行 (6-K)/3>0 即 K<6；K>0。所以 0<K<6。",
+      "explain": "Routh：s^3 行 1,2；s^2 行 3,K；s 行 (6-K)/3>0 即 K<6；K>0。所以 0<K<6。",
       "source": "899 自控 · Routh 参数",
       "tags": []
     },
@@ -8212,7 +8212,7 @@
       "options": [
         "U1/U2=N2/N1",
         "U1/U2=N1/N2",
-        "U1/U2=(N1/N2)²",
+        "U1/U2=(N1/N2)^2",
         "U1/U2=1"
       ],
       "answer": [
