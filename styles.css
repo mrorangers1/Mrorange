@@ -320,6 +320,34 @@ html[data-theme="light"] .chip.active{color:#fff}
   .chapter-progress{width:46px}
 }
 
+/* ---------- offline check ---------- */
+.check-row{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px dashed var(--line);font-size:12.5px}
+.check-row:last-child{border-bottom:0}
+.check-mark{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font:800 11px/1 var(--sans);flex:0 0 auto}
+.check-mark.ok{color:var(--green);background:color-mix(in srgb,var(--green) 14%,transparent)}
+.check-mark.bad{color:var(--red);background:color-mix(in srgb,var(--red) 14%,transparent)}
+
+/* ---------- card quiz & stream ---------- */
+.card-quiz{margin-top:12px;border:1px solid color-mix(in srgb,var(--teal) 25%,var(--line));border-radius:14px;padding:12px;background:color-mix(in srgb,var(--teal) 4%,var(--card))}
+.cq-item{margin-top:8px}
+.cq-q{display:flex;align-items:flex-start;gap:9px;width:100%;text-align:left;border:1px solid var(--line);border-radius:10px;padding:10px 11px;background:var(--card);font-size:13px;line-height:1.55}
+.cq-q:active{background:var(--card2)}
+.cq-n{width:20px;height:20px;border-radius:6px;background:color-mix(in srgb,var(--teal) 18%,transparent);color:var(--teal);display:grid;place-items:center;font:800 11px/1 var(--mono);flex:0 0 auto;margin-top:1px}
+.cq-a{border:1px dashed var(--line);border-radius:10px;padding:9px 11px;margin-top:5px;background:var(--card2);animation:fade .25s ease}
+.cq-a-line{font-size:12.5px;line-height:1.6}
+.card-actions{display:flex;gap:8px;margin-top:14px}
+.card-actions .btn{flex:1;min-height:46px;font-size:13px;padding:0 8px}
+
+/* ---------- example reader ---------- */
+.example-view{position:fixed;inset:0;z-index:110;background:var(--bg);display:flex;flex-direction:column}
+.example-view[hidden]{display:none}
+.ex-steps{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.ex-step{border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:10px 12px;background:var(--card);animation:fade .3s ease}
+.ex-step-t{font-size:12px;font-weight:700;color:var(--gold);margin-bottom:3px}
+.ex-step-c{font-size:13.5px;line-height:1.65}
+.example-card{cursor:pointer}
+.example-card:active{background:var(--card2)}
+
 /* ---------- practice ---------- */
 .practice{
   position:fixed;inset:0;z-index:100;background:var(--bg);

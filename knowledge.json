@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-07T10:46:49+08:00",
+  "generatedAt": "2026-11-11T21:45:36+08:00",
   "count": 168,
   "bySubject": {
     "math": 60,
@@ -490,12 +490,18 @@
         "m-031"
       ],
       "note": "10-数学751/01-微积分/00-极限与连续",
-      "hasCard": false,
-      "summary": "比较阶、无穷小×有界",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "无穷小是极限为 0 的变量；比较两个无穷小看它们比值的极限。",
+      "formulas": [
+        "α 是 x→x₀ 时的无穷小 ⇔ lim α = 0",
+        "α~β ⇔ lim α/β = 1",
+        "α 是 β 的高阶无穷小 ⇔ lim α/β = 0，记 α=o(β)",
+        "同阶：lim α/β = C≠0；k 阶：lim α/βᵏ = C≠0",
+        "无穷小 × 有界变量 = 无穷小"
+      ],
+      "example": "x→0 时 x² 是 x 的高阶无穷小：lim x²/x = 0。",
+      "cardNote": "高阶 = 趋于 0 更快 = 更小。",
+      "source": "751 · 极限"
     },
     {
       "id": "math-1.3",
@@ -564,12 +570,16 @@
         "m-031"
       ],
       "note": "10-数学751/01-微积分/00-极限与连续",
-      "hasCard": false,
-      "summary": "验证条件、求导后极限",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "0/0 与 ∞/∞ 可对分子分母分别求导后再取极限，即洛必达法则。",
+      "formulas": [
+        "lim f/g = lim f'/g'（前提是 0/0 或 ∞/∞，且右边极限存在）",
+        "可连续使用，直到不再是未定式",
+        "其他未定式先变形：0·∞ → 0/(1/∞)；∞-∞ → 通分；1^∞、0⁰、∞⁰ → 取对数"
+      ],
+      "example": "lim(x→0)(e^x-1)/x = lim e^x/1 = 1。",
+      "cardNote": "每用一次先确认仍是未定式；lim f'/g' 不存在 ≠ 原极限不存在。",
+      "source": "751 · 极限"
     },
     {
       "id": "math-1.6",
@@ -586,12 +596,19 @@
         "m-031"
       ],
       "note": "10-数学751/01-微积分/00-极限与连续",
-      "hasCard": false,
-      "summary": "展开到分母同阶",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "泰勒把函数展成多项式，展开的阶数由分母（精度要求）决定，是等价替换失效时的兜底工具。",
+      "formulas": [
+        "e^x = 1+x+x²/2!+x³/3!+o(x³)",
+        "sin x = x-x³/3!+x⁵/5!-o(x⁵)",
+        "cos x = 1-x²/2!+x⁴/4!-o(x⁴)",
+        "ln(1+x) = x-x²/2+x³/3-o(x³)",
+        "(1+x)^α = 1+αx+α(α-1)x²/2!+o(x²)",
+        "一般式：f(x)=Σf⁽ᵏ⁾(x₀)(x-x₀)ᵏ/k! + Rₙ"
+      ],
+      "example": "lim(x→0)(cos x-1+x²/2)/x⁴：cos x 展到 x⁴ 得 1/24。",
+      "cardNote": "展到与分母同阶；多展无害，少展必错。",
+      "source": "751 · 极限"
     },
     {
       "id": "math-1.7",
@@ -605,12 +622,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/00-极限与连续",
-      "hasCard": false,
-      "summary": "数列极限、递推数列",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "数列极限两大武器：夹逼（找上下界）与单调有界（先证收敛再求值）。",
+      "formulas": [
+        "夹逼：aₙ≤bₙ≤cₙ 且两端极限同为 L ⇒ lim bₙ=L",
+        "单调有界数列必收敛",
+        "递推数列：先设极限 A 解方程，再证单调有界"
+      ],
+      "example": "n/(n²+n)·n ≤ Σn/(n²+i) ≤ n·n/(n²+1)，两端都→1。",
+      "cardNote": "夹逼常用于 n 项和；递推数列别漏'证收敛'。",
+      "source": "751 · 极限"
     },
     {
       "id": "math-1.8",
@@ -627,12 +648,18 @@
         "m-006"
       ],
       "note": "10-数学751/01-微积分/00-极限与连续",
-      "hasCard": false,
-      "summary": "分类、零点定理",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "连续 = 极限存在且等于函数值；间断点按左右极限是否都存在分类。",
+      "formulas": [
+        "连续 ⇔ lim(x→x₀)f(x)=f(x₀) ⇔ 左连续且右连续",
+        "第一类间断：左右极限都存在（相等为可去，不等为跳跃）",
+        "第二类间断：至少一侧极限不存在（无穷/振荡）",
+        "闭区间连续 ⇒ 有界、有最值、介值、零点定理",
+        "零点定理：f(a)f(b)<0 ⇒ ∃ξ∈(a,b), f(ξ)=0"
+      ],
+      "example": "f(x)=sin(1/x) 在 x=0 处振荡间断，属第二类。",
+      "cardNote": "分段点、绝对值点、分母零点都要检查。",
+      "source": "751 · 连续"
     },
     {
       "id": "math-2.1",
@@ -646,12 +673,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/01-导数与中值定理",
-      "hasCard": false,
-      "summary": "分段点左右导数",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "导数是变化率的极限；可导必连续，连续未必可导。",
+      "formulas": [
+        "f'(x₀)=lim(Δx→0)[f(x₀+Δx)-f(x₀)]/Δx",
+        "左导数 = 右导数 ⇒ 可导",
+        "可导 ⇒ 连续；连续 ⇏ 可导（|x| 在 0 处）"
+      ],
+      "example": "f(x)=x|x| 在 0 处左导、右导均为 0，可导。",
+      "cardNote": "分段点必须用定义验证左右导数。",
+      "source": "751 · 导数"
     },
     {
       "id": "math-2.2",
@@ -667,12 +698,18 @@
         "m-008"
       ],
       "note": "10-数学751/01-微积分/01-导数与中值定理",
-      "hasCard": false,
-      "summary": "默写公式、链式法则",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "基本公式表 + 四则法则 + 链式法则，是全部求导计算的底座。",
+      "formulas": [
+        "(x^α)'=αx^(α-1)；(a^x)'=a^x·ln a；(ln x)'=1/x",
+        "(sin x)'=cos x；(cos x)'=-sin x；(tan x)'=sec²x",
+        "(arcsin x)'=1/√(1-x²)；(arctan x)'=1/(1+x²)",
+        "(uv)'=u'v+uv'；(u/v)'=(u'v-uv')/v²",
+        "链式法则：[f(g(x))]'=f'(g(x))·g'(x)"
+      ],
+      "example": "y=ln(sin x²) ⇒ y'=2x·cot x²。",
+      "cardNote": "复合函数从外到内逐层乘。",
+      "source": "751 · 导数"
     },
     {
       "id": "math-2.3",
@@ -688,12 +725,16 @@
         "m-007"
       ],
       "note": "10-数学751/01-微积分/01-导数与中值定理",
-      "hasCard": false,
-      "summary": "三种求导",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "隐函数两边对 x 求导；参数方程相除；幂指函数先取对数。",
+      "formulas": [
+        "隐函数：F(x,y)=0 两边对 x 求导（y 看作 y(x)），解出 y'",
+        "参数方程：dy/dx=(dy/dt)/(dx/dt)；d²y/dx²=[d(dy/dx)/dt]/(dx/dt)",
+        "对数求导：y=u^v 或连乘连除时，先取 ln 再求导"
+      ],
+      "example": "x²+y²=1 ⇒ 2x+2yy'=0 ⇒ y'=-x/y。",
+      "cardNote": "参数方程二阶导最后还要除以 dx/dt。",
+      "source": "751 · 导数"
     },
     {
       "id": "math-2.4",
@@ -707,12 +748,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/01-导数与中值定理",
-      "hasCard": false,
-      "summary": "莱布尼茨、二阶导",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "高阶导数逐次求导，乘积用莱布尼茨公式。",
+      "formulas": [
+        "(e^x)⁽ⁿ⁾=e^x；(sin x)⁽ⁿ⁾=sin(x+nπ/2)",
+        "(x^m)⁽ⁿ⁾=m(m-1)…(m-n+1)x^(m-n)",
+        "莱布尼茨：(uv)⁽ⁿ⁾=ΣC(n,k)·u⁽ᵏ⁾v⁽ⁿ⁻ᵏ⁾",
+        "微分：dy=f'(x)dx"
+      ],
+      "example": "(xe^x)⁽ⁿ⁾=(x+n)e^x。",
+      "cardNote": "先算前几阶找规律再归纳。",
+      "source": "751 · 导数"
     },
     {
       "id": "math-2.5",
@@ -756,12 +802,17 @@
         "m-032"
       ],
       "note": "10-数学751/01-微积分/01-导数与中值定理",
-      "hasCard": false,
-      "summary": "求极值、最值",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "一阶导定单调；驻点与不可导点是极值嫌疑点。",
+      "formulas": [
+        "f'>0 增、 f'<0 减",
+        "极值嫌疑点：f'=0（驻点）或 f' 不存在",
+        "第一判别：f' 在该点两侧变号（左正右负 → 极大）",
+        "第二判别：f'=0 且 f''>0 极小；f''<0 极大"
+      ],
+      "example": "f=x³-3x：驻点 ±1；f''=6x，x=-1 极大，x=1 极小。",
+      "cardNote": "f''=0 时第二判别失效，回到第一判别。",
+      "source": "751 · 导数"
     },
     {
       "id": "math-2.7",
@@ -775,12 +826,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/01-导数与中值定理",
-      "hasCard": false,
-      "summary": "二阶导判凹凸、三类渐近线",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "二阶导定凹凸；渐近线分水平、垂直、斜三类。",
+      "formulas": [
+        "f''>0 凹（∪）、f''<0 凸（∩）；拐点 = f'' 变号的点",
+        "水平渐近线：lim(x→∞)f(x)=b",
+        "垂直渐近线：lim(x→a)f(x)=∞",
+        "斜渐近线：k=lim f(x)/x，b=lim[f(x)-kx]"
+      ],
+      "example": "y=x³ 的 f''=6x 在 0 两侧变号，(0,0) 是拐点。",
+      "cardNote": "同一方向水平与斜渐近线互斥。",
+      "source": "751 · 导数"
     },
     {
       "id": "math-2.8",
@@ -794,12 +850,15 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/01-导数与中值定理",
-      "hasCard": false,
-      "summary": "端点展开、构造",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "泰勒公式把函数展开成多项式，是证明不等式的高级工具。",
+      "formulas": [
+        "带拉氏余项：f(x)=Σf⁽ᵏ⁾(x₀)(x-x₀)ᵏ/k!+f⁽ⁿ⁺¹⁾(ξ)(x-x₀)ⁿ⁺¹/(n+1)!",
+        "常用不等式：e^x≥1+x；ln(1+x)≤x（x>-1）；sin x<x（x>0）"
+      ],
+      "example": "e^x≥1+x：e^x 在 0 点一阶展开，余项 e^ξ·x²/2≥0。",
+      "cardNote": "展开点通常取 0 或端点；余项符号定不等号方向。",
+      "source": "751 · 导数"
     },
     {
       "id": "math-3.1",
@@ -816,12 +875,18 @@
         "m-013"
       ],
       "note": "10-数学751/01-微积分/02-积分",
-      "hasCard": false,
-      "summary": "默写 12 个基本积分",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "积分是求导的逆运算，基本积分表必须默写到条件反射。",
+      "formulas": [
+        "∫x^αdx=x^(α+1)/(α+1)+C（α≠-1）；∫dx/x=ln|x|+C",
+        "∫e^xdx=e^x+C；∫a^xdx=a^x/ln a+C",
+        "∫sin x dx=-cos x+C；∫cos x dx=sin x+C；∫sec²x dx=tan x+C",
+        "∫dx/(1+x²)=arctan x+C；∫dx/√(1-x²)=arcsin x+C",
+        "∫dx/(x²+a²)=(1/a)arctan(x/a)+C"
+      ],
+      "example": "∫(2x+1/x)dx=x²+ln|x|+C。",
+      "cardNote": "不定积分永远别忘 +C。",
+      "source": "751 · 积分"
     },
     {
       "id": "math-3.2",
@@ -835,12 +900,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/02-积分",
-      "hasCard": false,
-      "summary": "第一/第二换元",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "第一换元（凑微分）找'内层函数 × 内层导数'；第二换元去根号。",
+      "formulas": [
+        "∫f(g(x))g'(x)dx=∫f(u)du，u=g(x)",
+        "三角换元：√(a²-x²) 令 x=a sin t；√(a²+x²) 令 x=a tan t",
+        "根式换元：令 t=ⁿ√(ax+b)",
+        "倒代换 x=1/t：分母次数明显高时"
+      ],
+      "example": "∫cos x·sin³x dx=∫sin³x d(sin x)=sin⁴x/4+C。",
+      "cardNote": "凑不出就换元；根号下二次式优先三角换元。",
+      "source": "751 · 积分"
     },
     {
       "id": "math-3.3",
@@ -880,12 +950,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/02-积分",
-      "hasCard": false,
-      "summary": "待定系数、重根",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "有理函数积分：先多项式除法降次，再部分分式拆开逐项积。",
+      "formulas": [
+        "分子次数 ≥ 分母：先做多项式除法",
+        "分母因式分解 → 拆成 A/(x-a)ᵏ 与 (Bx+C)/(x²+px+q)ᵏ",
+        "∫dx/(x-a)=ln|x-a|+C",
+        "∫dx/(x²+a²)=(1/a)arctan(x/a)+C"
+      ],
+      "example": "∫dx/(x²-1)=½ln|(x-1)/(x+1)|+C。",
+      "cardNote": "二次不可约因子先配方，再出 arctan。",
+      "source": "751 · 积分"
     },
     {
       "id": "math-3.5",
@@ -901,12 +976,17 @@
         "m-033"
       ],
       "note": "10-数学751/01-微积分/02-积分",
-      "hasCard": false,
-      "summary": "奇偶/周期、变上限",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "定积分是数值；N-L 公式归结为原函数在两端取差。",
+      "formulas": [
+        "∫(a→b)f dx=F(b)-F(a)，F'=f",
+        "对称区间：奇函数积分为 0，偶函数 = 2 倍半区间",
+        "比较性质：f≤g ⇒ ∫f≤∫g（a<b）",
+        "积分中值定理：∫(a→b)f=f(ξ)(b-a)"
+      ],
+      "example": "∫(-1→1)x³dx=0（奇函数）。",
+      "cardNote": "N-L 前提：f 在 [a,b] 连续。",
+      "source": "751 · 积分"
     },
     {
       "id": "math-3.6",
@@ -947,12 +1027,17 @@
         "m-015"
       ],
       "note": "10-数学751/01-微积分/02-积分",
-      "hasCard": false,
-      "summary": "判敛、p-积分",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "反常积分先写成极限再判敛散；p 积分是最常用的对照尺。",
+      "formulas": [
+        "∫(a→∞)f=lim(b→∞)∫(a→b)f",
+        "∫(1→∞)dx/x^p：p>1 收敛；p≤1 发散",
+        "∫(0→1)dx/x^p：p<1 收敛；p≥1 发散",
+        "比较判别：找同阶的 p 积分对照"
+      ],
+      "example": "∫(1→∞)1/x² dx=1 收敛；∫(0→1)1/√x dx=2 收敛。",
+      "cardNote": "先找瑕点/无穷限，别直接套 N-L。",
+      "source": "751 · 积分"
     },
     {
       "id": "math-3.8",
@@ -966,12 +1051,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/02-积分",
-      "hasCard": false,
-      "summary": "列式、绝对值",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "定积分几何应用：先画图，再列式——面积看上下，体积看绕轴。",
+      "formulas": [
+        "面积：S=∫(a→b)[上函数-下函数]dx",
+        "绕 x 轴：V=π∫f²dx；柱壳法：V=2π∫x·f dx",
+        "平均值：f̄=(1/(b-a))∫f dx",
+        "弧长：L=∫√(1+f'²)dx"
+      ],
+      "example": "y=x 与 y=x² 围成面积 =∫(0→1)(x-x²)dx=1/6。",
+      "cardNote": "上减下、右减左；不确定就先画图。",
+      "source": "751 · 积分"
     },
     {
       "id": "math-4.1",
@@ -987,12 +1077,17 @@
         "m-018"
       ],
       "note": "10-数学751/01-微积分/03-多元函数与二重积分",
-      "hasCard": false,
-      "summary": "偏导、可微判断",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "偏导数 = 单变量求导、其余变量当常数；全微分是函数的线性主部。",
+      "formulas": [
+        "∂f/∂x=lim[f(x+Δx,y)-f(x,y)]/Δx",
+        "全微分 dz=f_x dx+f_y dy",
+        "可微 ⇒ 偏导存在；偏导连续 ⇒ 可微",
+        "偏导存在 ⇏ 可微"
+      ],
+      "example": "z=x²y：∂z/∂x=2xy，∂z/∂y=x²。",
+      "cardNote": "偏导存在只是'沿坐标轴方向'可微。",
+      "source": "751 · 多元"
     },
     {
       "id": "math-4.2",
@@ -1006,12 +1101,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/03-多元函数与二重积分",
-      "hasCard": false,
-      "summary": "画树、链式法则",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "复合函数画变量树沿链相乘、分叉相加；隐函数求导带负号。",
+      "formulas": [
+        "z=f(u,v)：∂z/∂x=f_u·u_x+f_v·v_x",
+        "F(x,y)=0：dy/dx=-F_x/F_y",
+        "F(x,y,z)=0：∂z/∂x=-F_x/F_z，∂z/∂y=-F_y/F_z"
+      ],
+      "example": "x²+y²=1 ⇒ y'=-x/y。",
+      "cardNote": "隐函数公式的负号是最常见的丢分点。",
+      "source": "751 · 多元"
     },
     {
       "id": "math-4.3",
@@ -1052,12 +1151,16 @@
         "m-016"
       ],
       "note": "10-数学751/01-微积分/03-多元函数与二重积分",
-      "hasCard": false,
-      "summary": "画区域、定限",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "二重积分先画区域再定限：内层限是外层变量的函数。",
+      "formulas": [
+        "∬f dσ=∫(a→b)dx∫(φ₁(x)→φ₂(x))f(x,y)dy",
+        "选序原则：被积函数对谁好积、区域少分块",
+        "区域面积 = ∬1 dσ"
+      ],
+      "example": "D:0≤y≤x≤1：∬xy dσ=∫(0→1)dx∫(0→x)xy dy=1/8。",
+      "cardNote": "内层限不能含内层变量自己。",
+      "source": "751 · 二重积分"
     },
     {
       "id": "math-4.5",
@@ -1073,12 +1176,16 @@
         "m-017"
       ],
       "note": "10-数学751/01-微积分/03-多元函数与二重积分",
-      "hasCard": false,
-      "summary": "圆域、雅可比 r",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "圆域/环域/含 x²+y² 的题用极坐标，别忘雅可比 r。",
+      "formulas": [
+        "x=r cosθ，y=r sinθ，dσ=r dr dθ",
+        "∬f dσ=∫dθ∫f(r cosθ,r sinθ)·r dr",
+        "圆 x²+y²≤a²：θ∈[0,2π]，r∈[0,a]"
+      ],
+      "example": "∬(x²+y²≤1)(x²+y²)dσ=2π·∫(0→1)r³dr=π/2。",
+      "cardNote": "漏乘 r 是二重积分第一大错。",
+      "source": "751 · 二重积分"
     },
     {
       "id": "math-4.6",
@@ -1092,12 +1199,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/03-多元函数与二重积分",
-      "hasCard": false,
-      "summary": "奇偶、轮换、重画",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "对称性先观察：奇部归零、偶部翻倍，能省一半计算。",
+      "formulas": [
+        "区域关于 x 轴对称：f(x,-y)=-f ⇒ 积分为 0；偶 ⇒ 2 倍上半",
+        "区域关于 y=x 对称：∬x dσ=∬y dσ，∬x²=∬y²",
+        "交换次序：按已有限画出区域，再按新次序重写"
+      ],
+      "example": "单位圆上 ∬(x+y)dσ=0（两项各自为奇）。",
+      "cardNote": "动笔前先问：区域对称吗？被积函数有奇偶吗？",
+      "source": "751 · 二重积分"
     },
     {
       "id": "math-5.1",
@@ -1113,12 +1224,15 @@
         "m-020"
       ],
       "note": "10-数学751/01-微积分/04-常微分方程",
-      "hasCard": false,
-      "summary": "分离、漏解",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "能分离成 g(y)dy=f(x)dx 的方程，两边直接积分。",
+      "formulas": [
+        "dy/dx=f(x)g(y) ⇒ ∫dy/g(y)=∫f(x)dx+C",
+        "分离时除以 g(y) 要检查 g(y)=0 的常数解"
+      ],
+      "example": "y'=y ⇒ ln|y|=x+C ⇒ y=Ce^x。",
+      "cardNote": "常数解最容易漏。",
+      "source": "751 · 微分方程"
     },
     {
       "id": "math-5.2",
@@ -1132,12 +1246,15 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/04-常微分方程",
-      "hasCard": false,
-      "summary": "标准形、积分因子",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "标准形 y'+Py=Q 套积分因子 e^∫P。",
+      "formulas": [
+        "积分因子 μ=e^∫Pdx，(μy)'=μQ",
+        "通解 y=e^(-∫Pdx)[∫Qe^(∫Pdx)dx+C]"
+      ],
+      "example": "y'+y=e^x ⇒ y=e^x/2+Ce^(-x)。",
+      "cardNote": "先化标准形再套公式，P 的符号别错。",
+      "source": "751 · 微分方程"
     },
     {
       "id": "math-5.3",
@@ -1178,12 +1295,15 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/04-常微分方程",
-      "hasCard": false,
-      "summary": "特解形式（单根/重根）",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "非齐次通解 = 齐次通解 + 特解；特解设法只看两点。",
+      "formulas": [
+        "右端 P_m(x)e^(λx)：y*=xᵏ·Q_m(x)e^(λx)，k=0/1/2 按 λ 非根/单根/重根",
+        "右端 e^(αx)(P cosβx+Q sinβx)：y*=xᵏe^(αx)(R cosβx+S sinβx)，按 α±iβ 是否特征根取 0/1"
+      ],
+      "example": "y''-3y'+2y=e^x：λ=1 是单根，设 y*=axe^x。",
+      "cardNote": "k 取错是这节最常见失分点。",
+      "source": "751 · 微分方程"
     },
     {
       "id": "math-5.5",
@@ -1197,12 +1317,15 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/01-微积分/04-常微分方程",
-      "hasCard": false,
-      "summary": "代初值、写特解",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "初值问题：先求通解，再代初值定常数；二阶方程需要两个条件。",
+      "formulas": [
+        "y(x₀)=y₀，y'(x₀)=y₁ 联立解 C₁、C₂",
+        "求出特解后代回原方程验证（30 秒换 5 分）"
+      ],
+      "example": "y''+y=0，y(0)=1，y'(0)=0 ⇒ y=cos x。",
+      "cardNote": "验证是最便宜的保险。",
+      "source": "751 · 微分方程"
     },
     {
       "id": "math-6.1",
@@ -1219,12 +1342,17 @@
         "m-024"
       ],
       "note": "10-数学751/02-线代/00-行列式与矩阵",
-      "hasCard": false,
-      "summary": "造零展开、换行变号",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "行列式是一个数，行列变换的性质是化简工具。",
+      "formulas": [
+        "|Aᵀ|=|A|；|AB|=|A||B|",
+        "交换两行变号；两行相同或成比例 ⇒ 行列式=0",
+        "某行乘 k ⇒ 行列式乘 k；某行加另一行的 k 倍 ⇒ 不变",
+        "|kA|=kⁿ|A|（n 阶）"
+      ],
+      "example": "两行相同的行列式必为 0。",
+      "cardNote": "提公因子一次只能提一行。",
+      "source": "751 · 线代"
     },
     {
       "id": "math-6.2",
@@ -1238,12 +1366,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/02-线代/00-行列式与矩阵",
-      "hasCard": false,
-      "summary": "三角/范德蒙德/分块",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "三角、范德蒙德、分块三类行列式直接出值。",
+      "formulas": [
+        "上/下三角 = 对角线元素乘积",
+        "范德蒙德 = ∏(xⱼ-xᵢ)（i<j），记'大减小'连乘",
+        "分块对角/三角 = 各块行列式乘积"
+      ],
+      "example": "|1 1 1;1 2 3;1 4 9|=(2-1)(3-1)(3-2)=2。",
+      "cardNote": "见到 1,x,x² 结构想范德蒙德。",
+      "source": "751 · 线代"
     },
     {
       "id": "math-6.3",
@@ -1260,12 +1392,16 @@
         "m-034"
       ],
       "note": "10-数学751/02-线代/00-行列式与矩阵",
-      "hasCard": false,
-      "summary": "伴随、初等行变换求逆",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "求逆两条路：2 阶用伴随口诀，高阶用行变换。",
+      "formulas": [
+        "A⁻¹=A*/|A|（|A|≠0）",
+        "[A|E] 行变换 → [E|A⁻¹]",
+        "(AB)⁻¹=B⁻¹A⁻¹（反序）；可逆 ⇔ |A|≠0 ⇔ r(A)=n"
+      ],
+      "example": "A=[[1,2],[3,4]]：|A|=-2，A⁻¹=[[-2,1],[3/2,-1/2]]。",
+      "cardNote": "2 阶口诀：主对调、副变号、除行列式。",
+      "source": "751 · 线代"
     },
     {
       "id": "math-6.4",
@@ -1305,12 +1441,15 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/02-线代/00-行列式与矩阵",
-      "hasCard": false,
-      "summary": "分块求逆/行列式",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "分块矩阵把大矩阵当元素算，可降维。",
+      "formulas": [
+        "分块对角矩阵：幂、逆对各块分别运算",
+        "[[A,B],[0,D]]⁻¹=[[A⁻¹,-A⁻¹BD⁻¹],[0,D⁻¹]]"
+      ],
+      "example": "diag(2,3)⁻¹=diag(1/2,1/3)。",
+      "cardNote": "非对角块非零时不能直接各块求逆。",
+      "source": "751 · 线代"
     },
     {
       "id": "math-6.6",
@@ -1326,12 +1465,17 @@
         "m-030"
       ],
       "note": "10-数学751/02-线代/00-行列式与矩阵",
-      "hasCard": false,
-      "summary": "判相关、求秩",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "线性相关 ⇔ 存在不全为 0 的系数组合为零 ⇔ 秩 < 向量个数。",
+      "formulas": [
+        "α₁…αₛ 相关 ⇔ 齐次方程组有非零解 ⇔ r<s",
+        "s>n（个数 > 维数）必相关",
+        "部分相关 ⇒ 整体相关；整体无关 ⇒ 部分无关",
+        "无关组加长分量仍无关"
+      ],
+      "example": "3 个二维向量必相关。",
+      "cardNote": "秩 = 极大无关组的向量个数。",
+      "source": "751 · 线代"
     },
     {
       "id": "math-6.7",
@@ -1370,12 +1514,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/02-线代/00-行列式与矩阵",
-      "hasCard": false,
-      "summary": "三种解情况、通解",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "非齐次方程组先比秩：r(A) 与 r(A|b) 定有无解，与 n 比较定唯一/无穷。",
+      "formulas": [
+        "r(A)<r(A|b) ⇒ 无解",
+        "r(A)=r(A|b)=n ⇒ 唯一解",
+        "r(A)=r(A|b)<n ⇒ 无穷多解",
+        "通解 = 一个特解 + 对应齐次通解"
+      ],
+      "example": "{x+y=1; x-y=0}：r=r=n=2，唯一解 (1/2,1/2)。",
+      "cardNote": "自由变量个数 = n-r。",
+      "source": "751 · 线代"
     },
     {
       "id": "math-6.9",
@@ -1416,12 +1565,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "10-数学751/02-线代/00-行列式与矩阵",
-      "hasCard": false,
-      "summary": "可对角化条件、求 P",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "有 n 个线性无关特征向量才能对角化；重根要验几何重数。",
+      "formulas": [
+        "可对角化 ⇔ 每个特征值的几何重数 = 代数重数",
+        "特征值互异 ⇒ 必可对角化（充分条件）",
+        "A=PKP⁻¹：K 对角元 = 特征值，P 的列 = 对应特征向量",
+        "求幂：Aᵏ=PKᵏP⁻¹"
+      ],
+      "example": "实对称矩阵必可正交对角化。",
+      "cardNote": "P 的列顺序必须与 K 的特征值顺序对应。",
+      "source": "751 · 线代"
     },
     {
       "id": "auto-3.1",
@@ -1437,12 +1591,17 @@
         "a-001"
       ],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "常用变换、终值/初值",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "拉氏变换把微分方程变成代数方程，是自控的运算语言。",
+      "formulas": [
+        "L[δ(t)]=1；L[1(t)]=1/s；L[t]=1/s²",
+        "L[e^(-at)]=1/(s+a)；L[sin ωt]=ω/(s²+ω²)；L[cos ωt]=s/(s²+ω²)",
+        "微分：L[f']=sF(s)-f(0)；积分：L[∫f]=F(s)/s",
+        "终值定理：f(∞)=lim(s→0)sF(s)（极点须在左半平面）"
+      ],
+      "example": "L[e^(-2t)]=1/(s+2)。",
+      "cardNote": "用终值定理前先确认系统稳定。",
+      "source": "899 · 拉氏变换"
     },
     {
       "id": "auto-3.2",
@@ -1482,12 +1641,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "串联/并联/反馈、梅森公式",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "串联乘、并联加、负反馈除 1+GH；复杂图用梅森公式。",
+      "formulas": [
+        "串联 G₁G₂；并联 G₁±G₂；负反馈 G/(1+GH)",
+        "梅森：G=ΣPₖΔₖ/Δ",
+        "Δ=1-ΣLᵢ+ΣLᵢLⱼ-ΣLᵢLⱼLₖ+…（不接触回路才相乘）",
+        "Pₖ = 第 k 条前向通路增益"
+      ],
+      "example": "单回路负反馈总传函 = G/(1+GH)。",
+      "cardNote": "梅森先数回路、再找前向通路，别漏不相触回路的组合项。",
+      "source": "899 · 方框图"
     },
     {
       "id": "auto-3.4",
@@ -1504,12 +1668,17 @@
         "a-031"
       ],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "A/B/C/D、G(s)",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "状态空间用一阶微分方程组描述系统，是现代控制的基础。",
+      "formulas": [
+        "x'=Ax+Bu，y=Cx+Du",
+        "传函 G(s)=C(sI-A)⁻¹B+D",
+        "稳定 ⇔ A 的特征值全在左半平面",
+        "可控 ⇔ [B AB … Aⁿ⁻¹B] 满秩；可观 ⇔ [C;CA;…;CAⁿ⁻¹] 满秩"
+      ],
+      "example": "x'=ax 的解 x=e^(at)x(0)，a<0 时稳定。",
+      "cardNote": "状态变量个数 = 系统阶数。",
+      "source": "899 · 状态空间"
     },
     {
       "id": "auto-3.5",
@@ -1525,12 +1694,16 @@
         "a-003"
       ],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "T/63.2%/3T/4T",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "一阶系统只有一个参数 T，决定全部动态。",
+      "formulas": [
+        "G=K/(Ts+1)；阶跃响应 y=K(1-e^(-t/T))",
+        "t=T 到达 63.2%；3T 到 95%；4T 到 98%",
+        "调节时间 ts(2%)≈4T"
+      ],
+      "example": "T=2s 的一阶系统约 8s 进入 2% 误差带。",
+      "cardNote": "T 越小响应越快。",
+      "source": "899 · 时域"
     },
     {
       "id": "auto-3.6",
@@ -1627,12 +1800,16 @@
         "a-011"
       ],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "幅值/相角条件",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "根轨迹 = K 从 0→∞ 时闭环特征根的轨迹；相角条件定轨迹，幅值条件定 K。",
+      "formulas": [
+        "根轨迹方程：G(s)H(s)=-1",
+        "相角条件：∠GH=(2k+1)·180°（判断点是否在轨迹上）",
+        "幅值条件：|GH|=1（求该点对应的 K）"
+      ],
+      "example": "判点是否在根轨迹上，只用相角条件。",
+      "cardNote": "相角管'在不在'，幅值管'K 多大'。",
+      "source": "899 · 根轨迹"
     },
     {
       "id": "auto-3.10",
@@ -1674,12 +1851,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "临界 K、虚轴交点",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "根轨迹与虚轴交点 = 临界稳定点，用 Routh 或 s=jω 求。",
+      "formulas": [
+        "令 s=jω 代入特征方程，实部、虚部分别为零",
+        "或 Routh 表第一列出现 0 行（全 0 行）的条件",
+        "交点对应的 K = 临界增益；稳定范围 = 根全在左半平面的 K 范围"
+      ],
+      "example": "s³+3s²+2s+K=0：临界 K=6，交点 ±j√2。",
+      "cardNote": "求临界 K 是 Routh 最常考用法。",
+      "source": "899 · 根轨迹"
     },
     {
       "id": "auto-3.12",
@@ -1695,12 +1876,16 @@
         "a-015"
       ],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "典型环节、转角频率",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "Bode 图 = 对数幅频 + 相频；斜率与相位要背成对。",
+      "formulas": [
+        "比例：0 dB/dec；积分：-20 dB/dec、-90°；微分：+20、+90°",
+        "惯性 1/(Ts+1)：转折频率 1/T，之后 -20、相位终值 -90°",
+        "二阶振荡：转折后 -40、相位终值 -180°"
+      ],
+      "example": "1/(s+1) 的转折频率 = 1 rad/s。",
+      "cardNote": "渐近线在转折处与实际差约 ±3dB。",
+      "source": "899 · 频域"
     },
     {
       "id": "auto-3.13",
@@ -1742,12 +1927,17 @@
         "a-019"
       ],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "Z=P+N、最小相位",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "Nyquist 用开环频率特性判闭环稳定；最小相位系统可直接用 Bode 判。",
+      "formulas": [
+        "判据 Z=P+N（按教材符号约定）",
+        "P = 开环右半平面极点数；Z = 闭环右半平面极点数",
+        "N = Nyquist 曲线包围 (-1,j0) 的圈数",
+        "最小相位系统：幅频与相频一一对应"
+      ],
+      "example": "P=0 且曲线不包围 (-1,j0) ⇒ 闭环稳定。",
+      "cardNote": "各教材 N 的符号约定不同，按自己教材写。",
+      "source": "899 · 频域"
     },
     {
       "id": "auto-3.15",
@@ -1763,12 +1953,16 @@
         "a-020"
       ],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "φm/α/T、提高 PM",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "超前校正在低频段加零点补相位，提高稳定裕度。",
+      "formulas": [
+        "Gc=(1+αTs)/(1+Ts)，α>1",
+        "最大超前角 φm=arcsin[(α-1)/(α+1)]",
+        "ωm=1/(T√α)"
+      ],
+      "example": "需补 40° ⇒ α≈4.6。",
+      "cardNote": "α 越大补得越多，但高频增益大、对噪声敏感。",
+      "source": "899 · 校正"
     },
     {
       "id": "auto-3.16",
@@ -1784,12 +1978,17 @@
         "a-021"
       ],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "β/T、改善稳态误差",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "滞后校正提高低频增益、减小稳态误差，牺牲带宽。",
+      "formulas": [
+        "Gc=(1+Ts)/(1+βTs)，β>1",
+        "作用：抬低频增益 → 稳态误差下降",
+        "代价：相位滞后、带宽变窄、响应变慢",
+        "PI 控制是极点在原点的特殊滞后校正"
+      ],
+      "example": "要求 ess 小但带宽要求不高时用滞后。",
+      "cardNote": "校完后务必重新验相位裕度。",
+      "source": "899 · 校正"
     },
     {
       "id": "auto-3.17",
@@ -1832,12 +2031,16 @@
         "a-026"
       ],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "z=e^sT、采样定理",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "离散系统用 z 变换，z=e^(sT) 是 s 平面与 z 平面的桥。",
+      "formulas": [
+        "z=e^(sT)：s 左半平面 ⇔ |z|<1",
+        "Z[δ(k)]=1；Z[1(k)]=z/(z-1)；Z[aᵏ]=z/(z-a)",
+        "采样定理：fs > 2fmax"
+      ],
+      "example": "Z[2ᵏ]=z/(z-2)（收敛域 |z|>2）。",
+      "cardNote": "z 平面稳定域是单位圆内，不是左半平面。",
+      "source": "899 · 离散"
     },
     {
       "id": "auto-3.19",
@@ -1853,12 +2056,16 @@
         "a-024"
       ],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "单位圆、Jury/双线性",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "离散系统稳定 ⇔ 全部特征根在单位圆内。",
+      "formulas": [
+        "稳定 ⇔ 所有 |zᵢ|<1",
+        "判据：Jury 判据，或双线性变换 w=(z+1)/(z-1) 后用 Routh",
+        "w 平面的稳定域 = 左半平面"
+      ],
+      "example": "判 z²-0.5z+0.1=0 的根模长是否都小于 1。",
+      "cardNote": "变换公式别写反：z=(w+1)/(w-1)。",
+      "source": "899 · 离散"
     },
     {
       "id": "auto-3.20",
@@ -1875,12 +2082,17 @@
         "a-028"
       ],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "饱和/继电、极限环",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "非线性系统不满足叠加原理；描述函数 = 谐波线性化。",
+      "formulas": [
+        "常见非线性：饱和、死区、间隙、继电、摩擦",
+        "N(A) = 输出基波分量 / 输入正弦幅值",
+        "极限环条件：1+N(A)G(jω)=0，即 G(jω)=-1/N(A)",
+        "理想继电：N(A)=4M/(πA)"
+      ],
+      "example": "G(jω) 与 -1/N(A) 相交 ⇒ 可能存在极限环。",
+      "cardNote": "交点后还要判稳定性：振幅偏离后能否回到交点。",
+      "source": "899 · 非线性"
     },
     {
       "id": "auto-3.21",
@@ -1894,12 +2106,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "20-899工程能力/30-自动控制/00-数学模型与传递函数",
-      "hasCard": false,
-      "summary": "判题型→标准形→判稳→指标",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "自控大题万能顺序：定型 → 标准形 → 判稳 → 算指标。",
+      "formulas": [
+        "先写闭环特征式，对照标准形找 ζ、ωn、K",
+        "任何计算前先判稳（Routh 或极点位置）",
+        "误差题先看开环积分个数（型别）",
+        "频域题先画渐近线斜率，再谈裕度"
+      ],
+      "example": "例题见精讲 ex-a-001 ~ ex-a-006。",
+      "cardNote": "所有指标计算的前提是系统稳定。",
+      "source": "899 · 综合"
     },
     {
       "id": "ethics-1.1",
@@ -1915,12 +2132,16 @@
         "e-001"
       ],
       "note": "20-899工程能力/10-工程伦理/00-伦理框架",
-      "hasCard": false,
-      "summary": "微观/中观/宏观举例",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "工程伦理研究工程师职业活动中'应该做什么'，分个人、组织、社会三层。",
+      "formulas": [
+        "微观：个人行为（造假、保密、利益冲突）",
+        "中观：企业/组织（安全投入、赶工期、供应链）",
+        "宏观：工程与社会（环境、公共安全、技术公平）"
+      ],
+      "example": "数据造假 = 微观；工厂压安全预算 = 中观；碳排放与代际公平 = 宏观。",
+      "cardNote": "答题先定位是哪一层，再选原则。",
+      "source": "899 · 工程伦理"
     },
     {
       "id": "ethics-1.2",
@@ -1961,12 +2182,16 @@
         "e-002"
       ],
       "note": "20-899工程能力/10-工程伦理/00-伦理框架",
-      "hasCard": false,
-      "summary": "后果论/义务论/德性论",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "三种伦理理论是分析案例的三把刀：后果论算总账、义务论守底线、德性论看品格。",
+      "formulas": [
+        "后果论（功利主义）：最大多数人的最大幸福，比方案的成本收益",
+        "义务论（康德）：人不是手段；行为是否符合可普遍化的准则",
+        "德性伦理：有德性的工程师会怎么做（诚实、审慎、勇敢）"
+      ],
+      "example": "安全 vs 成本：后果论算期望风险，义务论说不能拿公众安全做交易。",
+      "cardNote": "三个都用一遍，答案自动变丰满。",
+      "source": "899 · 工程伦理"
     },
     {
       "id": "ethics-1.4",
@@ -1982,12 +2207,15 @@
         "e-011"
       ],
       "note": "20-899工程能力/10-工程伦理/00-伦理框架",
-      "hasCard": false,
-      "summary": "列相关方、找最弱势",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "利益相关者分析：列出所有受影响者，标出最弱势、最没话语权的那个。",
+      "formulas": [
+        "步骤：列相关方 → 标利益与风险 → 找权利冲突 → 找最弱势者 → 给补偿/监督机制",
+        "常见相关方：公众、用户、员工、雇主、供应商、监管、环境、后代"
+      ],
+      "example": "化工厂选址：居民承担风险却无决策权，是最弱势相关方。",
+      "cardNote": "忽略最弱势群体 = 伦理分析 incomplete。",
+      "source": "899 · 工程伦理"
     },
     {
       "id": "ethics-1.5",
@@ -2027,12 +2255,17 @@
         "e-008"
       ],
       "note": "20-899工程能力/10-工程伦理/00-伦理框架",
-      "hasCard": false,
-      "summary": "法律/职业/道德责任、风险=概率×后果、ALARP",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "工程师的责任分三种；对公众安全负责是最高优先级，上级指令不能免除。",
+      "formulas": [
+        "法律责任：违反法律/合同的后果",
+        "职业责任：职业准则与岗位责任（对公众安全健康福利负责）",
+        "道德责任：良知与社会期望",
+        "冲突时：公众安全 > 雇主利益 > 个人利益"
+      ],
+      "example": "领导批准签字 ≠ 工程师免责；发现隐患仍要书面升级。",
+      "cardNote": "'听领导的'从来不是免责理由。",
+      "source": "899 · 工程伦理"
     },
     {
       "id": "ethics-1.7",
@@ -2049,12 +2282,17 @@
         "e-016"
       ],
       "note": "20-899工程能力/10-工程伦理/00-伦理框架",
-      "hasCard": false,
-      "summary": "披露/回避/隔离/退出",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "利益冲突的本质是'看起来可能偏袒'；处理四件套：披露、回避、隔离、退出。",
+      "formulas": [
+        "披露：向相关方公开潜在利益关系",
+        "回避：不参与相关决策/评审",
+        "隔离：信息防火墙",
+        "退出：无法回避时放弃该利益"
+      ],
+      "example": "亲属在投标公司任职 → 披露并回避该项目评标。",
+      "cardNote": "只口头保证公正没用，必须披露+回避。",
+      "source": "899 · 工程伦理"
     },
     {
       "id": "ethics-1.8",
@@ -2094,12 +2332,17 @@
         "e-006"
       ],
       "note": "20-899工程能力/10-工程伦理/00-伦理框架",
-      "hasCard": false,
-      "summary": "充分信息/自愿/能力",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "知情同意三要素：充分信息、自愿、有能力理解。",
+      "formulas": [
+        "充分信息：风险、收益、替代方案、不确定性",
+        "自愿：无胁迫无诱导，明确选择",
+        "能力：当事人能理解并决定",
+        "例外：紧急情况、法定强制"
+      ],
+      "example": "APP 默认勾选收集信息 ≠ 自愿。",
+      "cardNote": "签字 ≠ 同意；签字只是形式，理解和自愿才是内核。",
+      "source": "899 · 工程伦理"
     },
     {
       "id": "ethics-1.10",
@@ -2115,12 +2358,17 @@
         "e-009"
       ],
       "note": "20-899工程能力/10-工程伦理/00-伦理框架",
-      "hasCard": false,
-      "summary": "三种环境观、代际公平",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "环境伦理三种立场：人类中心、生物中心、生态中心；答题不必站队，多元权衡。",
+      "formulas": [
+        "人类中心：自然价值在于服务人类",
+        "生物中心：一切生命有内在价值",
+        "生态中心：生态系统整体健康优先",
+        "可持续：代际公平 + 代内公平"
+      ],
+      "example": "湿地开发：人类中心看经济收益，生态中心看生态功能。",
+      "cardNote": "答案立场越绝对越危险，用'权衡+程序'最稳。",
+      "source": "899 · 工程伦理"
     },
     {
       "id": "ethics-1.11",
@@ -2137,12 +2385,15 @@
         "e-015"
       ],
       "note": "20-899工程能力/10-工程伦理/00-伦理框架",
-      "hasCard": false,
-      "summary": "不确定性、环评六步",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "预防原则针对严重/不可逆损害的不确定性；EIA 是制度化的预防工具。",
+      "formulas": [
+        "预防原则四要素：不确定下行动、举证责任转移、探索替代、公众参与",
+        "EIA 六步：筛选 → 界定范围 → 调查预测 → 公众参与 → 减缓措施 → 审批监测"
+      ],
+      "example": "新化学品上市：厂商须自证安全，而非公众证明有害。",
+      "cardNote": "预防原则 ≠ 什么都不做；要与比例原则联用。",
+      "source": "899 · 工程伦理"
     },
     {
       "id": "ethics-1.12",
@@ -2158,12 +2409,18 @@
         "e-012"
       ],
       "note": "20-899工程能力/10-工程伦理/00-伦理框架",
-      "hasCard": false,
-      "summary": "挑战者号、6 段答题",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "案例题六段模板：事实 → 冲突 → 相关方 → 原则 → 方案比较 → 落实。",
+      "formulas": [
+        "① 事实一句话 + 点出伦理冲突",
+        "② 相关方列表 + 最弱势者",
+        "③ 引用 2-3 条原则并说'为什么适用'",
+        "④ ≥3 个方案（含不做）比较风险/可逆性",
+        "⑤ 落实：谁做、何时、如何监督、如何补救"
+      ],
+      "example": "挑战者号：安全 vs 进度、组织压制异议、风险正常化。",
+      "cardNote": "没有'谁来做怎么监督'的答案永远是半吊子。",
+      "source": "899 · 工程伦理"
     },
     {
       "id": "logic-2.1",
@@ -2207,12 +2464,17 @@
         "l-013"
       ],
       "note": "20-899工程能力/20-逻辑推理/00-逻辑基础",
-      "hasCard": false,
-      "summary": "逆否等价、¬(P∧Q)",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "原命题等价于逆否命题；德摩根律管'非'的分配。",
+      "formulas": [
+        "P→Q ⇔ ¬Q→¬P（逆否等价）",
+        "逆命题、否命题与原命题不等价",
+        "¬(P∧Q)=¬P∨¬Q；¬(P∨Q)=¬P∧¬Q",
+        "'只有P才Q' ⇔ Q→P；'除非P否则Q' ⇔ ¬P→Q"
+      ],
+      "example": "'只有过初试才能复试' ⇒ 复试→初试。",
+      "cardNote": "箭头方向是逻辑题第一错点。",
+      "source": "899 · 逻辑"
     },
     {
       "id": "logic-2.3",
@@ -2228,12 +2490,16 @@
         "l-004"
       ],
       "note": "20-899工程能力/20-逻辑推理/00-逻辑基础",
-      "hasCard": false,
-      "summary": "所有/存在、集合图",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "量词题画集合图最快；全称命题的矛盾是存在反例。",
+      "formulas": [
+        "'所有 A 是 B' 的矛盾：'有的 A 不是 B'",
+        "'有的 A 是 B' 的矛盾：'所有 A 都不是 B'",
+        "三段论：A⊆B 且 B⊆C ⇒ A⊆C；注意'有的'不能传递"
+      ],
+      "example": "所有猫是动物 ⇏ 所有动物是猫。",
+      "cardNote": "'有的'开头不能推出'所有'。",
+      "source": "899 · 逻辑"
     },
     {
       "id": "logic-2.4",
@@ -2247,12 +2513,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "20-899工程能力/20-逻辑推理/00-逻辑基础",
-      "hasCard": false,
-      "summary": "找结论/论据/假设",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "论证 = 结论 + 论据 + 隐藏假设；做题先花 30 秒拆这三样。",
+      "formulas": [
+        "结论：作者想让你接受的判断（常在因此/所以后）",
+        "论据：支持结论的事实",
+        "假设：论据到结论之间没说出来的桥",
+        "论证方式：归纳 / 类比 / 因果 / 统计 / 权威"
+      ],
+      "example": "先用自己的话复述结论，再回原文找支撑。",
+      "cardNote": "把论据当结论是逻辑题第二错点。",
+      "source": "899 · 逻辑"
     },
     {
       "id": "logic-2.5",
@@ -2294,12 +2565,17 @@
         "l-015"
       ],
       "note": "20-899工程能力/20-逻辑推理/00-逻辑基础",
-      "hasCard": false,
-      "summary": "排除他因/机制/证据",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "加强题给论证补裂缝：排除他因、提供机制、补充证据、假设成立。",
+      "formulas": [
+        "排除他因：没有别的变化能解释结果",
+        "提供机制：解释为什么论据能推出结论",
+        "补充证据：新样本同方向",
+        "类比成立：关键属性相似"
+      ],
+      "example": "新药有效：两组年龄病情一致 → 排除混杂。",
+      "cardNote": "加强'论证链'比加强'结论本身'更重要。",
+      "source": "899 · 逻辑"
     },
     {
       "id": "logic-2.7",
@@ -2339,12 +2615,16 @@
         "l-008"
       ],
       "note": "20-899工程能力/20-逻辑推理/00-逻辑基础",
-      "hasCard": false,
-      "summary": "同时容纳两边",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "解释题要找一个能同时容纳矛盾双方的选项。",
+      "formulas": [
+        "先写出'看似矛盾'的两件事",
+        "正确项：让两件事同时成立的新信息",
+        "排除：重复题干项、只解释一边项"
+      ],
+      "example": "警力增加但犯罪率上升：报案率提高/统计口径变化。",
+      "cardNote": "只解释一边的选项必错。",
+      "source": "899 · 逻辑"
     },
     {
       "id": "logic-2.9",
@@ -2358,12 +2638,15 @@
       "priority": "normal",
       "questionIds": [],
       "note": "20-899工程能力/20-逻辑推理/00-逻辑基础",
-      "hasCard": false,
-      "summary": "找关键变量",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "评价题找'关键变量'：回答它是/否会直接影响结论成立。",
+      "formulas": [
+        "问法：'以下哪项对评价该论证最重要'",
+        "方法：逐项回答'是/否'，看哪个让结论翻天"
+      ],
+      "example": "'锻炼延寿'：分组时锻炼组是否本来就更健康？",
+      "cardNote": "评价题就是假设题的变体。",
+      "source": "899 · 逻辑"
     },
     {
       "id": "logic-2.10",
@@ -2380,12 +2663,15 @@
         "l-014"
       ],
       "note": "20-899工程能力/20-逻辑推理/00-逻辑基础",
-      "hasCard": false,
-      "summary": "共同原因/时间顺序/剂量",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "因果论证的削弱与加强围绕四个漏洞：倒置、共同原因、样本、时间。",
+      "formulas": [
+        "削弱：因果倒置 / 共同原因C导致两者 / 样本偏差 / 时间顺序错",
+        "加强：排除倒置与共同原因 / 机制清晰 / 剂量-反应关系"
+      ],
+      "example": "咖啡与长寿：收入同时导致两者 = 共同原因。",
+      "cardNote": "相关≠因果；先找时间顺序，再找第三变量。",
+      "source": "899 · 逻辑"
     },
     {
       "id": "logic-2.11",
@@ -2402,12 +2688,17 @@
         "l-010"
       ],
       "note": "20-899工程能力/20-逻辑推理/00-逻辑基础",
-      "hasCard": false,
-      "summary": "基数/平均数/幸存者",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "统计陷阱四大件：基数、平均数、幸存者、回归均值。",
+      "formulas": [
+        "百分比必看基数：率与量可以背离",
+        "平均数≠中位数：极端值拉高平均",
+        "幸存者偏差：只看到留下来的",
+        "回归均值：极端后自然回落"
+      ],
+      "example": "甲厂不合格率 2% 但数量更多：总量大因为产量大。",
+      "cardNote": "见'平均''比例''上升下降'先找分母。",
+      "source": "899 · 逻辑"
     },
     {
       "id": "logic-2.12",
@@ -2424,12 +2715,16 @@
         "l-016"
       ],
       "note": "20-899工程能力/20-逻辑推理/00-逻辑基础",
-      "hasCard": false,
-      "summary": "选言推理、真假话",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "选言推理：否定一支肯定另一支；真假话题从矛盾关系入手。",
+      "formulas": [
+        "P∨Q 且 ¬P ⇒ Q（否定肯定式）",
+        "要么P要么Q（不相容）：否定一支必肯定另一支",
+        "真假话：先找矛盾命题，再利用'只有一真'条件"
+      ],
+      "example": "三人都说自己没拿 → 找互相矛盾的一对，其余全真。",
+      "cardNote": "多条件排列题先列表，把确定信息写死。",
+      "source": "899 · 逻辑"
     },
     {
       "id": "logic-2.13",
@@ -2443,12 +2738,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "20-899工程能力/20-逻辑推理/00-逻辑基础",
-      "hasCard": false,
-      "summary": "捆绑/插空/列表",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "排列组合三招：捆绑相邻、插空不相邻、隔板分组。",
+      "formulas": [
+        "相邻问题：捆绑成整体（注意内部顺序）",
+        "不相邻：先排其余，再插空",
+        "定序问题：总排列 ÷ 定序部分的排列"
+      ],
+      "example": "甲乙相邻：捆成 1 个单位参与排列 × 内部 2 种。",
+      "cardNote": "先处理特殊限制，再排一般元素。",
+      "source": "899 · 逻辑"
     },
     {
       "id": "logic-2.14",
@@ -2464,12 +2763,18 @@
         "l-014"
       ],
       "note": "20-899工程能力/20-逻辑推理/00-逻辑基础",
-      "hasCard": false,
-      "summary": "识别 10 种常见谬误",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "十大谬误要会认：以偏概全、因果倒置、滑坡、诉诸权威/人身、虚假两难、循环论证等。",
+      "formulas": [
+        "以偏概全：小样本推全体",
+        "因果倒置：把结果当原因",
+        "滑坡：一步推出连锁灾难",
+        "虚假两难：只给两个选项",
+        "循环论证：结论当论据"
+      ],
+      "example": "'换厂长后产量降了，所以厂长导致减产' = 事后归因。",
+      "cardNote": "认谬误题：先写论证结构，再对号入座。",
+      "source": "899 · 逻辑"
     },
     {
       "id": "english-1.1",
@@ -2486,12 +2791,19 @@
         "en-002"
       ],
       "note": "30-英语243/01-词汇/00-高频词与词根",
-      "hasCard": false,
-      "summary": "中英互认、搭配",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "高频动词 50 个是词汇语法题的半壁江山，按'动词+搭配'成组背。",
+      "formulas": [
+        "abandon/give up 放弃",
+        "accomplish/attain/achieve 完成达到",
+        "assess/evaluate 评估",
+        "allocate/distribute 分配",
+        "distinguish A from B 区分",
+        "contribute to / result in / result from 导致/由…导致"
+      ],
+      "example": "The delay resulted from the storm.",
+      "cardNote": "只背中文不背搭配 = 白背。",
+      "source": "243 · 词汇"
     },
     {
       "id": "english-1.2",
@@ -2508,12 +2820,17 @@
         "en-003"
       ],
       "note": "30-英语243/01-词汇/00-高频词与词根",
-      "hasCard": false,
-      "summary": "褒贬/程度",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "高频形容词抓褒贬与程度：-able 可…、-ent/-ant …的。",
+      "formulas": [
+        "beneficial 有益的 / detrimental 有害的",
+        "feasible 可行的 / inevitable 不可避免的",
+        "substantial/considerable 相当大的",
+        "crucial/vital/essential 至关重要的"
+      ],
+      "example": "a substantial increase 相当大的增幅。",
+      "cardNote": "褒义形容词与负面语境的混搭常是干扰项。",
+      "source": "243 · 词汇"
     },
     {
       "id": "english-1.3",
@@ -2529,12 +2846,18 @@
         "en-009"
       ],
       "note": "30-英语243/01-词汇/00-高频词与词根",
-      "hasCard": false,
-      "summary": "spect/port/dict/duc 等",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "词根词缀是猜词义的外挂：认识 30 个词根覆盖上千词。",
+      "formulas": [
+        "-spect- 看：inspect/respect/prospect",
+        "-port- 携带：transport/import/export",
+        "-dict- 说：predict/contradict",
+        "-duc- 引导：produce/reduce/conduct",
+        "-vert- 转：convert/reverse/diverse"
+      ],
+      "example": "predict = pre(前) + dict(说) = 预言。",
+      "cardNote": "考场上见到生词先拆词根。",
+      "source": "243 · 词汇"
     },
     {
       "id": "english-1.4",
@@ -2605,12 +2928,16 @@
         "en-007"
       ],
       "note": "30-英语243/01-词汇/00-高频词与词根",
-      "hasCard": false,
-      "summary": "过去完成/被动语态",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "时态看时间轴：过去完成 = 过去的过去；被动 = be + 过去分词。",
+      "formulas": [
+        "by the end of + 过去 → 过去完成时 had done",
+        "by the end of + 将来 → will have done",
+        "被动：情态动词 + be + done（must be checked）"
+      ],
+      "example": "By the time he arrived, the meeting had started.",
+      "cardNote": "被动语态的 be 不能丢。",
+      "source": "243 · 语法"
     },
     {
       "id": "english-1.7",
@@ -2624,12 +2951,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "30-英语243/01-词汇/00-高频词与词根",
-      "hasCard": false,
-      "summary": "定语/名词性/状语、doing/done/to do",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "三大从句 + 非谓语：先找连接词，再判从句类型。",
+      "formulas": [
+        "定语从句：that/which/who 修饰名词",
+        "名词性从句：that 从句充当主/宾/表语",
+        "状语从句：because/although/when 引导",
+        "非谓语：doing 主动进行 / done 被动完成 / to do 目的将来"
+      ],
+      "example": "The report published yesterday attracted attention.（过去分词作定语）",
+      "cardNote": "没有连词却出现两个谓语 = 必考非谓语。",
+      "source": "243 · 语法"
     },
     {
       "id": "english-1.8",
@@ -2646,12 +2978,17 @@
         "en-016"
       ],
       "note": "30-英语243/01-词汇/00-高频词与词根",
-      "hasCard": false,
-      "summary": "not only 倒装、It is...that",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "倒装、强调、虚拟是语法三大难点，各记一个标志。",
+      "formulas": [
+        "否定词置于句首 → 部分倒装：Not only did he…",
+        "强调句：It is/was … that …",
+        "虚拟：suggest/demand 后接 (should) + 动词原形",
+        "Hardly/Scarcely … when：主句过去完成时"
+      ],
+      "example": "It was his attitude that impressed me.",
+      "cardNote": "看到 It is … 先想强调句还是形式主语。",
+      "source": "243 · 语法"
     },
     {
       "id": "english-2.1",
@@ -2665,12 +3002,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "30-英语243/03-阅读/00-阅读题型与定位",
-      "hasCard": false,
-      "summary": "转折/因果/并列、上下文复现",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "完形填空考的是上下文逻辑，不是单句语法。",
+      "formulas": [
+        "转折：however/nevertheless/while",
+        "因果：therefore/thus/hence",
+        "递进：moreover/furthermore",
+        "让步：although/despite/in spite of"
+      ],
+      "example": "He worked hard; however, he failed.（前后语义相反）",
+      "cardNote": "空前后各读一句再选，别只看空前。",
+      "source": "243 · 完形"
     },
     {
       "id": "english-2.2",
@@ -2708,12 +3050,16 @@
       "priority": "core",
       "questionIds": [],
       "note": "30-英语243/03-阅读/00-阅读题型与定位",
-      "hasCard": false,
-      "summary": "题干关键词、同义替换",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "细节题三步：题干关键词 → 原文定位 → 同义替换比对。",
+      "formulas": [
+        "顺序原则：题序≈文序",
+        "定位词：数字、大写、专有名词最好找",
+        "正确答案多为同义改写，很少原词照搬"
+      ],
+      "example": "题干用 purchase，原文用 buy —— 它们是同一意思。",
+      "cardNote": "找到原词直接选的选项，往往是陷阱。",
+      "source": "243 · 阅读"
     },
     {
       "id": "english-2.4",
@@ -2727,12 +3073,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "30-英语243/03-阅读/00-阅读题型与定位",
-      "hasCard": false,
-      "summary": "一步推理、作者态度词",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "推断题只推一步；态度题看评价词。",
+      "formulas": [
+        "infer/imply：答案基于原文 + 一步推理，多则过度",
+        "态度词：objective 客观 / critical 批判 / supportive 支持 / skeptical 怀疑",
+        "客观陈述利弊而不站队 = objective ≠ indifferent"
+      ],
+      "example": "文中大量'研究表明''数据显示'而无论断 → objective。",
+      "cardNote": "indifferent 是最大干扰项：关心但不站队是客观，不关心才是漠然。",
+      "source": "243 · 阅读"
     },
     {
       "id": "english-2.5",
@@ -2746,12 +3096,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "30-英语243/03-阅读/00-阅读题型与定位",
-      "hasCard": false,
-      "summary": "上下文线索、构词",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "词义题回原文看上下文逻辑：并列、转折、举例、定义。",
+      "formulas": [
+        "并列：and/or 前后同义",
+        "转折：but/however 前后反义",
+        "举例：such as 后举例解释",
+        "构词法辅助验证"
+      ],
+      "example": "'plummet' 后接数据暴跌 → fall sharply。",
+      "cardNote": "代入选项读一遍，语感就能排除一半。",
+      "source": "243 · 阅读"
     },
     {
       "id": "english-2.6",
@@ -2765,12 +3120,16 @@
       "priority": "core",
       "questionIds": [],
       "note": "30-英语243/03-阅读/00-阅读题型与定位",
-      "hasCard": false,
-      "summary": "无中生有/偷换/绝对化",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "干扰项六大特征：无中生有、偷换概念、以偏概全、过度推断、正反混淆、绝对化。",
+      "formulas": [
+        "all/never/only/must 要回原文验证",
+        "只覆盖一段的选项不可能是主旨",
+        "常识正确但原文没提 = 不选"
+      ],
+      "example": "主旨题选项含文中某个例子细节 → 过窄，排除。",
+      "cardNote": "两个选项纠结时，选'证据最直接'的那个。",
+      "source": "243 · 阅读"
     },
     {
       "id": "english-3.1",
@@ -2808,12 +3167,17 @@
         "en-008"
       ],
       "note": "30-英语243/02-长难句/00-长难句拆解",
-      "hasCard": false,
-      "summary": "拆句/增补/被动转主动",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "英译汉四转换：拆句、增补主语、被动转主动、名词转动词。",
+      "formulas": [
+        "长句拆成 2-3 个中文短句",
+        "英文省略的主语/逻辑，中文补出来",
+        "被动转主动：'被发现'→'人们发现'",
+        "It is estimated that → 据估计"
+      ],
+      "example": "It is estimated that 80% of data remains unanalyzed. → 据估计，80% 的数据仍未被分析。",
+      "cardNote": "逐词翻译是翻译题最大杀手。",
+      "source": "243 · 翻译"
     },
     {
       "id": "english-3.3",
@@ -2827,12 +3191,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "30-英语243/02-长难句/00-长难句拆解",
-      "hasCard": false,
-      "summary": "开头/主体/结尾、主题句",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "写作三段式：开头亮观点、主体两理由、结尾升华。",
+      "formulas": [
+        "开头：现象 + 我的观点",
+        "主体：First…Second… + 例证",
+        "结尾：In conclusion + 建议/展望",
+        "字数：按题目要求，宁可稍多勿少"
+      ],
+      "example": "Nowadays, … From my perspective, … plays a vital role.",
+      "cardNote": "每段第一句必须是主题句。",
+      "source": "243 · 写作"
     },
     {
       "id": "english-3.4",
@@ -2846,12 +3215,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "30-英语243/02-长难句/00-长难句拆解",
-      "hasCard": false,
-      "summary": "强调/倒装/非谓语/定语从句",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "3 个高级句式让作文上档：强调句、倒装、非谓语。",
+      "formulas": [
+        "强调：It is … that …",
+        "倒装：Only in this way can we …",
+        "非谓语：Faced with …, we should …",
+        "连接词储备 8 个：however/therefore/moreover/for instance/in conclusion 等"
+      ],
+      "example": "Only by working hard can we achieve our goals.",
+      "cardNote": "每篇作文用 2 个就够，堆砌反而错多。",
+      "source": "243 · 写作"
     },
     {
       "id": "english-3.5",
@@ -2865,12 +3239,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "30-英语243/02-长难句/00-长难句拆解",
-      "hasCard": false,
-      "summary": "主谓一致/时态/拼写/字数",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "交卷前 60 秒自查四项：主谓一致、时态、拼写、字数。",
+      "formulas": [
+        "the number of … 用单数",
+        "议论文主体用一般现在时",
+        "易错拼写：government/environment/development/achievement"
+      ],
+      "example": "The number of students is increasing.（不是 are）",
+      "cardNote": "拼写错 3 处以上会直接降档。",
+      "source": "243 · 写作"
     },
     {
       "id": "politics-1.1",
@@ -2886,12 +3264,16 @@
         "p-001"
       ],
       "note": "40-政治111/01-马原/00-唯物论",
-      "hasCard": false,
-      "summary": "思维/存在、唯物/唯心、可知论",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "哲学基本问题是思维与存在的关系，分两问：何者第一性、有无同一性。",
+      "formulas": [
+        "何者第一性：唯物主义 vs 唯心主义的划分标准",
+        "有无同一性：可知论 vs 不可知论",
+        "这是唯一划分标准，其他都是干扰"
+      ],
+      "example": "认为'理念生万物' = 唯心主义。",
+      "cardNote": "两问各自独立：唯心主义者也可以是可知论者。",
+      "source": "111 · 唯物论"
     },
     {
       "id": "politics-1.2",
@@ -2932,12 +3314,16 @@
         "p-003"
       ],
       "note": "40-政治111/01-马原/00-唯物论",
-      "hasCard": false,
-      "summary": "人脑机能、主观映象、四点能动",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "意识是人脑的机能、客观世界的主观映象；能动作用通过实践实现。",
+      "formulas": [
+        "本质：人脑机能 + 客观内容 + 主观形式",
+        "能动作用四点：目的性计划性/创造性/指导实践/调控生理",
+        "边界：意识不能直接改变物质，必须通过实践"
+      ],
+      "example": "'意识分泌物质'是庸俗唯物主义，混淆了意识与物质。",
+      "cardNote": "夸大意识能动作用 = 唯心主义。",
+      "source": "111 · 唯物论"
     },
     {
       "id": "politics-1.4",
@@ -2951,12 +3337,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "40-政治111/01-马原/00-唯物论",
-      "hasCard": false,
-      "summary": "决定/反作用、一切从实际出发",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "物质决定意识，意识反作用于物质；方法论是一切从实际出发。",
+      "formulas": [
+        "决定作用：来源、内容、变化都受物质制约",
+        "反作用：正确意识促进、错误意识阻碍",
+        "方法论：一切从实际出发 + 重视精神力量"
+      ],
+      "example": "因地制宜 = 从实际出发。",
+      "cardNote": "两个都离不开：只讲决定是机械唯物，只讲反作用是唯心。",
+      "source": "111 · 唯物论"
     },
     {
       "id": "politics-1.5",
@@ -2972,12 +3362,16 @@
         "p-004"
       ],
       "note": "40-政治111/01-马原/00-唯物论",
-      "hasCard": false,
-      "summary": "尊重规律是前提",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "尊重客观规律是发挥主观能动性的前提；二者通过实践统一。",
+      "formulas": [
+        "规律客观：不能被创造、消灭、改变",
+        "尊重规律是正确发挥能动性的前提",
+        "实践是二者统一的基础"
+      ],
+      "example": "'人定胜天'若理解为无视规律，就是唯心。",
+      "cardNote": "常见辨析：'人可以创造规律'必错。",
+      "source": "111 · 唯物论"
     },
     {
       "id": "politics-2.1",
@@ -2991,12 +3385,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "40-政治111/01-马原/01-辩证法",
-      "hasCard": false,
-      "summary": "普遍/客观/多样/条件、发展实质",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "联系与发展是唯物辩证法的总特征；发展的实质是新事物产生、旧事物灭亡。",
+      "formulas": [
+        "联系四性：普遍、客观、多样、条件",
+        "发展：前进上升的运动；实质 = 新陈代谢",
+        "新事物 ≠ 新出现的事物（要符合历史趋势）"
+      ],
+      "example": "数码取代胶片 = 新事物取代旧事物。",
+      "cardNote": "发展是'前进性'的运动，不是一切变化。",
+      "source": "111 · 辩证法"
     },
     {
       "id": "politics-2.2",
@@ -3039,12 +3437,16 @@
         "p-006"
       ],
       "note": "40-政治111/01-马原/01-辩证法",
-      "hasCard": false,
-      "summary": "量变/质变/度",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "量变与质变相互转化；度是保持事物质的量的界限。",
+      "formulas": [
+        "量变 → 质变 → 新的量变（循环）",
+        "方法论：重视积累 + 抓住时机促成飞跃 + 坚持适度",
+        "度：关节点、临界点"
+      ],
+      "example": "温水煮青蛙：温度渐变（量变）到死亡（质变）。",
+      "cardNote": "'质变优于量变'是错的——阶段不同作用不同。",
+      "source": "111 · 辩证法"
     },
     {
       "id": "politics-2.4",
@@ -3060,12 +3462,16 @@
         "p-007"
       ],
       "note": "40-政治111/01-马原/01-辩证法",
-      "hasCard": false,
-      "summary": "扬弃、前进性/曲折性",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "辩证否定是自我否定，实质是'扬弃'；前途光明、道路曲折。",
+      "formulas": [
+        "否定三特点：自我否定/发展与联系的环节/扬弃",
+        "形而上学否定观：全盘肯定或全盘否定",
+        "否定之否定 = 波浪式前进、螺旋式上升"
+      ],
+      "example": "对待传统文化：取其精华去其糟粕 = 扬弃。",
+      "cardNote": "两次否定三个阶段，仿佛回到起点但更高一级。",
+      "source": "111 · 辩证法"
     },
     {
       "id": "politics-2.5",
@@ -3079,12 +3485,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "40-政治111/01-马原/01-辩证法",
-      "hasCard": false,
-      "summary": "原因/结果、必然/偶然等",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "五对范畴是分析工具：因果、必然偶然、可能现实、现象本质、内容形式。",
+      "formulas": [
+        "因果：先后 + 引起被引起（≠先后关系都是因果）",
+        "必然与偶然：必然通过偶然开辟道路",
+        "现象与本质：透过现象看本质",
+        "可能与现实：区分可能与不可能（有无根据）"
+      ],
+      "example": "守株待兔：把偶然当必然。",
+      "cardNote": "'熟能生巧'体现因果；'守株待兔'混淆必然偶然。",
+      "source": "111 · 辩证法"
     },
     {
       "id": "politics-2.6",
@@ -3098,12 +3509,17 @@
       "priority": "core",
       "questionIds": [],
       "note": "40-政治111/01-马原/01-辩证法",
-      "hasCard": false,
-      "summary": "一分为二、具体分析、抓主要矛盾",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "矛盾分析法是辩证法核心方法论：一分为二、抓主要矛盾、具体问题具体分析。",
+      "formulas": [
+        "一分为二：承认矛盾双方",
+        "抓主要矛盾：牵牛要牵牛鼻子",
+        "具体问题具体分析：马克思主义活的灵魂",
+        "两点论与重点论统一"
+      ],
+      "example": "精准扶贫：具体问题具体分析。",
+      "cardNote": "答主观题万能：材料里找矛盾双方 + 找主要矛盾。",
+      "source": "111 · 辩证法"
     },
     {
       "id": "politics-3.1",
@@ -3119,12 +3535,15 @@
         "p-008"
       ],
       "note": "40-政治111/01-马原/02-认识论",
-      "hasCard": false,
-      "summary": "物质性/能动性/社会历史性",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "实践是人类能动地改造世界的物质活动，具有三个基本特征。",
+      "formulas": [
+        "三特征：直接现实性 / 自觉能动性 / 社会历史性",
+        "三形式：生产实践（最基本）/ 社会政治实践 / 科学文化实践"
+      ],
+      "example": "工人造车 = 生产实践；做物理实验 = 科学文化实践。",
+      "cardNote": "直接现实性是实践区别于意识的特点。",
+      "source": "111 · 认识论"
     },
     {
       "id": "politics-3.2",
@@ -3140,12 +3559,17 @@
         "p-008"
       ],
       "note": "40-政治111/01-马原/02-认识论",
-      "hasCard": false,
-      "summary": "来源/动力/目的/检验标准",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "实践决定认识四个方面：来源、动力、目的、检验标准；认识反作用于实践。",
+      "formulas": [
+        "来源：一切真知来自实践",
+        "动力：实践提出问题、提供工具",
+        "目的：认识最终为实践服务",
+        "检验标准：实践是检验真理的唯一标准"
+      ],
+      "example": "'纸上得来终觉浅'强调来源与检验。",
+      "cardNote": "四方面分清，简答题按点给分。",
+      "source": "111 · 认识论"
     },
     {
       "id": "politics-3.3",
@@ -3159,12 +3583,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "40-政治111/01-马原/02-认识论",
-      "hasCard": false,
-      "summary": "感觉/知觉/表象、概念/判断/推理",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "感性认识上升到理性认识是第一次飞跃；理论回到实践是第二次飞跃。",
+      "formulas": [
+        "感性：感觉、知觉、表象（具体个别的认识）",
+        "理性：概念、判断、推理（抽象本质的认识）",
+        "两次飞跃：实践→认识→再实践→再认识",
+        "感性材料必须加工：去粗取精、去伪存真、由此及彼、由表及里"
+      ],
+      "example": " Newton 从苹果落地（感性）到万有引力（理性）。",
+      "cardNote": "第二次飞跃意义更大：认识为了改造世界。",
+      "source": "111 · 认识论"
     },
     {
       "id": "politics-3.4",
@@ -3205,12 +3634,16 @@
         "p-010"
       ],
       "note": "40-政治111/01-马原/02-认识论",
-      "hasCard": false,
-      "summary": "驳“权威/多数/有用”",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "实践是检验真理的唯一标准，由真理的本性和实践的特点决定。",
+      "formulas": [
+        "真理本性：主观与客观相符合",
+        "实践特点：主观见之于客观的物质活动",
+        "逻辑证明不能代替实践检验"
+      ],
+      "example": "驳'多数人认为正确就是真理'。",
+      "cardNote": "这是辨析题高频考点。",
+      "source": "111 · 认识论"
     },
     {
       "id": "politics-4.1",
@@ -3226,12 +3659,16 @@
         "p-011"
       ],
       "note": "40-政治111/01-马原/03-唯物史观",
-      "hasCard": false,
-      "summary": "决定/相对独立/反作用",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "社会存在决定社会意识；社会意识有相对独立性并能反作用。",
+      "formulas": [
+        "社会存在：物质生产方式（决定力量）+ 地理环境 + 人口",
+        "相对独立性三表现：不完全同步 / 历史继承性 / 相互影响",
+        "反作用：先进促进、落后阻碍"
+      ],
+      "example": "改革思想先行 = 社会意识的相对独立性。",
+      "cardNote": "相对独立性 ≠ 完全独立，最终由存在决定。",
+      "source": "111 · 唯物史观"
     },
     {
       "id": "politics-4.2",
@@ -3247,12 +3684,16 @@
         "p-012"
       ],
       "note": "40-政治111/01-马原/03-唯物史观",
-      "hasCard": false,
-      "summary": "三要素、适合规律",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "生产力决定生产关系；生产关系反作用于生产力。",
+      "formulas": [
+        "生产力三要素：劳动者（主导）+ 劳动资料（工具是标志）+ 劳动对象",
+        "生产关系三方面：所有制（基础）+ 人与人的关系 + 分配",
+        "规律：生产关系一定要适合生产力状况"
+      ],
+      "example": "家庭联产承包责任制适合当时生产力。",
+      "cardNote": "'生产关系越先进越好'错——要'适合'。",
+      "source": "111 · 唯物史观"
     },
     {
       "id": "politics-4.3",
@@ -3266,12 +3707,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "40-政治111/01-马原/03-唯物史观",
-      "hasCard": false,
-      "summary": "决定/反作用",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "经济基础决定上层建筑；上层建筑反作用于经济基础。",
+      "formulas": [
+        "经济基础 = 占统治地位的生产关系总和",
+        "上层建筑 = 意识形态 + 政治法律制度及设施",
+        "规律：上层建筑一定要适合经济基础状况"
+      ],
+      "example": "宪法修改 = 上层建筑适应经济基础变化。",
+      "cardNote": "二者与经济基础的矛盾是社会基本矛盾之一。",
+      "source": "111 · 唯物史观"
     },
     {
       "id": "politics-4.4",
@@ -3285,12 +3730,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "40-政治111/01-马原/03-唯物史观",
-      "hasCard": false,
-      "summary": "五形态、两对矛盾",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "两对社会基本矛盾是社会发展的根本动力；阶级斗争是阶级社会的直接动力。",
+      "formulas": [
+        "基本矛盾：生产力↔生产关系、经济基础↔上层建筑",
+        "阶级斗争：阶级社会发展的直接动力",
+        "改革：社会主义制度的自我完善和发展"
+      ],
+      "example": "改革不是改变社会主义制度，而是自我完善。",
+      "cardNote": "'根本动力'与'直接动力'别混。",
+      "source": "111 · 唯物史观"
     },
     {
       "id": "politics-4.5",
@@ -3306,12 +3755,16 @@
         "p-013"
       ],
       "note": "40-政治111/01-马原/03-唯物史观",
-      "hasCard": false,
-      "summary": "历史创造者、群众路线",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "人民群众是历史创造者：物质财富、精神财富的创造者，社会变革的决定力量。",
+      "formulas": [
+        "三创造：物质财富 / 精神财富 / 社会变革",
+        "历史人物影响历史进程但不决定方向",
+        "方法论：群众观点 + 群众路线"
+      ],
+      "example": "时势造英雄，而非英雄造时势。",
+      "cardNote": "'英雄创造历史' = 唯心史观。",
+      "source": "111 · 唯物史观"
     },
     {
       "id": "politics-5.1",
@@ -3328,12 +3781,17 @@
         "p-015"
       ],
       "note": "40-政治111/01-马原/04-政治经济学与科社",
-      "hasCard": false,
-      "summary": "使用价值/价值、具体/抽象劳动",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "商品二因素（使用价值+价值）与劳动二重性（具体+抽象）是政经的入口。",
+      "formulas": [
+        "使用价值：自然属性，交换价值的物质承担者",
+        "价值：社会属性，凝结的无差别人类劳动",
+        "具体劳动 → 使用价值；抽象劳动 → 价值",
+        "价值量由社会必要劳动时间决定"
+      ],
+      "example": "同样的鞋，手工做 10 小时、机器做 1 小时，价值按社会必要劳动时间算。",
+      "cardNote": "劳动二重性是理解政治经济学的枢纽。",
+      "source": "111 · 政经"
     },
     {
       "id": "politics-5.2",
@@ -3347,12 +3805,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "40-政治111/01-马原/04-政治经济学与科社",
-      "hasCard": false,
-      "summary": "社会必要劳动时间、价格波动",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "价值规律：价值量由社会必要劳动时间决定，交换按等价原则进行，价格围绕价值波动。",
+      "formulas": [
+        "内容：价值决定 + 等价交换",
+        "表现形式：价格受供求影响围绕价值上下波动",
+        "作用：调节资源配置 / 刺激技术进步 / 优胜劣汰"
+      ],
+      "example": "白菜贵时多种白菜 → 供过于求 → 价格回落。",
+      "cardNote": "价格波动不是对价值规律的否定，而是其表现形式。",
+      "source": "111 · 政经"
     },
     {
       "id": "politics-5.3",
@@ -3393,12 +3855,17 @@
         "p-017"
       ],
       "note": "40-政治111/01-马原/04-政治经济学与科社",
-      "hasCard": false,
-      "summary": "有机构成、生产社会化/私人占有",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "资本积累导致有机构成提高，相对过剩人口出现，两极分化加剧。",
+      "formulas": [
+        "资本积累：剩余价值资本化",
+        "有机构成 c:v 不断提高",
+        "相对过剩人口：产业后备军",
+        "基本矛盾激化 → 经济危机"
+      ],
+      "example": "机器取代工人 = 有机构成提高。",
+      "cardNote": "积累的源泉是剩余价值。",
+      "source": "111 · 政经"
     },
     {
       "id": "politics-5.5",
@@ -3414,12 +3881,16 @@
         "p-018"
       ],
       "note": "40-政治111/01-马原/04-政治经济学与科社",
-      "hasCard": false,
-      "summary": "唯物史观+剩余价值学说",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "空想社会主义批判资本主义但找不到实现的力量和道路；两大发现使其变为科学。",
+      "formulas": [
+        "空想局限：看不到无产阶级力量 / 找不到实现路径",
+        "两大基石：唯物史观 + 剩余价值学说",
+        "标志：《共产党宣言》1848"
+      ],
+      "example": "欧文新和谐公社失败 = 空想社会主义的实践局限。",
+      "cardNote": "两大基石一起记：一个解释历史规律，一个揭示剥削秘密。",
+      "source": "111 · 科社"
     },
     {
       "id": "politics-5.6",
@@ -3435,12 +3906,16 @@
         "p-019"
       ],
       "note": "40-政治111/01-马原/04-政治经济学与科社",
-      "hasCard": false,
-      "summary": "方向+条件",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "两个必然讲历史方向，两个决不会讲实现条件，二者统一。",
+      "formulas": [
+        "两个必然：资本主义必然灭亡、社会主义必然胜利",
+        "两个决不会：生产力未充分发挥前旧制度不会灭亡；条件未成熟前新制度不会出现",
+        "方法论：方向坚定 + 脚踏实地"
+      ],
+      "example": "用'两个决不会'反对急躁冒进。",
+      "cardNote": "只背一个必然 = 教条；加上条件 = 辩证法。",
+      "source": "111 · 科社"
     },
     {
       "id": "politics-6.1",
@@ -3481,12 +3956,16 @@
         "p-022"
       ],
       "note": "40-政治111/02-主观题/00-答题模板",
-      "hasCard": false,
-      "summary": "原理+3-5 条",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "简答题公式：原理名 + 一句话定义 + 3-5 条要点 + 一句方法论。",
+      "formulas": [
+        "开头直接给原理名（阅卷按点给分）",
+        "每条'核心句 + 一句展开'",
+        "结尾回扣方法论或材料"
+      ],
+      "example": "问实践与认识关系：先写'实践决定认识'，再列来源/动力/目的/标准四点。",
+      "cardNote": "分条写，一大段糊在一起等于丢分。",
+      "source": "111 · 主观题"
     },
     {
       "id": "politics-6.3",
@@ -3500,12 +3979,18 @@
       "priority": "normal",
       "questionIds": [],
       "note": "40-政治111/02-主观题/00-答题模板",
-      "hasCard": false,
-      "summary": "原理/展开/材料/方法论/结尾",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "论述题五段式：原理 → 展开 → 材料 → 方法论 → 结尾回扣。",
+      "formulas": [
+        "原理：写准名称 + 内容",
+        "展开：2-3 层逻辑（是什么/为什么/怎么办）",
+        "材料：至少两处引用材料关键词",
+        "方法论：对现实的指导意义",
+        "结尾：一句话回扣题目"
+      ],
+      "example": "用辩证法分析材料：先亮矛盾分析法，再套材料，最后落到两点论重点论。",
+      "cardNote": "没有材料引用的论述题最高拿一半分。",
+      "source": "111 · 主观题"
     },
     {
       "id": "electrical-1.1",
@@ -3521,12 +4006,16 @@
         "el-001"
       ],
       "note": "50-电气基础/00-考试与计划",
-      "hasCard": false,
-      "summary": "等效电阻、分压分流",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "欧姆定律、串并联是电路计算的起点。",
+      "formulas": [
+        "U=IR",
+        "串联：R=R₁+R₂；分压与阻值成正比",
+        "并联：R=R₁R₂/(R₁+R₂)；分流与阻值成反比"
+      ],
+      "example": "2Ω 与 4Ω 并联 = 8/6 = 4/3Ω。",
+      "cardNote": "并联总电阻小于任一支路。",
+      "source": "电气 · 电路"
     },
     {
       "id": "electrical-1.2",
@@ -3565,12 +4054,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "50-电气基础/00-考试与计划",
-      "hasCard": false,
-      "summary": "有效值、相位差",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "正弦量三要素：幅值、频率（周期）、初相位；有效值 = 幅值/√2。",
+      "formulas": [
+        "u=Um sin(ωt+φ)：Um 幅值、ω 角频率、φ 初相",
+        "有效值 U=Um/√2（220V 是有效值）",
+        "角频率 ω=2πf，工频 f=50Hz"
+      ],
+      "example": "220V 对应幅值约 311V。",
+      "cardNote": "我国工频 50Hz，周期 0.02s。",
+      "source": "电气 · 交流"
     },
     {
       "id": "electrical-1.4",
@@ -3637,12 +4130,16 @@
         "el-005"
       ],
       "note": "50-电气基础/00-考试与计划",
-      "hasCard": false,
-      "summary": "电压/电流/匝数比",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "变压器按电磁感应原理工作，电压比等于匝数比。",
+      "formulas": [
+        "U₁/U₂=N₁/N₂",
+        "I₁/I₂=N₂/N₁（能量守恒）",
+        "理想变压器：输入功率 = 输出功率"
+      ],
+      "example": "10kV 降到 380V 用降压变压器。",
+      "cardNote": "电流比与匝数比相反。",
+      "source": "电气 · 变压器"
     },
     {
       "id": "electrical-1.7",
@@ -3656,12 +4153,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "50-电气基础/00-考试与计划",
-      "hasCard": false,
-      "summary": "异步电机转差/起动",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "异步电动机转速略低于同步转速，转差率是其特征量。",
+      "formulas": [
+        "同步转速 n₀=60f/p",
+        "转差率 s=(n₀-n)/n₀，额定运行约 2%~5%",
+        "转向由相序决定（对调任意两相即反转）"
+      ],
+      "example": "50Hz、2 极电机：n₀=3000r/min。",
+      "cardNote": "转差存在才有感应电流和转矩。",
+      "source": "电气 · 电机"
     },
     {
       "id": "electrical-1.8",
@@ -3677,12 +4178,16 @@
         "el-006"
       ],
       "note": "50-电气基础/00-考试与计划",
-      "hasCard": false,
-      "summary": "接地/接零、漏保",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "保护接地与保护接零防触电；安全电压干燥环境 36V。",
+      "formulas": [
+        "保护接地：外壳接大地，降低接触电压",
+        "保护接零：外壳接零线，促使熔断器动作",
+        "安全电压：干燥 36V、潮湿 12V"
+      ],
+      "example": "洗衣机三孔插座 = 保护接地。",
+      "cardNote": "同一系统中接地与接零不能混用。",
+      "source": "电气 · 安全"
     },
     {
       "id": "electrical-2.1",
@@ -3696,12 +4201,15 @@
       "priority": "normal",
       "questionIds": [],
       "note": "",
-      "hasCard": false,
-      "summary": "单向导电、桥式整流",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "二极管单向导电性；桥式整流把交流变脉动直流。",
+      "formulas": [
+        "正向导通、反向截止",
+        "桥式整流输出电压 ≈ 0.9U₂（U₂ 为变压器副边有效值）"
+      ],
+      "example": "手机充电器前级 = 整流电路。",
+      "cardNote": "整流后还需滤波才能得平滑直流。",
+      "source": "电气 · 模拟电子"
     },
     {
       "id": "electrical-2.2",
@@ -3715,12 +4223,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "",
-      "hasCard": false,
-      "summary": "截止/放大/饱和",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "三极管三区：截止、放大、饱和；放大区发射结正偏、集电结反偏。",
+      "formulas": [
+        "Ie=Ib+Ic",
+        "放大条件：发射结正偏、集电结反偏",
+        "Ic=β·Ib"
+      ],
+      "example": "放大电路必须让三极管工作在放大区。",
+      "cardNote": "三极管只放大电流，电压放大靠电路实现。",
+      "source": "电气 · 模拟电子"
     },
     {
       "id": "electrical-2.3",
@@ -3734,12 +4246,16 @@
       "priority": "normal",
       "questionIds": [],
       "note": "",
-      "hasCard": false,
-      "summary": "虚短/虚断、反相/同相",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "运放分析两条黄金法则：虚短、虚断。",
+      "formulas": [
+        "虚短：u+ ≈ u-",
+        "虚断：输入电流 ≈ 0",
+        "反相放大：uo=-(Rf/R1)ui；同相放大：uo=(1+Rf/R1)u+"
+      ],
+      "example": "R1=1k、Rf=10k 反相放大器放大倍数 -10。",
+      "cardNote": "先列虚短虚断，再列节点电流方程。",
+      "source": "电气 · 模拟电子"
     },
     {
       "id": "electrical-2.4",
@@ -3753,12 +4269,17 @@
       "priority": "normal",
       "questionIds": [],
       "note": "",
-      "hasCard": false,
-      "summary": "与或非、真值表",
-      "formulas": [],
-      "example": "",
-      "cardNote": "",
-      "source": ""
+      "hasCard": true,
+      "summary": "基本逻辑：与（全真才真）、或（一真即真）、非（取反）。",
+      "formulas": [
+        "与 A·B：00→0、01→0、10→0、11→1",
+        "或 A+B：00→0、01→1、10→1、11→1",
+        "非 ¬A：0→1、1→0",
+        "常用：与非 = 与后取反"
+      ],
+      "example": "两个开关串联控制灯 = 与逻辑。",
+      "cardNote": "先写真值表再化简逻辑式。",
+      "source": "电气 · 数字电子"
     }
   ]
 }

@@ -1,5 +1,5 @@
 /* 考研刷题 PWA · cache-first for offline commute */
-const CACHE = "kaoyan-quiz-20261107104649";
+const CACHE = "kaoyan-quiz-20261111214536";
 const ASSETS = [
   "./",
   "./index.html",
@@ -7,6 +7,7 @@ const ASSETS = [
   "./app.js",
   "./questions.json",
   "./knowledge.json",
+  "./examples.json",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",

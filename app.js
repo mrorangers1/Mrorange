@@ -142,7 +142,10 @@
   let state = defaultState();
   let DB = null;
   let KDB = null;
+  let EDB = null;
   let session = null;
+  let exSession = null;
+  let cardSession = null;
   let timerId = null;
   let route = "today";
   const bankFilter = { subject: "all", query: "" };
@@ -241,17 +244,39 @@
       questions: list.map(normalizeQuestion).filter(Boolean)
     };
   }
+  async function fetchWithTimeout(url, ms) {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), ms || 8000);
+    try {
+      return await fetch(url, { cache: "no-store", signal: ctrl.signal });
+    } finally {
+      clearTimeout(t);
+    }
+  }
   async function loadQuestions() {
     if (window.__QUESTIONS__) return normalizeBank(window.__QUESTIONS__);
-    const res = await fetch("questions.json", { cache: "no-store" });
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    return normalizeBank(await res.json());
+    try {
+      const res = await fetchWithTimeout("questions.json", 8000);
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return normalizeBank(await res.json());
+    } catch (e) {
+      // 网络不可用（飞行/隧道）：尝试从 SW 缓存直接取
+      const hit = await caches.match("questions.json");
+      if (hit) return normalizeBank(await hit.json());
+      throw e;
+    }
   }
   async function loadKnowledge() {
     if (window.__KNOWLEDGE__) return window.__KNOWLEDGE__;
-    const res = await fetch("knowledge.json", { cache: "no-store" });
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    return await res.json();
+    try {
+      const res = await fetchWithTimeout("knowledge.json", 8000);
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return await res.json();
+    } catch (e) {
+      const hit = await caches.match("knowledge.json");
+      if (hit) return await hit.json();
+      throw e;
+    }
   }
   function allNodes() { return (KDB && Array.isArray(KDB.nodes)) ? KDB.nodes : []; }
   function nodeById(id) { return allNodes().find((n) => n.id === id) || null; }
@@ -273,6 +298,20 @@
   function nodeCount(subject) {
     return allNodes().filter((n) => !subject || n.subject === subject).length;
   }
+  async function loadExamples() {
+    if (window.__EXAMPLES__) return window.__EXAMPLES__;
+    try {
+      const res = await fetchWithTimeout("examples.json", 8000);
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return await res.json();
+    } catch (e) {
+      const hit = await caches.match("examples.json");
+      if (hit) return await hit.json();
+      throw e;
+    }
+  }
+  function allExamples() { return (EDB && Array.isArray(EDB.examples)) ? EDB.examples : []; }
+  function examplesOf(nodeId) { return allExamples().filter((e) => e.node === nodeId); }
   function allQuestions() { return (DB ? DB.questions : []).concat(state.custom || []); }
   function questionById(id) { return allQuestions().find((q) => q.id === id) || null; }
   function subjectName(s) { return (SUBJECTS[s] && SUBJECTS[s].name) || s; }
@@ -476,6 +515,12 @@
     }
   }
 
+  function exampleOfDay() {
+    const list = allExamples();
+    if (!list.length) return null;
+    const dayIndex = diffDays("2026-11-01", todayStr());
+    return list[((dayIndex % list.length) + list.length) % list.length];
+  }
   /* ---------------- today ---------------- */
   function studiedOn(date) {
     for (const l of state.log) {
@@ -541,6 +586,28 @@
       <div class="tiny muted mt8">${esc(weekNodeTip())}</div>
       <div class="tiny faint mt8">先点亮节点，再来刷对应题；每周只挑 3-5 个；不会的题回 Obsidian 笔记。</div>
       <div class="row mt8"><button class="btn small" data-action="go-learn">去学习</button></div>
+    </div>
+
+    ${(function(){
+      const ex = exampleOfDay();
+      if (!ex) return "";
+      return `<div class="card mt12 example-card" data-action="open-example" data-id="${esc(ex.id)}">
+        <div class="between">
+          <div class="row"><span class="badge gold">今日精讲</span><span class="tiny muted">${esc(subjectShort(ex.subject))} · ${esc(ex.topic)} · ${ex.minutes}分钟</span></div>
+          <span class="tiny faint">▸</span>
+        </div>
+        <div class="mt8" style="font-size:14px;font-weight:600;line-height:1.5">${esc(ex.title)}</div>
+        <div class="tiny muted mt8">点卡片看分步详解 · 每天一道</div>
+      </div>`;
+    })()}
+
+    <div class="card switch-row mt12">
+      <div class="grow"><b>通勤读卡</b><div class="tiny muted">一卡一测 ≈ 3 分钟 · 168 张卡</div></div>
+      <button class="btn small" data-action="start-cards">开始</button>
+    </div>
+    <div class="card switch-row">
+      <div class="grow"><b>5 分钟速刷</b><div class="tiny muted">排队、等餐时来 5 题</div></div>
+      <button class="btn small" data-action="start-quick">开始</button>
     </div>
 
     <div class="section">
@@ -674,8 +741,9 @@
           <p class="tiny muted mt8">已掌握 ${done} · 在学 ${doing} · 未学 ${Math.max(0, total - done - doing)}</p>
         </div>
       </div>
-      <div class="row mt12">
+      <div class="row mt12 wrap">
         <button class="btn primary small" data-action="continue-learn">${next ? "继续：" + esc(next.title) : "开始学习"}</button>
+        <button class="btn small" data-action="start-cards">通勤读卡</button>
         <button class="btn small" data-action="go-bank">题库</button>
       </div>
     </section>
@@ -735,8 +803,14 @@
         ${!n.hasCard ? `<div class="node-missing">这节还没有知识卡；先看 Obsidian 笔记/教材，再回来做题。</div>` : ""}
       </div>
       <div class="tiny muted mt8">前置：${esc(n.prereq || "—")} ｜ 考点：${esc(n.focus || "—")}</div>
+      ${cardQuizHTML(n, "sheet")}
       <div class="toolbar mt12">
         <button class="btn primary" data-action="start-node" data-id="${esc(n.id)}" ${qc ? "" : "disabled"}>做这节题（${qc}）</button>
+        ${(function(){
+          const exs = examplesOf(n.id);
+          if (!exs.length) return "";
+          return `<button class="btn" data-action="open-example" data-id="${esc(exs[0].id)}">精讲（${exs.length}）</button>`;
+        })()}
       </div>
       <div class="tiny faint">做完题回来自评：能讲 + 做对变式，再点「已掌握」。</div>
     </div>`;
@@ -768,6 +842,196 @@
     if (nodeStatus(id) === 0) setNodeStatus(id, 1);
     closeNodeSheet();
     startSession({ ids, mode: "node" });
+  }
+
+  /* ---------------- card quiz & 通勤读卡 ---------------- */
+  function nodeQuizQuestions(n, limit) {
+    const ids = (n.questionIds || []).filter((qid) => !!questionById(qid));
+    return ids.slice(0, limit || 3).map((qid) => questionById(qid));
+  }
+  function cardQuizHTML(n, scope) {
+    const qs = nodeQuizQuestions(n, 3);
+    if (!qs.length) return "";
+    const key = scope + ":" + n.id;
+    return `<div class="card-quiz" data-quiz-scope="${esc(key)}">
+      <div class="between"><b>自测一下</b><span class="tiny muted">${qs.length} 题 · 点题看答案</span></div>
+      ${qs.map((q) => `
+        <div class="cq-item" data-cq="${esc(q.id)}">
+          <button class="cq-q" data-action="cq-reveal" data-qid="${esc(q.id)}">
+            <span class="cq-n">?</span><span>${inline(q.stem)}</span>
+          </button>
+          <div class="cq-a" hidden>
+            <div class="cq-a-line"><b>答：</b>${q.type === "short" ? inline(q.answerText) : esc("ABCDEF"[q.answer[0]] || "") + "．" + inline(q.options[q.answer[0]] || "")}</div>
+            ${q.explain ? `<div class="cq-a-line tiny muted mt8">${inline(q.explain)}</div>` : ""}
+          </div>
+        </div>`).join("")}
+    </div>`;
+  }
+  function buildCardQueue() {
+    const nodes = allNodes().filter((n) => n.hasCard);
+    const doing = nodes.filter((n) => nodeStatus(n.id) === 1);
+    const fresh = nodes.filter((n) => nodeStatus(n.id) === 0);
+    const done = nodes.filter((n) => nodeStatus(n.id) === 2);
+    return doing.concat(fresh).concat(done).map((n) => n.id);
+  }
+  function openCardStream() {
+    const queue = buildCardQueue();
+    if (!queue.length) { toast("还没有知识卡"); return; }
+    cardSession = { queue, index: 0, graded: {} };
+    renderCardStream();
+  }
+  function closeCardStream() {
+    cardSession = null;
+    const el = $("#cardView");
+    if (el) { el.hidden = true; el.innerHTML = ""; }
+    document.body.style.overflow = "";
+    if (route === "learn" || route === "today") render();
+  }
+  function cardNext() {
+    if (!cardSession) return;
+    cardSession.index += 1;
+    if (cardSession.index >= cardSession.queue.length) {
+      toast("今天的卡读完了");
+      closeCardStream();
+      return;
+    }
+    renderCardStream();
+  }
+  function cardSetStatus(status) {
+    if (!cardSession) return;
+    const id = cardSession.queue[cardSession.index];
+    setNodeStatus(id, status);
+    toast(status === 2 ? "已点亮" : status === 1 ? "标记在学" : "跳过");
+    cardNext();
+  }
+  function renderCardStream() {
+    if (!cardSession) return;
+    const id = cardSession.queue[cardSession.index];
+    const n = nodeById(id);
+    if (!n) { cardNext(); return; }
+    const total = cardSession.queue.length;
+    const num = cardSession.index + 1;
+    const st = nodeStatus(id);
+    let el = $("#cardView");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "cardView";
+      el.className = "example-view";
+      document.body.appendChild(el);
+    }
+    const formulas = (n.formulas || []).map((f) => `<div class="formula">${inline(f)}</div>`).join("");
+    el.innerHTML = `
+      <div class="practice-head">
+        <button class="icon-btn" data-action="card-close" aria-label="关闭">✕</button>
+        <div class="progress-wrap">
+          <div class="progress-top"><span>通勤读卡 · ${esc(subjectShort(n.subject))} · ${esc(n.chapter)}</span><span>${num} / ${total}</span></div>
+          <div class="progress"><i style="width:${Math.round((num / total) * 100)}%"></i></div>
+        </div>
+        <span style="width:34px"></span>
+      </div>
+      <div class="practice-body">
+        <div class="practice-inner">
+          <div class="q-meta">
+            <span class="badge">${esc(n.num)}</span>
+            <span class="badge">${esc(n.title)}</span>
+            ${st === 2 ? '<span class="badge" style="color:var(--green)">已掌握</span>' : st === 1 ? '<span class="badge due">在学</span>' : '<span class="badge new">未学</span>'}
+          </div>
+          <div class="node-read">
+            <div class="eyebrow">先看知识</div>
+            <p class="node-summary">${inline(n.summary || "")}</p>
+            ${formulas ? `<div class="formula-list">${formulas}</div>` : ""}
+            ${n.example ? `<div class="node-example"><b>例</b> ${inline(n.example)}</div>` : ""}
+            ${n.cardNote ? `<div class="node-tip"><b>记</b> ${inline(n.cardNote)}</div>` : ""}
+          </div>
+          ${cardQuizHTML(n, "stream")}
+          <div class="card-actions">
+            <button class="btn" data-action="card-status" data-status="0">跳过</button>
+            <button class="btn" data-action="card-status" data-status="1">在学</button>
+            <button class="btn primary" data-action="card-status" data-status="2">掌握，下一卡</button>
+          </div>
+          <div class="tiny faint mt8" style="text-align:center">读卡 + 自测 ≈ 3 分钟</div>
+        </div>
+      </div>
+    `;
+    el.hidden = false;
+    document.body.style.overflow = "hidden";
+    el.scrollTop = 0;
+  }
+
+  /* ---------------- example reader ---------------- */
+  function openExample(id) {
+    const ex = allExamples().find((e) => e.id === id);
+    if (!ex) { toast("精讲不存在", true); return; }
+    exSession = { ex, step: 0 };
+    renderExample();
+  }
+  function closeExample() {
+    exSession = null;
+    const el = $("#exampleView");
+    if (el) { el.hidden = true; el.innerHTML = ""; }
+    document.body.style.overflow = "";
+    if (route === "learn") render();
+  }
+  function exampleNextStep() {
+    if (!exSession) return;
+    if (exSession.step < exSession.ex.steps.length) exSession.step += 1;
+    renderExample();
+  }
+  function renderExample() {
+    if (!exSession) return;
+    const ex = exSession.ex;
+    const total = ex.steps.length;
+    const shown = exSession.step;
+    const allShown = shown >= total;
+    let el = $("#exampleView");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "exampleView";
+      el.className = "example-view";
+      document.body.appendChild(el);
+    }
+    const stepsHTML = ex.steps.slice(0, shown).map((s, i) => `
+      <div class="ex-step">
+        <div class="ex-step-t">${inline(s.t)}</div>
+        <div class="ex-step-c">${inline(s.c)}</div>
+      </div>`).join("");
+    const moreBtn = !allShown
+      ? `<button class="btn primary wide" data-action="ex-next-step">下一步（${shown}/${total}）</button>`
+      : "";
+    const tail = allShown ? `
+      <div class="answer-box"><div class="t">答案</div><div class="v">${inline(ex.answer)}</div></div>
+      ${ex.insight ? `<div class="explain"><div class="t">一句话总结</div><div class="v">${inline(ex.insight)}</div></div>` : ""}
+      ${(ex.pitfalls && ex.pitfalls.length) ? `<div class="explain"><div class="t">易错点</div><div class="v">${ex.pitfalls.map((x) => "✗ " + inline(x)).join("<br>")}</div></div>` : ""}
+      <div class="toolbar">
+        <button class="btn" data-action="ex-close">看完，回学习</button>
+        ${nodeById(ex.node) ? `<button class="btn primary" data-action="ex-close-start-node" data-node="${esc(ex.node)}">做这节题</button>` : `<button class="btn primary" data-action="ex-close">完成</button>`}
+      </div>` : "";
+    el.innerHTML = `
+      <div class="practice-head">
+        <button class="icon-btn" data-action="ex-close" aria-label="关闭">✕</button>
+        <div class="progress-wrap">
+          <div class="progress-top"><span>${esc(subjectShort(ex.subject))} · ${esc(ex.topic)} · 例题精讲</span><span>${ex.minutes} 分钟</span></div>
+          <div class="progress"><i style="width:${Math.round((shown / total) * 100)}%"></i></div>
+        </div>
+        <span style="width:34px"></span>
+      </div>
+      <div class="practice-body">
+        <div class="practice-inner">
+          <div class="q-card">
+            <div class="eyebrow">题目</div>
+            <div class="q-stem mt8">${inline(ex.problem)}</div>
+          </div>
+          ${shown === 0 ? `<div class="hint mt12" style="text-align:center">先自己想 1 分钟，再点「下一步」看解析</div>` : ""}
+          <div class="ex-steps">${stepsHTML}</div>
+          ${moreBtn}
+          ${tail}
+          ${ex.source ? `<div class="tiny faint mt12">来源：${esc(ex.source)}</div>` : ""}
+        </div>
+      </div>
+    `;
+    el.hidden = false;
+    document.body.style.overflow = "hidden";
+    el.scrollTop = el.scrollHeight;
   }
 
   /* ---------------- bank ---------------- */
@@ -966,6 +1230,75 @@
     `;
   }
 
+  /* ---------------- offline self check ---------------- */
+  async function runOfflineCheck() {
+    const out = { items: [], ok: true };
+    const add = (name, ok, detail) => {
+      out.items.push({ name, ok, detail: detail || "" });
+      if (!ok) out.ok = false;
+    };
+    // 1. localStorage
+    try {
+      localStorage.setItem("__t", "1");
+      localStorage.removeItem("__t");
+      add("进度存储（localStorage）", true);
+    } catch (e) {
+      add("进度存储（localStorage）", false, "不可用");
+    }
+    // 2. 数据已加载
+    add("题库已载入", !!(DB && DB.questions && DB.questions.length), DB ? DB.questions.length + " 题" : "0");
+    add("知识卡已载入", allNodes().length > 0, allNodes().length + " 张卡");
+    add("精讲已载入", allExamples().length > 0, allExamples().length + " 道");
+    // 3. Service Worker
+    const swOk = "serviceWorker" in navigator;
+    add("浏览器支持离线（Service Worker）", swOk);
+    if (swOk) {
+      const reg = await navigator.serviceWorker.getRegistration();
+      add("离线缓存已注册", !!reg);
+      add("离线缓存已激活", !!(navigator.serviceWorker.controller || (reg && reg.active)));
+      // 4. 缓存内容
+      try {
+        const keys = await caches.keys();
+        const cache = keys.length ? await caches.open(keys[0]) : null;
+        for (const f of ["questions.json", "knowledge.json", "examples.json"]) {
+          const hit = cache ? await cache.match(f) : null;
+          add("缓存：" + f, !!hit);
+        }
+        add("缓存：图标与程序文件", keys.length > 0, keys.length ? keys[0] : "");
+      } catch (e) {
+        add("缓存检查", false, String(e.message || e));
+      }
+    }
+    return out;
+  }
+  function renderOfflineCard(checking, result) {
+    const el = $("#offlineCard");
+    if (!el) return;
+    if (checking) {
+      el.innerHTML = `<div class="between"><b>离线自检</b><span class="tiny muted">检查中…</span></div><div class="tiny muted mt8">正在验证飞行模式可用性</div>`;
+      return;
+    }
+    if (!result) return;
+    const rows = result.items.map((it) => `
+      <div class="check-row">
+        <span class="check-mark ${it.ok ? "ok" : "bad"}">${it.ok ? "✓" : "✗"}</span>
+        <span class="grow">${esc(it.name)}</span>
+        ${it.detail ? `<span class="tiny muted">${esc(it.detail)}</span>` : ""}
+      </div>`).join("");
+    el.innerHTML = `
+      <div class="between">
+        <b>离线自检</b>
+        <span class="badge ${result.ok ? "" : "hard"}" style="${result.ok ? "color:var(--green);background:color-mix(in srgb,var(--green) 12%,transparent)" : ""}">${result.ok ? "✈️ 可离线使用" : "未就绪"}</span>
+      </div>
+      <div class="mt8">${rows}</div>
+      <div class="toolbar">
+        <button class="btn small" data-action="refresh-cache">刷新缓存</button>
+        <button class="btn small" data-action="run-check">重新检查</button>
+      </div>
+      ${result.ok ? `<div class="tiny muted">起飞前看一眼这里全是 ✓ 就稳了。长途飞行建议先导出一份进度到「文件」。</div>` : `<div class="tiny" style="color:var(--coral)">存在 ✗ 项：联网后点「刷新缓存」，再重新检查。</div>`}
+    `;
+  }
+
   /* ---------------- me ---------------- */
   function viewMe() {
     const s = state.settings;
@@ -1018,6 +1351,11 @@
         <button class="btn small" data-action="export-custom">导出加题 Markdown</button>
       </div>
       <div class="tiny muted">换手机/清缓存前，导出一份到 iCloud；新设备导入即可。</div>
+    </div>
+
+    <div class="card" id="offlineCard">
+      <div class="between"><b>离线自检</b><button class="btn small" data-action="run-check">检查</button></div>
+      <div class="tiny muted mt8">点「检查」验证飞行模式可用性（缓存、离线支持、数据完整性）。</div>
     </div>
 
     <div class="card">
@@ -1558,6 +1896,48 @@
       case "close-node": closeNodeSheet(); break;
       case "set-node-status": setNodeStatusAction(el.dataset.id, Number(el.dataset.status)); break;
       case "start-node": startNodeQuestions(el.dataset.id); break;
+      case "open-example": openExample(el.dataset.id); break;
+      case "ex-next-step": exampleNextStep(); break;
+      case "ex-close": closeExample(); break;
+      case "ex-close-start-node": {
+        const nodeId = el.dataset.node;
+        closeExample();
+        startNodeQuestions(nodeId);
+        break;
+      }
+      case "start-quick": startSession({ mode: "random", limit: 5 }); break;
+      case "cq-reveal": {
+        const item = el.closest(".cq-item");
+        const ans = item && item.querySelector(".cq-a");
+        if (ans) ans.hidden = !ans.hidden;
+        break;
+      }
+      case "start-cards": openCardStream(); break;
+      case "run-check": {
+        const card = $("#offlineCard");
+        renderOfflineCard(true);
+        runOfflineCheck().then((r) => renderOfflineCard(false, r));
+        break;
+      }
+      case "refresh-cache": {
+        toast("正在刷新缓存…");
+        (async () => {
+          try {
+            if ("caches" in window) {
+              const keys = await caches.keys();
+              await Promise.all(keys.map((k) => caches.delete(k)));
+            }
+            if ("serviceWorker" in navigator) {
+              const reg = await navigator.serviceWorker.getRegistration();
+              if (reg) await reg.unregister();
+            }
+          } catch (e) { /* ignore */ }
+          location.reload();
+        })();
+        break;
+      }
+      case "card-close": closeCardStream(); break;
+      case "card-status": cardSetStatus(Number(el.dataset.status)); break;
       case "continue-learn": { const n = continueNode(); if (n) openNodeSheet(n.id); break; }
       case "import": { const f = $("#importFile"); if (f) f.click(); break; }
       case "reset":
@@ -1741,7 +2121,7 @@
     try {
       DB = await loadQuestions();
     } catch (e) {
-      $("#view").innerHTML = `<div class="empty" style="margin-top:18vh"><div class="big">!</div><b>题库没加载出来</b>请通过本地服务器/部署地址打开；或使用单文件版 <code>考研刷题.html</code>。<br><span class="tiny">${esc(e.message || e)}</span></div>`;
+      $("#view").innerHTML = `<div class="empty" style="margin-top:14vh"><div class="big">✈️</div><b>内容没加载出来</b>你可能在飞行/无网环境且缓存已过期。<br>恢复方法（有网时任选一）：<br>① 联网后重新打开一次本 App（自动刷新缓存）<br>② 「我的 → 离线自检 → 刷新缓存」<br>③ 用单文件版 <code>考研刷题.html</code>（全内嵌）<br><span class="tiny">${esc(e.message || e)}</span></div>`;
       return;
     }
     if (!DB.questions.length) {
@@ -1752,6 +2132,11 @@
       KDB = await loadKnowledge();
     } catch (e) {
       KDB = { nodes: [], subjects: {} };
+    }
+    try {
+      EDB = await loadExamples();
+    } catch (e) {
+      EDB = { examples: [] };
     }
     ensureDaily();
     const params = new URLSearchParams(location.search);
